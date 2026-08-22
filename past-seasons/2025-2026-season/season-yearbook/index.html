@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Season Yearbook — Fantasy Fucks</title>
+<link rel="stylesheet" href="../../../site.css">
+<style>
+  .ai-banner {
+    margin: 0 0 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--other) var(--tint-soft), var(--bg-elev));
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+</style>
+<script>
+  // Apply theme and sidebar state before first paint to avoid a flash.
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+</head>
+<body>
+<!-- clickup-export:season-yearbook -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node"><a class="nav-link" href="../../../index.html" title="2026 Draft and Keeper Info">2026 Draft and Keeper Info</a></li><li class="nav-node"><a class="nav-link" href="../../../rules/" title="Rules">Rules</a></li><li class="nav-node has-kids is-branch" data-key="past-seasons/" data-open="true"><div class="nav-row"><a class="nav-link" href="../../" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="true" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids is-branch" data-key="past-seasons/2025-2026-season/" data-open="true"><div class="nav-row"><a class="nav-link" href="../" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="true" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node is-branch"><a class="nav-link" href="./" title="Season Yearbook" aria-current="page">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2020-2021-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2020 - 2021 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2020-2021-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2019-2020-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2019-2020-season/" title="2019 - 2020 Season">2019 - 2020 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2019 - 2020 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2019-2020-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2018-2019-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2018 - 2019 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2018-2019-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">Season Yearbook</span>
+  </header>
+<main class="page" id="main">
+  <p class="crumbs"><a href="../../">Past Seasons</a> / <a href="../">2025 - 2026 Season</a> / Season Yearbook</p>
+  <h1>Season Yearbook</h1>
+  <p class="meta">Updated 2026-08-22</p>
+  <article class="prose">
+<p>The 2025–26 yearbook. Regular season through week 13, then the two-week playoffs, then who had to wear it. Numbers are from Sleeper; the color is from the weekly notes.</p>
+
+<p>
+<a href="#finals">Finals</a> ·
+<a href="#regular-season">Regular season</a> ·
+<a href="#draft">Who won the draft</a> ·
+<a href="#weeks">Won the week</a> ·
+<a href="#november">November</a> ·
+<a href="#wire">Wire &amp; trades</a> ·
+<a href="#playoffs">Playoffs</a> ·
+<a href="#slutler">Slutler</a> ·
+<a href="#portraits">Team portraits</a>
+</p>
+<p class="ai-banner">Generated by AI. May contain mistakes.</p>
+
+<h1 id="finals">The hardware</h1>
+<table>
+<thead>
+<tr><th>Finish</th><th>Manager</th><th>Team</th><th>How they got there</th></tr>
+</thead>
+<tbody>
+<tr><td>🏆 Champion</td><td>Kris Turner</td><td>Spitters not Quiters</td><td>10–3, #1 seed. Beat Jake in the semis, Joel in the final. First title.</td></tr>
+<tr><td>2nd</td><td>Joel Hernandez</td><td>Achane Reaction</td><td>7–6, #3 seed. Ended PJ’s three-peat bid in the semis, then ran into the 10–3 team.</td></tr>
+<tr><td>3rd</td><td>Jake Bowen</td><td>Egboogadaba</td><td>7–6, #4 seed. Lost the semis to Kris, took 3rd over PJ.</td></tr>
+<tr><td>4th</td><td>PJ Hardcastle</td><td>Boswell that ends well.</td><td>7–6, #2 seed. Two-week semis were not kind. Three-peat over.</td></tr>
+<tr><td>5th</td><td>Neil Calvert</td><td>Neon Keon</td><td>7–6. Same record as three playoff teams; lost the seat on points. Last year’s CJ movie, remastered.</td></tr>
+<tr><td>Slutler</td><td>Pangy</td><td>Josh Allen’s New Phat Hog</td><td>4–9, last in points, last after the pool penalty. Repeat offender.</td></tr>
+</tbody>
+</table>
+
+<h1 id="regular-season">Regular season (weeks 1–13)</h1>
+<p>Kris was a 10–3, 1,848-point problem. Next-best record was 7–6. Next-best points was Seif at 1,625 — and Seif finished 6th. The league spent most of November arguing about four 7–5 teams and one 6–6 team chasing one last seat. Week 13 settled it: the three 7–5 playoff teams all lost, PJ won, and Neil was the odd man out on points for.</p>
+
+<table>
+<thead>
+<tr><th></th><th>Manager</th><th>W–L</th><th>PF</th><th>PA</th><th>Avg</th><th>Seed</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Kris</td><td>10–3</td><td>1848.46</td><td>1466.04</td><td>142.2</td><td>#1</td></tr>
+<tr><td>2</td><td>PJ</td><td>7–6</td><td>1618.40</td><td>1658.96</td><td>124.5</td><td>#2</td></tr>
+<tr><td>3</td><td>Joel</td><td>7–6</td><td>1605.44</td><td>1489.48</td><td>123.5</td><td>#3</td></tr>
+<tr><td>4</td><td>Jake</td><td>7–6</td><td>1578.70</td><td>1600.66</td><td>121.4</td><td>#4</td></tr>
+<tr><td>5</td><td>Neil</td><td>7–6</td><td>1542.46</td><td>1480.92</td><td>118.7</td><td>—</td></tr>
+<tr><td>6</td><td>Seif</td><td>6–7</td><td>1624.98</td><td>1528.16</td><td>125.0</td><td>—</td></tr>
+<tr><td>7</td><td>CJ</td><td>6–7</td><td>1497.62</td><td>1452.44</td><td>115.2</td><td>—</td></tr>
+<tr><td>8</td><td>Andy</td><td>6–7</td><td>1410.30</td><td>1563.66</td><td>108.5</td><td>—</td></tr>
+<tr><td>9</td><td>Tony</td><td>5–8</td><td>1488.10</td><td>1653.36</td><td>114.5</td><td>—</td></tr>
+<tr><td>10</td><td>Pangy</td><td>4–9</td><td>1373.82</td><td>1694.60</td><td>105.7</td><td>—</td></tr>
+</tbody>
+</table>
+
+<p>Seif’s season in one line: second in points, sixth in the standings, first in “how is this team 6–7.” Tony had Ja’Marr Chase at 1.01 and still finished 9th. Pangy opened 3–1 with a wrecked training room and never found the floor again.</p>
+
+<p>Week 13 results that locked the bracket:</p>
+<ul>
+<li>Kris 116.9 over Joel 101.8 — #1 locked, Joel fell to 7–6</li>
+<li>Tony 121.6 over Jake 99.2 — Jake in as #4 on points, not the win</li>
+<li>Seif 113.5 over Neil 90.8 — Neil’s season ends at the door</li>
+<li>PJ 115.8 over Andy 109.1 — PJ jumps 6–6 to the #2 seed</li>
+<li>CJ 139.1 over Pangy 90.3 — AJ Brown’s 35.2 was a closing-credits cameo</li>
+</ul>
+
+<h1 id="draft">Who won the draft</h1>
+<p>Starter points in weeks 1–13, credited to whoever drafted the player (trades do not move the credit). Kris did not have a close second.</p>
+
+<table>
+<thead>
+<tr><th></th><th>Manager</th><th>Slot</th><th>Draft-class pts</th><th>The hits</th><th>The miss</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Kris</td><td>1.02</td><td>1628</td><td>Bijan (1.02), JT (2.09), JSN (3.02), Pickens (6.09), ETN (8.09)</td><td>There isn’t one that mattered</td></tr>
+<tr><td>2</td><td>Seif</td><td>1.07</td><td>1384</td><td>CMC (1.07, 328 pts — league-high drafted RB), Bowers keeper</td><td>Lamar (3.07) and a 6–7 record</td></tr>
+<tr><td>3</td><td>Joel</td><td>1.09</td><td>1336</td><td>Amon-Ra, Achane, Adams — a real WR room</td><td>Kenneth Walker (50 pts) later waived, started by PJ</td></tr>
+<tr><td>4</td><td>Andy</td><td>1.10</td><td>1272</td><td>Puka, Mahomes. The board was fine.</td><td>Then he traded Jeanty and Chase Brown, and November happened</td></tr>
+<tr><td>5</td><td>Tony</td><td>1.01</td><td>1223</td><td>Chase, Tyler Warren (8.10)</td><td>1.01 and 5–8. Kamara (3.01) gave him 57 points</td></tr>
+<tr><td>6</td><td>Neil</td><td>1.05</td><td>1143</td><td>McBride, Tet (6.06). Jacobs was fine.</td><td>Jefferson at 1.05 finished WR18. The draft did not get him Maye — waivers did</td></tr>
+<tr><td>7</td><td>Jake</td><td>1.08</td><td>1106</td><td>Hurts, London, Javonte (10.03, 175 pts)</td><td>Henry was RB13-ish. Tyreek at 3.06 was 53 points. The 10th-round pick outscored the 1st</td></tr>
+<tr><td>8</td><td>CJ</td><td>1.06</td><td>1105</td><td>Gibbs (270). Kelce still being Kelce</td><td>Mike Evans 34, DJ Moore 40, and a season-long AJ Brown marriage</td></tr>
+<tr><td>9</td><td>PJ</td><td>1.03</td><td>1091</td><td>Cook, Rice keeper, Seattle D</td><td>Nabers (2.08) 57 points. CeeDee was just okay. The #2 seed was a waiver team</td></tr>
+<tr><td>10</td><td>Pangy</td><td>1.04</td><td>960</td><td>Josh Allen, and then the injury report</td><td>Saquon at 1.04. Bucky 72. Terry keeper barely played. The draft lost the year before week 5</td></tr>
+</tbody>
+</table>
+
+<p><strong>Won the draft:</strong> Kris, and it was not subtle. JSN at 3.02 was the gasp pick. Pickens at 6.09 finished as a WR2. JT at 2.09 was the regular-season points monster. Bijan at 1.02 did Bijan things, then dropped 39.9 in week 17 when it counted.</p>
+
+<p><strong>Lost the draft:</strong> Pangy at 1.04, on volume and health. Tony is the honorable mention for turning the first pick into 9th place. PJ drafted like a mid-table team and still got the 2-seed, which is either a compliment to Rico Dowdle and Michael Pittman or an indictment of the board. Both can be true.</p>
+
+<h1 id="weeks">Won the week</h1>
+<p>The games people still remember, or should.</p>
+
+<table>
+<thead>
+<tr><th>Week</th><th>The game</th><th>Who won it</th></tr>
+</thead>
+<tbody>
+<tr><td>1 &amp; 3</td><td>Pangy 133 and 153, two of the first three weekly highs</td><td>Josh Allen. The 3–1 start was real. The roster was already on IR.</td></tr>
+<tr><td>5</td><td>Jake 174.00, then the league-high until Kris went nuclear</td><td>Egbuka 31.3, Javonte 26.9, Ferguson 23.9. Beat Pangy by 64. The 10th-round RB announced himself.</td></tr>
+<tr><td>6</td><td>Kris 183.44, beat Jake 109.3 by 74</td><td>Bijan 35.8, Pickens 31.8, JSN 30.2, JT 23.7. This is the week the 10–3 team became the 10–3 team.</td></tr>
+<tr><td>7</td><td>PJ 172.90 weekly high; Pangy 61.44 weekly low</td><td>Pangy’s floor. Andy beat him by 62. The injury spiral was no longer a bit.</td></tr>
+<tr><td>9</td><td>Seif 197.26 — highest team score of the regular season. Beat Kris 113.5 by 84</td><td>Bowers 43.3, CMC 34.3, Lamar 25.6. Kris’s only true “what just happened” loss. Seif’s November started here.</td></tr>
+<tr><td>10</td><td>Kris 172.10 over Andy 60.26, margin 111.8 — biggest blowout of the year</td><td>Jonathan Taylor, 49.6. Andy’s November, in one box score.</td></tr>
+<tr><td>10</td><td>Joel 160.8 over PJ 104.2</td><td>Achane 40.5. The notes called this the 50-burger. Semis rematch energy, four weeks early.</td></tr>
+<tr><td>12</td><td>Jahmyr Gibbs 55.4</td><td>Single-game high of the year. CJ’s team woke up just in time to spoil people and win a consolation pool.</td></tr>
+</tbody>
+</table>
+
+<h1 id="november">Who lost the season in November</h1>
+<p>Split at week 9. October was a 10-team league. November was a sorting hat.</p>
+
+<table>
+<thead>
+<tr><th>Manager</th><th>Weeks 1–8</th><th>Weeks 9–13</th><th>The story</th></tr>
+</thead>
+<tbody>
+<tr><td>Andy</td><td>5–3, 959 PF</td><td>1–4, 451 PF</td><td>The answer. Playoff team in October. Lowest November points in the league. Skattebo went from explosion to IR. The Titanic name did the rest.</td></tr>
+<tr><td>Neil</td><td>5–3, 977 PF</td><td>2–3, 565 PF</td><td>Held a playoff seat, spent the FAAB to keep it, then the RB door kept revolving. Lost week 13 to Seif and missed by 36 points for. Maye and McBride deserved a dance.</td></tr>
+<tr><td>Tony</td><td>3–5, 972 PF</td><td>2–3, 516 PF</td><td>Still mathematically alive at 6–6 through week 12, 150 PF behind the bubble. The waiver carousel spent the money before the stretch run.</td></tr>
+<tr><td>Pangy</td><td>3–5, 887 PF</td><td>1–4, 486 PF</td><td>The season was already lost. November just filed the paperwork.</td></tr>
+<tr><td>Seif</td><td>2–6, 928 PF</td><td>4–1, 697 PF</td><td>Won November. Lost September. 1,625 PF and a Slutler-pool invite.</td></tr>
+<tr><td>Kris</td><td>6–2, 1136 PF</td><td>4–1, 712 PF</td><td>Did not lose the season in November. Or any other month.</td></tr>
+</tbody>
+</table>
+
+<h1 id="wire">The wire, the wallet, the two trades</h1>
+<p>Budget was $100. Most of the league spent it. Highest single bids of the regular season:</p>
+
+<table>
+<thead>
+<tr><th>Bid</th><th>Week</th><th>Manager</th><th>Player</th><th>Verdict</th></tr>
+</thead>
+<tbody>
+<tr><td>$39</td><td>5</td><td>Neil</td><td>Rachaad White</td><td>The midseason FAAB spree, in one receipt. He was still starting White and Bam Knight in week 13.</td></tr>
+<tr><td>$38</td><td>1</td><td>Seif</td><td>Brian Robinson</td><td>Week 1 energy. Did not return week-1-energy value.</td></tr>
+<tr><td>$38</td><td>4</td><td>Pangy</td><td>Woody Marks</td><td>Outbid four people for a league-winner while carrying five OUT/IR/PUP. The bid was the season: swing big, still lose.</td></tr>
+<tr><td>$36</td><td>1</td><td>Kris</td><td>Harold Fannin</td><td>Early TE dart. Fine. He could afford it.</td></tr>
+<tr><td>$28</td><td>8</td><td>Seif</td><td>Travis Hunter</td><td>Then Hunter got hurt. The obituaries wrote themselves.</td></tr>
+<tr><td>$25</td><td>12</td><td>Kris</td><td>Buccaneers D/ST</td><td>No other bids. Notes at the time: he forgot FAAB carries into the playoffs. Champ tax.</td></tr>
+<tr><td>$23</td><td>3</td><td>PJ</td><td>Michael Pittman</td><td>Tony picked him up, dropped him, picked him up again for $11, dropped him again. PJ paid $23 and got WR10. Shame on Tony, flowers for PJ.</td></tr>
+<tr><td>$17</td><td>5</td><td>Pangy</td><td>Michael Carter</td><td>23 touches the week before, then the Titans were not on the schedule anymore.</td></tr>
+</tbody>
+</table>
+
+<p><strong>The waiver hits that actually mattered:</strong> Rico Dowdle (PJ — RB10, won him weeks), Drake Maye (Neil — the reason Neon Keon was a 7–6 team and not a 5–8 team), Tet was a draft pick but the rest of Neil’s roster was a waiver construction project.</p>
+
+<p><strong>Trades — the league only made two.</strong></p>
+<ul>
+<li><strong>Week 4, Jake ↔ Andy:</strong> Jake got Ashton Jeanty and Chase Brown. Andy got David Montgomery. Andy had just taken Jeanty at 2.01.</li>
+<li><strong>Week 5, Jake ↔ Seif:</strong> Jake flipped Chase Brown to Seif for Zay Flowers. Seif got the 10th-round keeper who was RB-productive the rest of the way, including 29.1 in week 17. Jake kept Jeanty and made the playoffs. Andy kept Montgomery and November.</li>
+</ul>
+
+<p>That is the entire trade deadline. Everyone else decided to lose on their own.</p>
+
+<h1 id="playoffs">Playoffs (two-week rounds)</h1>
+<p>Sleeper ran two weeks per round: semis in 14–15, championship and 3rd place in 16–17. Seeds were Kris, PJ, Joel, Jake.</p>
+
+<h2>Semifinals (weeks 14–15)</h2>
+<table>
+<thead>
+<tr><th>Matchup</th><th>W14</th><th>W15</th><th>Total</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Kris</strong> over Jake</td><td>123.34–87.60</td><td>160.46–128.50</td><td><strong>283.80–216.10</strong></td></tr>
+<tr><td><strong>Joel</strong> over PJ</td><td>123.74–101.48</td><td>151.72–131.34</td><td><strong>275.46–232.82</strong></td></tr>
+</tbody>
+</table>
+
+<p>The pre-playoff notes had Joel and PJ picking Jake over Kris, 294–276. Kris won by 68. Directionally, the other prediction was right: Jake’s preview had Joel ending the three-peat, 271–263. Joel won it by 43. Amon-Ra went for 41.4 in week 15. PJ spent the two weeks watching Cook / Rice / CeeDee not quite get there.</p>
+
+<h2>Championship &amp; 3rd (weeks 16–17)</h2>
+<table>
+<thead>
+<tr><th>Matchup</th><th>W16</th><th>W17</th><th>Total</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Kris</strong> over Joel</td><td>153.48–98.98</td><td>143.08–108.06</td><td><strong>296.56–207.04</strong></td></tr>
+<tr><td><strong>Jake</strong> over PJ</td><td>117.10–107.40</td><td>123.80–78.48</td><td><strong>240.90–185.88</strong></td></tr>
+</tbody>
+</table>
+
+<p>The final was not close. Kris put up 297 in two weeks; Joel put up 207. Bijan’s 39.9 in week 17 was the encore. Jake’s week 17 Derrick Henry game (45.6) won him a 3rd-place trophy and a what-if. PJ’s week 17 (78.48) was the quietest close of the four.</p>
+
+<p>Postseason high scores that were not in the money: Puka 46.5 for Andy in week 16, Trevor Lawrence 44.3 for Tony in week 15, Gibbs 37 for CJ in week 14. The consolation bracket had hands.</p>
+
+<h1 id="slutler">Slutler</h1>
+<p>Last year it was Pangy. This year it was Pangy. The homepage still has the badge. The standings still have 4–9 and 1,373 points. The injury report had him at five OUT/IR/PUP by week 5, and the notes never really found a different ending.</p>
+
+<p>Pool rules, for the archive: teams 7–10 in a least-points Slutler pool, with 8th −20, 9th −40, 10th −60. Regular-season finish into that pool was CJ, Andy, Tony, Pangy. Combined weeks 14–17:</p>
+
+<table>
+<thead>
+<tr><th>Finish</th><th>Manager</th><th>W14–17 PF</th><th>Penalty</th><th>Pool total</th></tr>
+</thead>
+<tbody>
+<tr><td>7th</td><td>CJ</td><td>540.78</td><td>—</td><td>540.78</td></tr>
+<tr><td>9th</td><td>Tony</td><td>518.66</td><td>−40</td><td>478.66</td></tr>
+<tr><td>8th</td><td>Andy</td><td>460.66</td><td>−20</td><td>440.66</td></tr>
+<tr><td>10th</td><td>Pangy</td><td>438.94</td><td>−60</td><td>378.94</td></tr>
+</tbody>
+</table>
+
+<p>He was last even before the −60. The penalty just made it official. (Teams 5–10 also run a most-points $100 pool. Over the same four weeks that would have been CJ at 540.78, with Neil last in the group at 413.10 — the rules example from last year, inverted.)</p>
+
+<h1 id="portraits">Team portraits</h1>
+<h3>Kris Turner — Spitters not Quiters — Champion</h3>
+<p>10–3, 1,848 PF, pick 1.02, first title. Drafted Bijan, JT, JSN, Pickens, ETN and then mostly just… started them. Three losses, one of them the 197-point Seif game. Did not have to deal with the injury tax the rest of the league paid. The awards recap called him a believer in <em>if you ain’t first, you’re last</em>. The bracket agreed.</p>
+
+<h3>Joel Hernandez — Achane Reaction — 2nd</h3>
+<p>The WR room (Amon-Ra, Adams, later Stafford off waivers) got him to a 3-seed and a championship. Achane was a weekly problem. The final was a two-week mismatch. Stopping the three-peat is a real résumé line.</p>
+
+<h3>Jake Bowen — Egboogadaba — 3rd</h3>
+<p>#4 seed two years running. Javonte at 10.03 was the draft-night groan that became RB8. Henry finally showed up in week 17, which is a very Henry thing to do. Lost the semis in both weeks, not just the total. The 174-point week 5 was the regular-season peak.</p>
+
+<h3>PJ Hardcastle — Boswell that ends well. — 4th</h3>
+<p>Two-time defending champ, 2-seed, out in the semis. The roster was Cook, CeeDee, Rice, and a waiver WR1 he stole from Tony. Nabers lasted until he didn’t. The three-peat talk died in weeks 14–15. Fourth is a long way from a banner.</p>
+
+<h3>Neil Calvert — Neon Keon — 5th</h3>
+<p>7–6, missed on points. Rebuilt midseason with FAAB, rode Maye and McBride, drafted Tet in the 6th. The RB injuries never stopped. Week 13 vs Seif was the door closing. Tet looks like the keeper. The rest looks like a warning about spending $39 on Rachaad White.</p>
+
+<h3>Matt Seifert — Im sorry, Mc-Jackson, ooh — 6th</h3>
+<p>1,625 PF, 6–7. CMC was a monster. Bowers’s 43.3 week was the highest TE game of the year. Lamar was the letdown award. The November 4–1 run was a playoff team that started 2–6. Second in points is a cruel way to watch other people play in January.</p>
+
+<h3>CJ — Barbeque Gibbs — 7th</h3>
+<p>Gibbs went for 55.4. AJ Brown was a loyalty project. The team woke up in December, spoiled a couple of lock-in weeks, then ran up 541 consolation points. If the $100 pool paid on raw postseason scoring, he took it.</p>
+
+<h3>Andy — Mr. Turna 2-to-uh-Titanic — 8th</h3>
+<p>5–3 through eight weeks. Drafted Puka and Mahomes. Traded Jeanty and Chase Brown in week 4. Skattebo went supernova and then to IR. November: 1–4, 451 points, a 60-burger from Kris. The boat name was not ironic for long.</p>
+
+<h3>Tony Warner — It’s just a Ladd — 9th</h3>
+<p>Drafted Chase 1.01. Finished 5–8. Tyler Warren was the steal (8.10, TE4). The waiver habit was spend, drop, spend again — Pittman being the exhibit. Still beating Jake in week 13 was a nice souvenir. It did not change the portrait.</p>
+
+<h3>Pangy — Josh Allen’s New Phat Hog — Slutler</h3>
+<p>Allen was elite. Everyone else was on a trainer’s table. Saquon at 1.04, Woody Marks at $38, Michael Carter at $17, five guys unavailable by week 5, 4–9, last in points, last in the pool. The notes in week 13: “I don’t know man. Just do better?” That is the yearbook quote.</p>
+
+<hr>
+<p>Sources: Sleeper league <code>1257449569814323200</code> (matchups, draft, waivers, brackets) plus the 2025 weekly power rankings and season awards. Regular season is weeks 1–13. Playoffs are two-week rounds, 14–15 and 16–17.</p>
+  </article>
+</main>
+<footer class="site">2025–26 yearbook · compiled from Sleeper and the weekly notes</footer>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="../../../site.js"></script>
+</body>
+</html>

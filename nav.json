@@ -23,6 +23,11 @@
         "href": "past-seasons/2025-2026-season/",
         "children": [
           {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2025-2026-season/season-yearbook/",
+            "children": []
+          },
+          {
             "label": "Season Awards, Obituaries & Postseason Preview",
             "href": "past-seasons/2025-2026-season/season-awards-obituaries-postseason-preview/",
             "children": []
@@ -93,6 +98,11 @@
         "label": "2024 - 2025 Season",
         "href": "past-seasons/2024-2025-season/",
         "children": [
+          {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2024-2025-season/season-yearbook/",
+            "children": []
+          },
           {
             "label": "Postseason Week 3 of 4",
             "href": "past-seasons/2024-2025-season/postseason-week-3-of-4/",
@@ -180,6 +190,11 @@
         "href": "past-seasons/2023-2024-season/",
         "children": [
           {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2023-2024-season/season-yearbook/",
+            "children": []
+          },
+          {
             "label": "Postseason Preview & Regular Season Awards",
             "href": "past-seasons/2023-2024-season/postseason-preview-regular-season-awards/",
             "children": []
@@ -250,6 +265,11 @@
         "label": "2022 - 2023 Season",
         "href": "past-seasons/2022-2023-season/",
         "children": [
+          {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2022-2023-season/season-yearbook/",
+            "children": []
+          },
           {
             "label": "Championship Preview",
             "href": "past-seasons/2022-2023-season/championship-preview/",
@@ -342,6 +362,11 @@
         "href": "past-seasons/2021-2022-season/",
         "children": [
           {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2021-2022-season/season-yearbook/",
+            "children": []
+          },
+          {
             "label": "Mid-Season Awards + Week Eight Power Rankings + Happy Halloween",
             "href": "past-seasons/2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/",
             "children": []
@@ -376,17 +401,35 @@
       {
         "label": "2020 - 2021 Season",
         "href": "past-seasons/2020-2021-season/",
-        "children": []
+        "children": [
+          {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2020-2021-season/season-yearbook/",
+            "children": []
+          }
+        ]
       },
       {
         "label": "2019 - 2020 Season",
         "href": "past-seasons/2019-2020-season/",
-        "children": []
+        "children": [
+          {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2019-2020-season/season-yearbook/",
+            "children": []
+          }
+        ]
       },
       {
         "label": "2018 - 2019 Season",
         "href": "past-seasons/2018-2019-season/",
-        "children": []
+        "children": [
+          {
+            "label": "Season Yearbook",
+            "href": "past-seasons/2018-2019-season/season-yearbook/",
+            "children": []
+          }
+        ]
       }
     ]
   }
