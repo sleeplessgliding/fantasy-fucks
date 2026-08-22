@@ -527,6 +527,7 @@ const KEEPERS_2025 = {
   RipCity14: { id: "6770", name: "Joe Burrow", round: 10 },
   YungPangy: { id: "5927", name: "Terry McLaurin", round: 6 },
 };
+const KEEPER_IDS_2025 = new Set(Object.values(KEEPERS_2025).map((k) => k.id));
 
 function ordinal(n) {
   if (n % 100 >= 11 && n % 100 <= 13) return `${n}th`;
@@ -578,8 +579,8 @@ function playerRow(p, keeperId) {
           : "Not on roster at end of Regular Season"
       }">&#10007;</span>`;
   const notes =
-    (p.id && p.id === keeperId
-      ? `<span class="tag keep" title="This manager's 2025 keeper">2025 KEEP</span>`
+    (p.id && KEEPER_IDS_2025.has(p.id)
+      ? `<span class="tag keep" title="Kept in 2025">2025 KEEP</span>`
       : "") +
     (earlyPick ? `<span class="tag early" title="Drafted in round ${round}">R1-R2</span>` : "") +
     (p.w13 === "other"
