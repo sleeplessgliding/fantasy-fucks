@@ -50,7 +50,7 @@ PROTECTED = {
 }
 
 SITE_NAV = (
-    ("2026 Keeper Info", "index.html"),
+    ("2026 Draft and Keeper Info", "index.html"),
     ("Rules", "rules/"),
     ("Past Seasons", "past-seasons/"),
 )
@@ -1095,7 +1095,7 @@ def nav_from_pages(roots: list[dict]) -> list[dict]:
     ]
     by_href = {node["href"]: node for node in nodes}
 
-    tree: list[dict] = [{"label": "2026 Keeper Info", "href": "index.html", "children": []}]
+    tree: list[dict] = [{"label": "2026 Draft and Keeper Info", "href": "index.html", "children": []}]
     for node in nodes:
         parent = None
         for href, candidate in by_href.items():
