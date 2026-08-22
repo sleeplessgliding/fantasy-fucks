@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>2019 - 2020 Season — Fantasy Fucks</title>
+<link rel="stylesheet" href="../../site.css">
+<script>
+  // Apply theme and sidebar state before first paint to avoid a flash.
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+</head>
+<body>
+<!-- clickup-export:a4475-308 -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node"><a class="nav-link" href="../../index.html" title="2026 Keeper Info">2026 Keeper Info</a></li><li class="nav-node"><a class="nav-link" href="../../rules/" title="Rules">Rules</a></li><li class="nav-node has-kids is-branch" data-key="past-seasons/" data-open="true"><div class="nav-row"><a class="nav-link" href="../" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="true" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids" data-key="past-seasons/2025-2026-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../2025-2026-season/" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../2025-2026-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../2025-2026-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="../2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="../2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node"><a class="nav-link" href="../2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a></li><li class="nav-node is-branch"><a class="nav-link" href="./" title="2019 - 2020 Season" aria-current="page">2019 - 2020 Season</a></li><li class="nav-node"><a class="nav-link" href="../2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">2019 - 2020 Season</span>
+  </header>
+<main class="page" id="main">
+  <p class="crumbs"><a href="../">Past Seasons</a> / 2019 - 2020 Season</p>
+  <h1>2019 - 2020 Season</h1>
+  
+  <p class="meta">Updated 2024-06-26</p>
+  <article class="prose">
+<p>CHAMPIONSHIP PREVIEW</p>
+<h2><em>CHAMPIONSHIP PREVIEW</em></h2>
+<h3>4. Bear Down v. 3. Unpaid Bills</h3>
+<p>The bottom seeds upset the top seeds, not that it was toooooo surprising.
+Neil will continue to ride Aaron Jones, and will likely go how he does. Matt will ride Thomas and Godwin, who are scary every week.
+<strong>Things to watch:</strong>- QB: Watson or Rodgers is a tough decision every week. Matt’s revolving door at QB didn’t hurt him in the first round, but will it now?
+- Sutton, Allen, Slayton, Brown - Neil’s WRs are very interesting, all could boom or bust.
+- Golladay - Just a tough cookie, is capable of swinging the game, but with 3rd string QB throwing his way, who knows?
+<strong>Prediction*:</strong> Unpaid Bills (-2)*
+<strong>Why:</strong> Neil’s team seems a little more explosive and I think it pays off over two weeks. I imagine these guys will split weeks, but Neil will edge Matt out for the ship.
+<em>*prediction is based on two-week matchup</em></p>
+<h2><em>SLUTLER PREVIEW</em></h2>
+<h3>10. Breesy Like Sunday Morning v. 7. Rub a Dub Dub</h3>
+<p>Joel’s been on track for this all year, but can Brees save him? Tony’s made a couple of nice moves recently to set him up nicely, but ya never know!
+<strong>Things to watch:</strong>
+- Emmanuel Sanders boom or bust - he’s mostly been good recently.
+- Brees v. Prescott is a nice matchup
+- Todd Gurley II - Maybe he shows up at the last minute to save Joel.
+<strong>Prediction*:</strong> Rub a Dub Dub (-23)*
+<strong>Why:</strong> Same story as all year, it’s been tough for Joel to field a healthy lineup, let alone get production from them.
+<em>*prediction is based on two-week matchup</em></p>
+<h2><em>OBITUARIES&hellip;</em></h2>
+<p>The Brooklyn Dodgers won pennants in 1941, 1947, 1949, 1952, and 1953, only to fall to the New York Yankees in each respective World Series.
+The annual ritual of building excitement, followed in the end by disappointment, became a common pattern to the long suffering fans, and &ldquo;Wait ’til next year!&rdquo; became an unofficial Dodger slogan.
+<strong>Just wait til next year, friends.</strong></p>
+<h3>House on Tyreek Hill</h3>
+<p>Damn CJ’s team was boom or bust AF. Woulda been a terror to face in the playoffs, his season was mirrored by Mike Evans, very unpredictable but could be lethal any week. It was disappointing to get a less than 100% Barkley for most of it too.</p>
+<h3>Return of the Mack</h3>
+<p>Reaching for Mahomes proved to hamstring this team, but Andy got an amazing value with Eckler, even flipping him in what looks to be a great deal in these last few weeks. Hopefully this money to be made in the Consolation bracket for Andy.</p>
+<hr>
+<p>AWARDS &amp; PLAYOFF PREVIEW
+<em>THANKS FOR ANOTHER GREAT SEASON, YOU FANTASY FUCKS!</em>
+<em>(You can view last year’s awards</em> <a href="https://fantasy-fucks.squarespace.com/2018-2019/awards-and-playoffs"><em>here</em></a><em>, if you’re interested!)</em></p>
+<h2><em>THE BEST OF THE BEST&hellip;</em></h2>
+<h3>MOST VALUABLE PLAYER</h3>
+<p><strong>Christian McCaffery -</strong> It’s been awhile since I just wrote in 30 for a player before the week started, but I was doing this all year for CMC. Amongst Flexes, CMC outscored the field by 28% - that’s unreal. Only Lamar came close in total points, in his own historic stretch, but with the premium at RB and deep field at QB, it’s CMC on the playoff-bound Return of the Mack.
+Honorable Mentions: Patriots D, Michael Thomas, Lamar Jackson
+<em>Last Year: Conner, runners-up: Hill, McCaffrey, Kamara, Brees</em></p>
+<h3>BRIGHTEST FUTURE</h3>
+<p><strong>Lamar Jackson</strong> - The odds-on favorite for (real life) MVP looks to be the Human Cheat Code 2.0, or 3.0 or something. He was a little lost in our league, with Kris outside the mix until late, but we’ll see that change in years to come. It’s tough to believe he’ll be available next year, as he&rsquo;d be an 11th round pick keeper.
+Honorable Mentions: DJ Chark Jr, Nick Chubb, CMC*, Cook
+<em>*CMC could win like every award but that’s not that interesting to read</em>
+<em>Last Year: Trubisky &amp; Saquon, runner-up: Andrew Luck</em></p>
+<h3>BEST MOVE</h3>
+<p><strong>Ian</strong> - A multi-step move started with Ian drafting WR depth, including Keenan Allen, then he picked up Chark which allowed him to flip Allen for Darren Waller, since Neil had an abundance of TE. Allen’s been erratic this year, and Waller makes Ian dangerous in all major lineup positions. The topper: the vision to replace Allen with Parker, who’s been ultra-steady.
+Honorary Mention: See <em>Worst Move</em> below…
+<em>Last year: Saved by the Conner, Rick N’ More TDs</em></p>
+<h2><em>THE WORST OF THE WORST&hellip;</em></h2>
+<h3>END OF THE ROAD</h3>
+<p><strong>Todd Gurley II -</strong> It’s been real Todd, wish you the best. <em>(Shades of Brandon Roy)</em>
+All I know is the Rams would be foolish to keep up with the charade. The flashes in the pan were not bright, and they were far between. There were a couple runs where I talked myself into thinking there was something in the tank, but I’d rather be on this side of the take and be wrong (to be fair, I think I was in on this take by Week 2).
+Honorable Mention: Tom Brady, Larry Fitzgerald, David Johnson (probably)
+<em>Last year: Tom Brady</em></p>
+<h3>MOST DISAPPOINTING</h3>
+<p><strong>Juju Smith-Schuster -</strong> I really wanted to make this Baker and OBJ combined for the pleasure of it. But when I added Juju to Honorable Mentions, it was just too clear. No other player in the top tier failed to produce a boom game, and it’s not even been close with Juju. It’s been weeks since one would consider starting him, besides maybe against Miami. I’m not sure it’s all the QB either, the Steelers need another WR to give him some relief on double-teams. It’ll be very interesting to see where he ranks coming into next year.
+Honorable Mention: Baker &amp; OBJ, David Johnson, Todd Gurley II
+<em>Last season: Tight End depth / Gronk</em></p>
+<h3>WORST MOVE</h3>
+<p><strong>Neil trading Nuk</strong>: PJ somehow swindled Nuk and Michel for Singletary and Fuller, who isn’t even on Neil’s team any longer (albeit after injury). Singletary has one week this year with 15+. While Michel’s not been much, Hopkins is WR4, with 15+ in every week since Week 4.
+<em>Last year: drafting Bell (Andy), trading for Bell (Jake), believing in McCoy (Joel)</em></p>
+<h2><em>PLAYOFF PREVIEW&hellip;</em></h2>
+<h3>1. House on Tyreek Hill v. 4. Bear Down</h3>
+<p>Matt and I are two of the hotter teams coming into the playoffs, Matt on a three-game stretch, and me 5-1 in my last six, including a win over Matt (and the monster 212 game, sorry brag).
+Matt’s got a lot of tough decisions to make with start em/sit ems over the next two week. I have lots of tough matchups and will likely ride my names… but will I have the balls to call an audible if I need one?
+We’ve both put up some big numbers recently, will a huge week decide things like it did two years ago, when Matt blew me out in the first week of the Championship leaving me ready to pay up before the second week?
+<strong>Things to watch:</strong>
+- TE: Cook’s been hot of late, with Hooper out who will I turn to?
+- QB: Josh Allen v. Kyler Murray - will one turn the tide with their feet?
+- Derrick Henry: Is it Henry Season?
+- Godwin boom potential
+<strong>Prediction*:</strong> House on Tyreek Hill (-9)
+<strong>Why:</strong> I get a big Henry game and a big game from Tyreek and another from Gordon, and it’s just enough to make it through.
+<em>*prediction is based on two-week matchup</em></p>
+<h3>2. Return of the Mack v. 3. Unpaid Bills</h3>
+<p>Two teams on somewhat similar trajectories:
+Neil backs in to the playoffs (again, see last year), with Watson looking shaky and Conner hurt, Neil’s failed to put up a big number since Week 8.
+Ian slipped a bit over the second half, but seems to have found his footing coming into the playoffs well-rounded. But his last commanding victory was Week 8 too.
+Typically one huge week wins you a two-week showdown. I think this game is more likely to have two close weeks, should be exciting.
+<strong>Things to watch:</strong>
+- Bills, Bills, Bills - Will Singletary produce? Can John Brown rebound from last week’s lowest yardage total of the season?
+- Aaron Jones - Mr. Boom or Bust himself, could swing a game.
+- Ian’s Flex - If someone finds Cooper Kupp, please tell him to return to LA. Is it time for Boyd to return to the lineup?
+- God yes, Sam Darnold starting in the playoffs
+<strong>Prediction*:</strong> Return of the Mack (-18)
+<strong>Why:</strong> Ian can typically book 45 for his RBs and fill it in around. Some up and down weeks from them both keep this close, but Ian pulls both weeks’s out by a narrow margin.
+<em>*prediction is based on two-week matchup</em></p>
+<h2><em>OBITUARIES&hellip;</em></h2>
+<p>The Brooklyn Dodgers won pennants in 1941, 1947, 1949, 1952, and 1953, only to fall to the New York Yankees in each respective World Series.
+The annual ritual of building excitement, followed in the end by disappointment, became a common pattern to the long suffering fans, and &ldquo;Wait ’til next year!&rdquo; became an unofficial Dodger slogan.
+<strong>Just wait til next year, friends.</strong></p>
+<h3>Hot Lockett - 6-6, 3rd in Points</h3>
+<p>Damn CJ’s team was boom or bust AF. Woulda been a terror to face in the playoffs, his season was mirrored by Mike Evans, very unpredictable but could be lethal any week. It was disappointing to get a less than 100% Barkley for most of it too.</p>
+<h3>Rick n MoreTD’s - 6-6, 4th in Points</h3>
+<p>Reaching for Mahomes proved to hamstring this team, but Andy got an amazing value with Eckler, even flipping him in what looks to be a great deal in these last few weeks. Hopefully this money to be made in the Consolation bracket for Andy.</p>
+<h3>Rub a Dub Dub - 5-7, 8th in Points</h3>
+<p>David Johnson collects another victim with the help of Theilen and Engram. There were weeks this team looked back on track, but injuries really help Tony down. Dak was great though, and Fournette has been too of late - could be a good Consolation dark horse.</p>
+<h3>Morning Chubb - 5-7, 9th in Points</h3>
+<p>Kris surprises with a three-game winning streak into the playoffs and he has Lamar Jackson, likely to be kept as an 11th round pick. Next year looks to be shaping up well. We wrote him off, he stood up for himself in the group chat. Looking at the lineup this week, that brother-on-brother trade may have left holes to fill - hopefully not as a Slutler</p>
+<h3>DK Metca$h - 3-9, 5th in Points</h3>
+<p>The theme of PJ’s season - the biggest disparity between record and Points For. It’s not an original story, there’s always one. But it must be disappointing to draft Russ and it not be enough as a FFB GM, on top of being a Hawks fan.</p>
+<h3>Breesy Like Sunday Morning - 1-11, 10th in Points</h3>
+<p>I’ll say it again, I appreciated Joel’s commitment to the league in such a tough year, marred by the absence of Gurley and Juju, and a nearly infinite list of injuries. Joel is the huge favorite to be the Slutler, but there’s still life.</p>
+<hr>
+<p>WEEK 11 - (PLAYOFF) HOPE FLOATS</p>
+<h2>MATCHUP OF THE WEEK</h2>
+<p>BEAR DOWN (6-4) V. RICK N MORETD’S (5-5)
+This game could very well decide a playoff spot. Both teams coming off strong weeks last week, this middle-matchup should be goooood.</p>
+<h2>IN LIKE FLYNT</h2>
+<h2>PLAYOFFS CLINCHED</h2>
+<p>IAN AND JAKE CAN COAST FOR THE NEXT TWO WEEKS
+WITH TWO PLAYOFF SPOTS CLAIMED</p>
+<h2>1 - Return of the Mack (8-2, W3)</h2>
+<p><strong>LAST WEEK: #1 ↔</strong>
+Most important the rest of the way: Darren Waller
+The last minute add to solidify TE could make a huge difference in the playoffs. The trade really shows off Ian&rsquo;s depth, being able to unload Allen without much worry.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em></p>
+<h2>2. House on Tyreek Hill (8-2, W4)</h2>
+<p><strong>LAST WEEK: #2 ↔</strong>
+Most important the rest of the way: Health and Hill
+I traded some depth for explosiveness, and it paid off with the biggest week of the year. I need Hill to be great, and my team to stay healthy - lots of guys are coming into their own right about now.</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>IN THE HUNT</h2>
+<p>FIVE TEAMS FIGHT FOR TWO PLAYOFF SPOTS</p>
+<h2>3 - Unpaid Bills (7-3, W1)</h2>
+<p><strong>LAST WEEK: #4 ↑</strong>
+Most important the rest of the way: Performance at WR
+There&rsquo;s no clear WR1 and WR2 on this squad. Sutton and Allen can be it, but Allen&rsquo;s been v shity recently, but Sutton&rsquo;s turned into a solid go-to option, with an albiet lower ceiling.</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em></p>
+<h2>4 - Rick n More TD&rsquo;s (5-5, L1)</h2>
+<p><strong>LAST WEEK: #5 ↑</strong>
+Most important the rest of the way: Mahomes
+So many high floor guys on this team, Andy will need Mahomes to raise his ceiling (or roof). Last week was tough, Andy scoring his most points all year and second most in the week but dropping a spot here in the home stretch.</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em></p>
+<h2>5 - Bear Down (6-4, W1)</h2>
+<p><strong>LAST WEEK: #7 ↑↑</strong>
+Most important the rest of the way: Low points against
+Matt snapped his losing streak last week, and remains slotted at #4 in the playoffs&hellip; But this has been the story all year, Matt keeps getting W&rsquo;s where he needs them, despite being 7th in points for.</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em></p>
+<h2>6 - Hot Lockett (5-6, L1)</h2>
+<p><strong>LAST WEEK: #6 ↔</strong>
+Most important the rest of the way: Consistency
+Wow this team is hard to judge. The up-down nature of the team might be okay in a two-week playoff match though, if Chris can get one of those large output weeks. Could be scary if he gets through.</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em></p>
+<h2>7 - Rub a Dub Dub (4-6, L4)</h2>
+<p><strong>LAST WEEK: #7 ↑</strong>
+Most important the rest of the way: A little skill, a little luck
+Four straight losses, but moves up here since he&rsquo;s still technically in the hunt. The path is there, but the cards will need to fall just right.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em></p>
+<h2>LIVING IN MOM’S BASEMENT</h2>
+<p>THESE TEAMS CAN STOP WORRYING ABOUT THE STRESSES OF THE PLAYOFFS AND ENJOY MOM’S MEATLOAF</p>
+<h2>8 - DK Metca$h (3-7, L1)</h2>
+<p><strong>LAST WEEK: #6 ↓↓</strong>
+Most important the rest of the way: Wild spending
+More moves like Lutz!</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em></p>
+<h2>9 - Morning Chubb (3-7, W1)</h2>
+<p><strong>LAST WEEK: #9 ↔</strong>
+Most important the rest of the way: Avoiding last place
+Gotta get ready for the loser&rsquo;s bracket games to avoid the butler treatment.</p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em></p>
+<h2>10 - Kerryon my Wayward Son (1-9, L7)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+Most important the rest of the way: Avoiding last place
+Gotta get ready for the loser&rsquo;s bracket games to avoid the butler treatment.</p>
+<h2></h2>
+<p><em>Kerryon my Wayward Son - Points week-by-week</em></p>
+<hr>
+<p>WEEK 10 - HERE WE ARE AGAIN</p>
+<h2>Quick Poll: When should the trade deadline be?</h2>
+<p>Nov 7 @ 3:00pm
+Nov 14 @ 3:00pm</p>
+<h2>Clarification on Last Place</h2>
+<p>When playoffs start, a consolation bracket will start. The consolation bracket will have six teams, and two, two-week matchups.
+In the first round, seeds 5 &amp; 6, 7 &amp; 8, and 9 &amp; 10 will play one another.
+*   The winners of the 5/6 + 7/8 play for the consolation prize.
+*   The losers of 7/8 + 9/10 play to avoid last place
+If today were the playoffs, here’s how this would work, blue representing wins, pink representing losses in the first round.
+View fullsize
+Sorry if there was some confusion on this, but hopefully this keeps things fun until the end too. I highly encourage seeds 5-8 to create a side pot for their playoffs.</p>
+<h2>MATCHUP OF THE WEEK</h2>
+<p>Return of the Mack (7-2, 1st) v. DK MetCa$h (3-6, 8th)
+Ian was lucky to get out of last week, and has shown cracks in his armor. PJs surging and has a case for making the playoffs, but this game’s crucial.
+CMC FOR MVP</p>
+<h2>1 - Return of the Mack (7-2, W2)</h2>
+<p><strong>LAST WEEK: #2 ↑</strong>
+Back in the top spot, even after a sub-100 game. Obviously not overly excited to move Ian back here for that reason, but with four weeks over 150pts this year, and Cook &amp; CMC in the wings it&rsquo;s hard to take #1 from 7-2 ROTM.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em>
+GORDON FINALLY ARRIVES</p>
+<h2>2. 7th Circle of Bell (7-2, W3)</h2>
+<p><strong>LAST WEEK: #3 ↑</strong>
+Feeling better about Bell and Gordon after last week, with Henry having one of his better games, and Freeman trending up, I&rsquo;m feeling good at RB. Also convinced Sanders is going to be a key point of the offense in SF.</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em>
+WORTH THE $$$
+STAFFORD’S BEEN A GREAT PICKUP
+TO ME, ANSWERING THE LONG-STANDING QUESTION:
+IS STAFFORD WORTH HIS DEAL?</p>
+<h2>3 - Hot Lockett (5-4, W2)</h2>
+<p><strong>LAST WEEK: #4 ↑</strong>
+The owner of three of the league&rsquo;s <em>hugest</em> weeks, and two monster back-to-back weeks comes in one spot higher. Chris&rsquo; graph is pretty impressive, with 5 125+ weeks. However, a poor week 4-7 has held him down.
+Can Lockett and Evans keep this up? I don&rsquo;t see any evidence the answer is no. Devil&rsquo;s Advocate: Gordon cuts into Lockett&rsquo;s production? Some weeks Godwin has to be the focal point in TB?</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em>
+EARLIER WE QUESTIONED THIS CRAZY TRADE
+DID SINGLETARY TAKE THE JOB LAST WEEK?
+HOW WILL THE TRADE ULTIMATELY AFFECT NEIL’S CELING?</p>
+<h2>4 - Unpaid Bills (6-3, L1)</h2>
+<p><strong>LAST WEEK: #1 ↓↓↓</strong>
+Neil didn&rsquo;t want to be #1, so he made sure he wasn&rsquo;t this week. Tough to overcome Metcalf and Wilson last week, Neil&rsquo;s got a tough matchup against the hottest team in the league.</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em>
+MAHOMES
+BACK</p>
+<h2>5 - Rick n More TD&rsquo;s (5-4, W1)</h2>
+<p><strong>LAST WEEK: #7 ↑↑</strong>
+Mahomes was a full participant today, coming up to a big game with me, our matchup&rsquo;s looking tight. Zeke&rsquo;s <em>worst</em> week of the year came last week where he rushed for 123. Andy&rsquo;s needs them both to feed to keep his playoff push alive.</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em>
+KAMARA
+BACK</p>
+<h2>6 - DK Metca$h (3-6, W3)</h2>
+<p><strong>LAST WEEK: #8 ↑↑</strong>
+An impressive 3-6, we&rsquo;ve seen this team float in the power rankings as its record would suggest it be lower. PJ&rsquo;s team is stablizing in the plus 125 area - and gets Kamara back this week against a fucking-terrible Falcons D.
+Huge game this week of course against #1 ROTM.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em>
+KENNY G
+IS PLAYING THE SWEET, SOULFUL TUNES
+OF
+CATCHING TDS AND EVERYTHING ELSE</p>
+<h2>7 - Bear Down (5-4, L3)</h2>
+<p><strong>LAST WEEK: #5 ↓↓</strong>
+Three straight losses has Matt reeling, after what we all foresaw as a lucky start against poor opponent performances. He can hit the reset button this week against Joel, but we&rsquo;ll see&hellip; for god&rsquo;s sake, he&rsquo;s starting Tannehill.</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em>
+INJURY BUG
+ANY (MORE) MISSED TIME FROM ENGRAM
+(OR THEILEN)
+IS A SCARY PROSPECT FOR RADD</p>
+<h2>8 - Rub a Dub Dub (4-5, L3)</h2>
+<p><strong>LAST WEEK: #6 ↓↓</strong>
+Slipping hard, but also in a good place to rebound. Question marks loom with Thielen, DJ and Engram both. Not what you love to see heading into the playoff-push season.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em>
+IT’S
+ALL
+ABOUT
+LAMAR</p>
+<h2>9 - Morning Chubb (2-7, L2)</h2>
+<p><strong>LAST WEEK: #9 ↔</strong>
+Great QBs but lots of injuries and boom-or-bust guys have been the story of a tough season. Playoffs aren&rsquo;t ruled out yet technically, but one loss or one with from 1/3 teams rules the Chubbs out. <a href="https://getroman.com/">(See: Roman)</a></p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em>
+EVERETT’S BEEN PRETTY GOOD?
+HARD TO FIND BRIGHT SPOTS ON JOEL’S TEAM :’(</p>
+<h2>10 - Kerryon my Wayward Son (1-8, L6)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+New week, same story. But with his best week yet, might we see Joel finish out of the 10th spot?</p>
+<h2></h2>
+<p><em>Kerryon my Wayward Son - Points week-by-week</em></p>
+<hr>
+<p>WEEK 9 - A BUTLER PREPARES FOR HIS DUTY</p>
+<h2>MATCHUP OF THE WEEK</h2>
+<p>SEVENTH CIRCLE OF BELL (6-2) V. BEAR DOWN (5-3)
+Touching each other in the standings at 3 / 4, and on separate trajectories with us both on separate types of streaks (W2/L2). I’ve been talking some smack about Matt’s squad, so I better get ready to back it up .
+WEEK 9
+POWER RANKINGS</p>
+<h2>1 - Unpaid Bills (6 -2, W5)</h2>
+<p><strong>LAST WEEK: #1 ↔</strong>
+Neil&rsquo;s squad&rsquo;s looked very strong and consistent. Watson has been amazing, but a little concern over Conner&rsquo;s shoulder.</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em></p>
+<h2>2 - Return of the Mack (6-2, W1)</h2>
+<p><strong>LAST WEEK: #1 ↔</strong>
+Nice bounce back week from Ian. Cook, Kupp and McCaffery sounds like a scary law firm, and also a scary FFB squad.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em>
+PATRIOTS D
+KEEPING ME AFLOAT FOR NOW</p>
+<h2>3. Seventh Circle of Bell (6-2, W2)</h2>
+<p><strong>LAST WEEK: #3 ↔</strong>
+Once thought to be my strength, my RBs have abandonded me. Without Pats D, I&rsquo;d be fucked. Barely hanging on in the top tier of the standings.</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>4 - Hot Lockett (4-4, W1)</h2>
+<p><strong>LAST WEEK: #7 ↑↑↑</strong>
+God damn, the graph can&rsquo;t techincally go above 200, but you got there. This week&rsquo;s highest riser has a kushy matchup this week, 5-4 on the horizon.</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em>
+WAIVER
+WIRE
+MAGIC
+LATAVIUS DELIVERS AFTER THE
+BIG ADDITION FROM HOT LOCKETT</p>
+<h2>5 - Bear Down (5-3, L2)</h2>
+<p><strong>LAST WEEK: #6 ↑</strong>
+Murray&rsquo;s been a super add, and Matt&rsquo;s scores continue to trend in the right direction. Thomas has been a beast and now he gets Brees back, yikes.</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em></p>
+<h2>6 - Rub a Dub Dub (4-4, L1)</h2>
+<p><strong>LAST WEEK: #5 ↓</strong>
+Fournette&rsquo;s been amazing this year, though has struggled to score, keeping his fantasy value below elite. I need Thielen to come back strong for me to keep the faith - though I just <em>barely</em> escaped from RADD this week myself. Shouts to a dope head-to-head this year, Tony! 👏</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em>
+JJ11
+WILL SANU’S DEPARTURE CREATE OPPORTUNITY
+OR WILL IT BRING DOUBLE-TEAMS?</p>
+<h2>7 - Rick n More TD&rsquo;s (4-4, L1)</h2>
+<p><strong>LAST WEEK: #6 ↑↑</strong>
+I thought things we&rsquo;re looking up, but it was rough last week. Mahomes couldn&rsquo;t play this week to give this squad a boost&hellip; <em>could he?</em></p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em></p>
+<h2>8 - DK Metca$h (2-6, W2)</h2>
+<p><strong>LAST WEEK: #9 ↑</strong>
+Properly named, and improperly rated. PJ&rsquo;s not only looking to play spoiler from here, but coming for our heads. Metcalf has been a joy to watch this year, looking forward to watching his career unfold.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em>
+DK COUNTRY
+METCALF’S LOOKS LIKE A STAR IN THE MAKING
+COULD BE A KEEPER CANDIDATE FOR NEXT YEAR</p>
+<h2>9 - Morning Chubb (2-6, L1)</h2>
+<p><strong>LAST WEEK: #8 ↓</strong>
+Well, Week 6 seems to be the outlier here. Lots of injury, lots of iffy players. Not technically out yet, but needs dominoes to fall perfectly from here.</p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em></p>
+<h2>10 - Kerryon my Wayward Son* (1-7, L5)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+Let us know if you need any help looking for outfits!
+But in reality, keep coming for us and make someone else be our bitch!</p>
+<h2></h2>
+<p>*Eliminated from playoffs</p>
+<hr>
+<p>WEEK 8 - A PATTERN EMERGES
+<strong>Week 7 Recap</strong>
+Another slow scoring week, but one that created real tiers in the standings.</p>
+<h2>MATCHUP OF THE WEEK</h2>
+<p>RADD (4-3) v. Saved by the Bell (5-2)
+Matt and Neil have a good matchup. But this matchup from two weeks ago is a good one, the last game between us was decided on the last play of MNF. I want revenge.
+WEEK 8
+POWER RANKINGS</p>
+<h2>1 - Unpaid Bills (5-2, W1)</h2>
+<p><strong>LAST WEEK: #1 ↑↑</strong>
+Jones has been a nice solid rock since I gave him such shit. One of two teams with 100+ each week. A big win and four straight help vault Neil to #1.</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em></p>
+<h2>2 - Return of the Mack (5-2, L1)</h2>
+<p><strong>LAST WEEK: #1 ↓</strong>
+Two down weeks but only one loss. It was tough to move Ian, but with Cook and MCM both playing this week, I expect a nice rebound.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em></p>
+<h2>3. Saved By The Bell (5-2, W2)</h2>
+<p><strong>LAST WEEK: #3 ↑↑</strong>
+After two losses, I put together a decent week. Hoping to get more from Bell and Gordon in the coming weeks to stay dangerous.</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>4 - Rick n More TD&rsquo;s (4-3, W1)</h2>
+<p><strong>LAST WEEK: #6 ↑↑</strong>
+Andy&rsquo;s found a way to sustain low outputs from Elliot and Mahomes here and there. If he can hang on until Mahomes returns, and Eckeler can stay hot, Andy can stick around in the mix.</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em></p>
+<h2>5 - Rub a Dub Dub (4-3, L1)</h2>
+<p><strong>LAST WEEK: #2 ↓↓↓</strong>
+Anthony&rsquo;s team was piss poor last week, mainly due to injury. But he may need some Mason Rudolph magic to pull off the W this week because of said injuries and byes.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em></p>
+<h2>6 - Bear Down (5-2, L1)</h2>
+<p><strong>LAST WEEK: #4 ↓↓</strong>
+Another week, another note about Matt&rsquo;s team not being that great despite his record. Still tied for best record overall. Big matchup against Neil this week!</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em></p>
+<h2>7 - Hot Lockett (3-4, L3)</h2>
+<p><strong>LAST WEEK: #7 ↔</strong>
+Just a lot of question marks around this team. Unfortunately, one still is Saquon too with a little ankle tweak last week.</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em></p>
+<h2>8 - Morning Chubb (2-5, W2)</h2>
+<p><strong>LAST WEEK: #8 ↔</strong>
+Only Kris and Neil have won back-to-back weeks. I&rsquo;d like to think that gets Kris a bump here, but he&rsquo;ll need to beat Chris for me to consider it. Also, to help keep his playoff hopes alive.</p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em></p>
+<h2>9 - DK Metca$h (1-6, W1)</h2>
+<p><strong>LAST WEEK: #9 ↔</strong>
+In the win column buddy! While it&rsquo;s possible to still make the playoffs, it&rsquo;d be crazy. Look out for PJ playing spoiler.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em></p>
+<h2>10 - Kerryon my Wayward Son (1-6, L4)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+It&rsquo;s been a tough year. Let&rsquo;s get a W this week against Ian, bud.</p>
+<hr>
+<p>WEEK 7 - HALF WAY HOME
+<strong>Week 6 Recap</strong>
+Not a super surprising week Power Rankings-wise. Most the teams that were at the top won, most at the bottom, lost. Crazy.
+<strong>They are who we thought they were!</strong></p>
+<h2>MATCHUP OF THE WEEK</h2>
+<p>Rick n More TDs (3-3) v. Bear Down (5-1)
+Pretender beware… These two teams have very similar scoring patterns, and should make for a great matchup. Is this the week Matt meets his match?
+WEEK SEVEN
+POWER RANKINGS</p>
+<h2>1 - Return of the Mack (5-1, W4)</h2>
+<p><strong>LAST WEEK: #1 ↔</strong>
+Ian escapes unscathed in a down week from a lot of his team. Goes to show how RB can keep this team afloat, just outpacing Andy&rsquo;s squad.
+This week&rsquo;s showdown with Unpaid Bills should be a good one.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em></p>
+<h2>2 - Rub a Dub Dub (4-2, W2)</h2>
+<p><strong>LAST WEEK: #2 ↔</strong>
+With a flair for the dramatic, Anthony escapes with a W on the <strong>last play of the week</strong>! Just like real football, a W is a W, it doesn&rsquo;t matter if you win by an inch or a quarter mile.
+Will Anthony bring the McLaurin out for a spin this week? I&rsquo;m excited to see how the WR spots are filled out for this team going forward.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em>
+COLDBLOODED CROSBY
+CROSBY WINS IT FOR THE PACK, FOR RUB A DUB DUB, AND GETS HIS LAMBEAU LEAP DREAM FULFILLED</p>
+<h2>3 - Unpaid Bills (4-2, W3)</h2>
+<p><strong>LAST WEEK: #3 ↔</strong>
+I spoke last week of Michel/Jones and how shitty that can be on any week. This week we saw Jones take a huge step back, and Michel was so-so.
+Ironically, Neil traded the most consistent WR in the league for another boom/bust guy in Fuller (though Hop has been down more often this year). This trade has me scratching my head, but I like mixing it up!</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em></p>
+<h2>4 - Bear Down (5-1, W2)</h2>
+<p><strong>LAST WEEK: #4 ↔</strong>
+Even Matt won&rsquo;t complain about being 5-1 but 4th in the rankings. He moved from 7th in PF to 9th this week and got a win while doing so. WTF?
+On average, Matt&rsquo;s opponents score 102 points/game, yeesh what a cupcake schedule.</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em>
+SAVED OR LOST BY THE BELL?
+DARNOLD’S RETURN DIDN’T SPELL SUCCESS FOR BELL
+WHAT CAN WE EXPECT OUT OF BELL AND THE JETS MOVING FORWARD?</p>
+<h2>5. Saved By The Bell (4-2, L2)</h2>
+<p><strong>LAST WEEK: #5 ↔</strong>
+Well, last week I said how great Cooper had been - and he cost me the game by exiting so quickly. His injury could be one that sticks around and is tough to figure out week-to-week.
+While I didn&rsquo;t like trading with #1, I thought it was necessary to get another serviceable WR in Diggs - which Diggs will I get though?</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>6 - Rick n More TD&rsquo;s (3-2, W1)</h2>
+<p><strong>LAST WEEK: #7 ↑</strong>
+Dissly&rsquo;s exit cost Andy a big upset, but the timing of Henry being back couldn&rsquo;t be better.
+I&rsquo;m like the makeup of this squad and expect it to make waves in the second half of the season. Mahomes, Elliott and White are so solid week-to-week, the floor is always high on this team, and it shows with no sub-100 scoring weeks so far.</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em>
+THE UNPREDICTABLE</p>
+<p>WENTZ
+A SLOW START DIDN’T SLOW WENTZ AND HIS HOT SHOES DOWN
+BUT IT’S BEEN UP-AND-DOWN FOR THIS PRESEASON MVP FAV</p>
+<h2>7 - Hot Lockett (3-3, L2)</h2>
+<p><strong>LAST WEEK: #6 ↓</strong>
+Getting Saquon back is obviously going to help, but there are lots of question marks on the squad around him. Which Wentz or Evans are going to show each week?
+The scoring trend would go to suggest this team should be scary when Barkley returns, but I&rsquo;m going to have to see it before moving this squad up. Luckily, I&rsquo;ll get a front row view playing the Hot Locketts this week myself.</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em></p>
+<h2>8 - Morning Chubb (1-5, W1)</h2>
+<p><strong>LAST WEEK: #9 ↑</strong>
+Yeesh! Big week from the previously-defeated Chubbs. Was it playing-PJ magic or is this the new look?! With Hill, Lamar and Chubb any week could be explosive, but there&rsquo;s a long road ahead to the playoffs from 1-5 - could Kris do it?</p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em>
+JUST NUK IT
+DESPITE BEING ADDED TO PJ’S SQUAD
+I EXPECT A FULL TURNAROUND FROM HOP
+IN THE SECOND HALF</p>
+<h2>9 - DK Metca$h (0-6, L6)</h2>
+<p><strong>LAST WEEK: #8 ↓</strong>
+For PJ&rsquo;s summary, please see previous weeks. PJ&rsquo;s opponents score 150+ on average, so it hardly matters what PJ&rsquo;s doing with his squad.
+Take a peek at his squad today to see five questionable WRs and Kamara too. Looks like the road stays rocky going forward, though we have a cellar match this week against Joel.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em></p>
+<h2>10 - Kerryon my Wayward Son (1-6, L4)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+At least Joel has a sense of humor about it - great sport!
+Joel/Cody can&rsquo;t seem to catch a break, but maybe this is the week! I expect Todd Gurley to return to 2017 form this week, only to descend to 2019 form immediately thereafter.
+Prediction: Joel wins 137-118 and leaps PJ next week.</p>
+<h2></h2>
+<p><em>Kerryon my Wayward Son - Points week-by-week</em></p>
+<h2>From the Commissioner</h2>
+<p>I’ve updated our trade review policy.
+Future trades will be processed after PJ and I review individually. If we don’t agree, or if we are participants in the trade, I will surface a league vote manually in our group chat.
+My other league has a simple review like this and it’s nice to have trades move quickly with waiver wires and games taking up most the days of the week.</p>
+<hr>
+<p>WEEK 6 - BOX EM&rsquo; OUT - REBOUND
+<strong>Week 5 Recap</strong>
+Shiiiit, last week was pathetic. This week Stonks were way up! (Keeping this meme alive, you’re welcome)</p>
+<h2>MATCHUP OF THE WEEK</h2>
+<h2><em>Loser Leaves Town</em></h2>
+<p><em>(…to pickup their butler uni)</em>
+<strong>DK MetCa$h (0-5) @ Morning Chubb (0-5)</strong>
+The matchup we dreamed up, we truly don’t deserve such a beautiful sight.
+WEEK SIX
+POWER RANKINGS</p>
+<h2>1 - Return of the Mack (4-1, W3)</h2>
+<p><strong>LAST WEEK: #3 ↑↑</strong>
+Okay, fuck this team.
+McCaffery is seriously a 30 point-a-weeker, <em>guaranteed</em>. With four 30+ performances on the team, it&rsquo;s clear this team is the one to beat at the moment. #1 in Standings, Points For, has RB1, has RB2 and WR3 and WR6. QB might be hard to get right each week.
+Hesitation - Lots of guys who typically show up on the injury report, and not much yet. CMC&rsquo;s ankle is probably nothing, but it&rsquo;s worth noting it exists at the moment.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em></p>
+<h2>2 - Rub a Dub Dub (3-2, W1)</h2>
+<p><strong>LAST WEEK: #4 ↑↑</strong>
+With Dak, Thielen and Fournette firing, they&rsquo;ll be tough to beat. Unfortunately all three firing each week hasn&rsquo;t been too frequent.
+Anthony&ndash;the hardly heard from in our group chat, has become the silent assassin. This squad&rsquo;s rolled off two straight, and is second in points, yet doesnt&rsquo; strike fear in my heart. Can they keep it going this week against the reeling Saved by the Bell (and change my mind [and record]?) Pretty similar chart for RADD, hoping to capitalize on a down week this week.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em>
+DAMN, A-A-RON
+FIRST GOOD GAME EVER, DON’T HOLD YOUR BREATH
+- A SALTY EX-GM</p>
+<h2>3 - Unpaid Bills (3-2, W2)</h2>
+<p><strong>LAST WEEK: #6 ↑↑↑</strong>
+I&rsquo;m buying on Watson. I think he can keep his groove and guide this squad (upping Hopkins subpar start).
+IDK, I&rsquo;m probably overreacting, but Neil picked up a big win. I&rsquo;ve had the Jones/Michel combo and it can be more Jekyll/Hyde. Now thinking of it, so can Watson. But that alone makes this team dangerous any week, and I bet Neil&rsquo;s happy to roll the dice with you.</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em></p>
+<h2>4 - Bear Down (4-1, W2)</h2>
+<p><strong>LAST WEEK: #4 ↔</strong>
+4-1, but not 7th in PF, least PA. Wins matter, but frankly there&rsquo;s teams below who should be higher <em>obviously</em> (see #5).
+All seriousness, WR1 and WR2 are on this team, so any week could be a big one from either. And it&rsquo;s worked for the Jags so far, so why not with Matt? It&rsquo;s all-in Minshew Mania in Bear Down Town!</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em>
+STEADY AS THE COME
+COOPER AND COOPER ALWAYS DELIVER</p>
+<h2>5. Saved By The Bell (4-1, L1)</h2>
+<p><strong>LAST WEEK: #1 ↓↓↓↓</strong>
+Yeesh that hurt. Not only did Ian take me out back, but I made about every bad decision you could make. And you guys didn&rsquo;t see my other league where it was 10 times worse.
+I&rsquo;ll surely be looking in the mirror this week, second guessing every move&hellip; every not move. Ugh.
+Bright side has been Amari and Austin, Coop and Coop 💍💍</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>6 - Hot Lockett (3-2, L1)</h2>
+<p><strong>LAST WEEK: #2 ↓↓↓↓</strong>
+Another fall from grace, an equally hard a showing as my squad made it hard not for us to fall connected at the waist (down four spots).
+Chris&rsquo; squad is on the look for RB after the Gallman plug cracked, will Drake make another #1 hit? And what&rsquo;s up with Mike Evans this year? You tell me 🤷‍♂️</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em>
+WILL EKELER
+LOSE HIS GRIP?
+HAHAHAHAHAHAHAHHAHAHAHA</p>
+<h2>7 - Rick n More TD&rsquo;s (3-2, W1)</h2>
+<p><strong>LAST WEEK: #7 ↔</strong>
+Well, Akeler&rsquo;s value sustained, touché. Dissly&rsquo;s been amazing, as has Mahomes obv. But when will the big game come for Zeke? Andy could use it this week against #1.
+With the line set at +18.3, RNMORETDS has work cut out for em.</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em></p>
+<h2>8 - DK Metca$h (0-5, L5)</h2>
+<p><strong>LAST WEEK: #9 ↑</strong>
+Fantasy is a cruel mistress. Your WR scores +50, your QB 30, and you lose? Well, as we know this is the life PJ lives.
+Do you want to play PJ? Maybe you do because it&rsquo;s probably gonna be a great week for you. Maybe not because he scores a lot of points. IDK you decide.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em>
+MVP?
+SPORTS ILLUSTRATED SAID RUSS MIGHT FINALLY WIN HIS FIRST MVP. THAT’S ALL I’LL SAY.</p>
+<h2>9- Morning Chubb (0-4, L5)</h2>
+<p><strong>LAST WEEK: #9 ↔</strong>
+Not much happening here at the bottom. Kris drops another one, but looks determined to get out of Wayward Town with a W.
+Man, Lamar&rsquo;s been kinda iffy recently. Tough decision week-to-week with the ageless TB12 in the wing awaitin.</p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em></p>
+<h2>10 - Kerryon my Wayward Son (1-4, L2)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+Yikes dude - another WR down. Juju with almost zero value. Starting the Chiefs D. Two Lions and a Bill on the bench? (in most years that&rsquo;d be worse).
+Joel better start learning what I like and soon? Hint: it&rsquo;s beer, or hot dogs, or hamburgers, or ribs, or beer, or whiskey. Chop chop, <em>Slutler</em>.</p>
+<h2></h2>
+<p><em>Kerryon my Wayward Son - Points week-by-week</em></p>
+<h3>Do you want to be on <em>Power Rankings</em>?!</h3>
+<p>We’re picking one (1) person* to appear on Power Rankings next week! In a special, <em>Fact or Fiction</em> episode, you, that’s right… <strong><em>you</em></strong> can ask the questions, and the Commissioner will answer!**
+<strong>- ENTER HERE -</strong></p>
+<p>*One entry per person, no purchase necessary. **On tape delay.</p>
+<hr>
+<p>WEEK 6 - BOX EM&rsquo; OUT - REBOUND
+<strong>Week 5 Recap</strong>
+Shiiiit, last week was pathetic. This week Stonks were way up! (Keeping this meme alive, you’re welcome)</p>
+<h2>MATCHUP OF THE WEEK</h2>
+<h2><em>Loser Leaves Town</em></h2>
+<p><em>(…to pickup their butler uni)</em>
+<strong>DK MetCa$h (0-5) @ Morning Chubb (0-5)</strong>
+The matchup we dreamed up, we truly don’t deserve such a beautiful sight.
+WEEK SIX
+POWER RANKINGS</p>
+<h2>1 - Return of the Mack (4-1, W3)</h2>
+<p><strong>LAST WEEK: #3 ↑↑</strong>
+Okay, fuck this team.
+McCaffery is seriously a 30 point-a-weeker, <em>guaranteed</em>. With four 30+ performances on the team, it&rsquo;s clear this team is the one to beat at the moment. #1 in Standings, Points For, has RB1, has RB2 and WR3 and WR6. QB might be hard to get right each week.
+Hesitation - Lots of guys who typically show up on the injury report, and not much yet. CMC&rsquo;s ankle is probably nothing, but it&rsquo;s worth noting it exists at the moment.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em></p>
+<h2>2 - Rub a Dub Dub (3-2, W1)</h2>
+<p><strong>LAST WEEK: #4 ↑↑</strong>
+With Dak, Thielen and Fournette firing, they&rsquo;ll be tough to beat. Unfortunately all three firing each week hasn&rsquo;t been too frequent.
+Anthony&ndash;the hardly heard from in our group chat, has become the silent assassin. This squad&rsquo;s rolled off two straight, and is second in points, yet doesnt&rsquo; strike fear in my heart. Can they keep it going this week against the reeling Saved by the Bell (and change my mind [and record]?) Pretty similar chart for RADD, hoping to capitalize on a down week this week.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em>
+DAMN, A-A-RON
+FIRST GOOD GAME EVER, DON’T HOLD YOUR BREATH
+- A SALTY EX-GM</p>
+<h2>3 - Unpaid Bills (3-2, W2)</h2>
+<p><strong>LAST WEEK: #6 ↑↑↑</strong>
+I&rsquo;m buying on Watson. I think he can keep his groove and guide this squad (upping Hopkins subpar start).
+IDK, I&rsquo;m probably overreacting, but Neil picked up a big win. I&rsquo;ve had the Jones/Michel combo and it can be more Jekyll/Hyde. Now thinking of it, so can Watson. But that alone makes this team dangerous any week, and I bet Neil&rsquo;s happy to roll the dice with you.</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em></p>
+<h2>4 - Bear Down (4-1, W2)</h2>
+<p><strong>LAST WEEK: #4 ↔</strong>
+4-1, but not 7th in PF, least PA. Wins matter, but frankly there&rsquo;s teams below who should be higher <em>obviously</em> (see #5).
+All seriousness, WR1 and WR2 are on this team, so any week could be a big one from either. And it&rsquo;s worked for the Jags so far, so why not with Matt? It&rsquo;s all-in Minshew Mania in Bear Down Town!</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em>
+STEADY AS THE COME
+COOPER AND COOPER ALWAYS DELIVER</p>
+<h2>5. Saved By The Bell (4-1, L1)</h2>
+<p><strong>LAST WEEK: #1 ↓↓↓↓</strong>
+Yeesh that hurt. Not only did Ian take me out back, but I made about every bad decision you could make. And you guys didn&rsquo;t see my other league where it was 10 times worse.
+I&rsquo;ll surely be looking in the mirror this week, second guessing every move&hellip; every not move. Ugh.
+Bright side has been Amari and Austin, Coop and Coop 💍💍</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>6 - Hot Lockett (3-2, L1)</h2>
+<p><strong>LAST WEEK: #2 ↓↓↓↓</strong>
+Another fall from grace, an equally hard a showing as my squad made it hard not for us to fall connected at the waist (down four spots).
+Chris&rsquo; squad is on the look for RB after the Gallman plug cracked, will Drake make another #1 hit? And what&rsquo;s up with Mike Evans this year? You tell me 🤷‍♂️</p>
+<h2></h2>
+<p><em>Hot Lockett - Points week-by-week</em>
+WILL EKELER
+LOSE HIS GRIP?
+HAHAHAHAHAHAHAHHAHAHAHA</p>
+<h2>7 - Rick n More TD&rsquo;s (3-2, W1)</h2>
+<p><strong>LAST WEEK: #7 ↔</strong>
+Well, Akeler&rsquo;s value sustained, touché. Dissly&rsquo;s been amazing, as has Mahomes obv. But when will the big game come for Zeke? Andy could use it this week against #1.
+With the line set at +18.3, RNMORETDS has work cut out for em.</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em></p>
+<h2>8 - DK Metca$h (0-5, L5)</h2>
+<p><strong>LAST WEEK: #9 ↑</strong>
+Fantasy is a cruel mistress. Your WR scores +50, your QB 30, and you lose? Well, as we know this is the life PJ lives.
+Do you want to play PJ? Maybe you do because it&rsquo;s probably gonna be a great week for you. Maybe not because he scores a lot of points. IDK you decide.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em>
+MVP?
+SPORTS ILLUSTRATED SAID RUSS MIGHT FINALLY WIN HIS FIRST MVP. THAT’S ALL I’LL SAY.</p>
+<h2>9- Morning Chubb (0-4, L5)</h2>
+<p><strong>LAST WEEK: #9 ↔</strong>
+Not much happening here at the bottom. Kris drops another one, but looks determined to get out of Wayward Town with a W.
+Man, Lamar&rsquo;s been kinda iffy recently. Tough decision week-to-week with the ageless TB12 in the wing awaitin.</p>
+<h2></h2>
+<p><em>Morning Chubb - Points week-by-week</em></p>
+<h2>10 - Kerryon my Wayward Son (1-4, L2)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+Yikes dude - another WR down. Juju with almost zero value. Starting the Chiefs D. Two Lions and a Bill on the bench? (in most years that&rsquo;d be worse).
+Joel better start learning what I like and soon? Hint: it&rsquo;s beer, or hot dogs, or hamburgers, or ribs, or beer, or whiskey. Chop chop, <em>Slutler</em>.</p>
+<h2></h2>
+<p><em>Kerryon my Wayward Son - Points week-by-week</em></p>
+<h3>Do you want to be on <em>Power Rankings</em>?!</h3>
+<p>We’re picking one (1) person* to appear on Power Rankings next week! In a special, <em>Fact or Fiction</em> episode, you, that’s right… <strong><em>you</em></strong> can ask the questions, and the Commissioner will answer!**
+<strong>- ENTER HERE -</strong></p>
+<p>*One entry per person, no purchase necessary. **On tape delay.</p>
+<hr>
+<p>WEEK 4 - MOVING WEEK</p>
+<h2>Matchup Breakdown</h2>
+<h3>Lots of great matchups this week, so I’m just gonna talk about us all!</h3>
+<p><strong>Rick n More TD’s (2-1) @ This is Wentzlemania (2-1) -</strong> <em>Matchup of the Week</em>
+In the <em>thick</em> at 2-1, both squads are primed for a make em or break em weeks. Andy’s team is explosive but could bust some weeks. What can we expect for Evans and Ingram, who both <em>went off</em> this week, going forward? Mahomes, Elliot and Ekeler lead the strong attack on the other side. My eyes will be fixed on this matchup come Sunday.
+<strong>Return of the Mack (2-1) @ Rub a Dub Dub (2-1)</strong>
+Back to the <em>thick</em>, ROTM has the highest projection, and have I told you I like CMC and Cook yet? RADD isn’t scaring me this week, but Anthony’s 2-1 and not to be taken lightly.
+<strong>Unpaid Bills (1-2) @ Kerryon my Wayward Son (1-2)</strong>
+If the above-mentioneds are in the <em>thick</em>, these guys are <em>tickling the hole</em> at 1-2. Who’s gonna be the idiot at 1-3?
+<strong>DK Metca$h (0-3) @ Bear Down (2-1)</strong>
+Matt surely is stoked to be playing against PJ, who seems to bring the best out in the rest of us. Though in the top half in points, PJ will need to be solid to avoid 0-4. Seif’s squad has been mediocre but that doesn’t matter, a win here keeps Seif in the upper crust. Loser definitely gets the most shit talked about them in the group chat.
+<strong>Saved by the Bell (3-0) @ Morning Chubb (0-3)</strong>
+3-0 v. 0-3: The line suggests it’ll be close, but Kris’ team has failed to register a good week yet, while I’ve been decently consistent. <em>Upset alert</em> for Jake or <em>life alert</em> for Kris?
+WEEK FOUR POWER RANKINGS</p>
+<h2>1. Saved By The Bell (3-0 - 440.7 PF)</h2>
+<p><strong>LAST WEEK: #1 ↔</strong>
+Hanging onto #1 with a thread, but 7 straight wins dating back to last year. Come at the King!
+Hopefully Darnold returns after the bye and reinstills Bell&rsquo;s value, or RB could be some trouble.</p>
+<h2></h2>
+<p><em>Saved by the Bell - Points week-by-week</em></p>
+<h2>2 - This is Wentzlemania (2-1 - 440.7 PF)</h2>
+<p><strong>LAST WEEK: #6 ↑↑↑↑</strong>
+Tied for most PF - Chris&rsquo; performance was stellar to fend of PJ. The week was tainted with the loss of Barkley. Perhaps Daniel Jones will make the Giants relevant and urge him to return hastily.</p>
+<h2></h2>
+<p><em>This is Wentzlemania - Points week-by-week</em>
+43.6 PTS
+KEENAN ALLEN - RETURN OF THE MACK</p>
+<h2>3 - Return of the Mack (2-1)</h2>
+<p><strong>LAST WEEK: #5 ↑↑</strong>
+Yo Keenan Allen, would you chill please? Ian needs another big week to get passed Anthony in their big showdown. Cook could be a league winner at this pace.</p>
+<h2></h2>
+<p><em>Return of the Mack - Points week-by-week</em></p>
+<h2>4 - Rub a Dub Dub (2-1)</h2>
+<p><strong>LAST WEEK: #3 ↓</strong>
+Dak is Superman. Julio has scored in 7 straight games. Engram may end up TE1. Yikes, we better look out for this team to move up.</p>
+<h2></h2>
+<p><em>Rub a Dub Dub - Points week-by-week</em>
+MAHOMES
+IS GOD
+86.8PTS THIS SEASON - 2ND OVERALL</p>
+<h2>5 - Rick n More TD&rsquo;s (2-1)</h2>
+<p><strong>LAST WEEK: #2 ↓↓↓</strong>
+Still looking strong after his first loss of the year. Andy&rsquo;s looking to ride the hot hands of John Ross II and Marquise Brown. Are they flame outs or some sort of hot-long-burning fire?</p>
+<h2></h2>
+<p><em>Rick n More TD&rsquo;s - Points week-by-week</em></p>
+<h2>6 - DK Metca$h (0-3)</h2>
+<p><strong>LAST WEEK: #8 ↑↑</strong>
+Are you kidding me? PJ moves up at 0-3? Well, he&rsquo;s 5th in points and I think he&rsquo;ll pick up some steam. But don&rsquo;t feel too badly for him. Look at that curve, Week 2 was not great, but he could easily be 2-1.</p>
+<h2></h2>
+<p><em>DK Metca$h - Points week-by-week</em>
+MIXED UP
+MIXON
+JUST 26.9 POINTS SO FAR
+(RB34)</p>
+<h2>7 - Bear Down (2-1)</h2>
+<p><strong>LAST WEEK: #4 ↓↓</strong>
+Trending in the wrong direction. Though 2-1, last week brought up some big questions.. Who is: Mayfield, Mixon, Thomas and Godwin? Lots of questions, but lots of talent. Quite an entertaining team as far as start-em / sit-em goes on a weekly occurrence.</p>
+<h2></h2>
+<p><em>Bear Down - Points week-by-week</em></p>
+<h2>8 - Unpaid Bills (1-2)</h2>
+<p><strong>LAST WEEK: #7 ↓</strong>
+Sony and Connor have been rough. WR has been iffy. The bright side here is Waller. With two solid TEs, will Neil make a move to fill out the roster?</p>
+<h2></h2>
+<p><em>Unpaid Bills - Points week-by-week</em>
+WEEEEEEEEE!!!</p>
+<h2>9 - Kerryon my Wayward Son (1-2)</h2>
+<p><strong>LAST WEEK: #9 ↔</strong>
+Joel squeaks it out in the (very-early-season) toilet bowl with just 104.2. But I&rsquo;ve gotta give credit, he went out and made sure he got Allen. Not sure many other options would have got him enough to win. TONS of injuries holding Joel down right now.</p>
+<h2></h2>
+<p><em>Kerryon my Wayward Son - Points week-by-week</em></p>
+<h2>10 - Morning Chubb (0-3)</h2>
+<p><strong>LAST WEEK: #10 ↔</strong>
+Loving the Tom Brady | Lamar Jackson combo. But Kris is just really missing that gasoline in Tyreek Hill. Needs more out of Montgomery and Chubb to make a ripple out here, with only one week over 100 points.</p>
+<hr>
+<p>WEEK 3 PNW POWER RANKINGS</p>
+<h1><strong>MATCHUPS OF THE WEEK</strong></h1>
+<p><strong>Saved by the Bell @ Rick n More TD’s - Two Undefeateds Square Off</strong>
+<strong>Kerryon my Wayward Son @ Morning Chubb - Two Defeateds Square Off</strong></p>
+<h1><strong>1. SAVED BY THE BELL (2-0)</strong></h1>
+<p>Week 2 ranking: 2 <strong>↑</strong>
+Probably shoulda started the season #1 as the defending champ, but I tried to be unbiased. Now I’m back where I belong.
+<strong>Pleasant surprise:</strong> Emmanuel Sanders is WR3 - Guy is 32 and coming off a torn achilles and looks as dangerous as any slot in the league, though he’ll lineup anywhere.
+<strong>Unpleasant surprise:</strong> Devonte Freeman - All those talks out of camp made it seem Freeman could be a RB1. Falcons got some shit to figure out.</p>
+<h1><strong>2. RICK N MORE TD’S (2-0)</strong></h1>
+<p>Week 2 ranking: 3 <strong>↑</strong>
+Turner looking strong after a pretty poor showing last year. Big matchup against the former champ to see if he belongs!
+<strong>Pleasant surprise:</strong> Ekeler is RB1. And they’re gonna keep feeding the beast. Might as well work him as hard as absolutely possible before Gordon’s back, then ride his fresh legs. -though I anticipate Ekeler being relevant all season long.
+<strong>Unpleasant surprise:</strong> It’s tough to find the downside on this squad. Gotta be Hunter Henry being HH and getting hurt. Cook looked to be a good gapstop but with Brees injury, who knows what to expect in NO.</p>
+<h1><strong>3. RUB A DUB DUB (1-1)</strong></h1>
+<p>Week 2 ranking: 4 <strong>↑</strong>
+Good week, tough loss. No one’s gonna be excited to play this squad.
+<strong>Pleasant surprise:</strong> Dak’s the man, after two weeks there’s fewer QBs who’ve had better starts. Julio Jones looks like he likes TDs this year too - good look.
+<strong>Unpleasant surprise:</strong> Might sound like a broken record after Matt above, but… RB uncertainty on a larger scale here. Early picks on DJ and Fournette may not pan out long term. DJ seems to have a high ceiling still, but how will Arizona decide to incorporate him, especially when they’ll be behind most games.</p>
+<h1><strong>4. BEAR DOWN (2-0)</strong></h1>
+<p>Week 2 ranking: 6 <strong>↑</strong>
+Storming up after last week’s ranking - closer to the draft grade. But, 8th in points, how long will it last?
+<strong>Pleasant surprise:</strong> Galladay is a true go-to #1 for the Lions, after two weeks I’m ready to write it down for years to come. Lions have good pass-catching depth, but it’s clear he’s the one.
+<strong>Unpleasant surprise:</strong> RB uncertainty. 25 points out of three backs this Sunday, that likely won’t get the job done most weeks. With only Duke and Latavius to supplement these backs, will Seif be active on the wire?</p>
+<h1><strong>5. RETURN OF THE MACK (1-1)</strong></h1>
+<p>Week 2 ranking: 1 <strong>↓</strong>
+God, loving the RB pairing still. But Run CMC’s first earthly week in forever hurt Ian this week. I wanted to rank this team at #4, but after all, they lost to #4.
+<strong>Pleasant surprise:</strong> Cook could be RB1 at the end of the year - Will Minnesota find a way to screw that up? That’s a hard <em>maybe</em>.
+<strong>Unpleasant surprise:</strong> Diggs had a 40-yard TD this week, but has only 15 points all year. Drafted as a WR2, he needs to find rhythm quickly.</p>
+<h1><strong>6. THIS IS WENTZLEMANIA (1-1)</strong></h1>
+<p>Week 2 ranking: 8 <strong>↓</strong>
+Can’t really figure out this team but they’re right in the thick of it.
+<strong>Pleasant surprise:</strong> Calvin Ridley’s been <em>nice</em>. That offense is figuring things out still, but Calvin seems in a good spot to produce.
+<strong>Unpleasant surprise:</strong> Mike Evans - He’s been super not chill. Where are all the targets, Jameis!?</p>
+<h1><strong>7. UNPAID BILLS (1-1)</strong></h1>
+<p>Week 2 ranking: 1 <strong>↔</strong>
+120 points with a very chill week out of the Texans. Boom potential here.
+<strong>Pleasant surprise:</strong> A big week from Aaron Jones after a slow start.
+<strong>Unpleasant surprise:</strong> A low week from Conner with a side of a big backstep in the Pittsburgh offense.</p>
+<h1><strong>8. DK METCA$H (0-2)</strong></h1>
+<p>Week 2 ranking: 1 ↓
+Most points against, but not a enough good excuse for being 0-2. Better crawl out this week against Chris.
+<strong>Pleasant surprise:</strong> It seemed Hilton would be taking a step back, but the Colts have responded well, and Hilton’s remaining at the center of the gameplan.
+<strong>Unpleasant surprise:</strong> Kamara’s 7 pts last weekend didn’t kill, but it could have. Next few weeks will be rough without Drew Easy Breesey next to him.</p>
+<h1><strong>9. KERRYON MY WAYARD SON (0-2)</strong></h1>
+<p>Week 2 ranking: 1 <strong>↔</strong>
+Little banged up, I expect to see Joel active in the FFB auction this week, unless he’s ready to fold it up.
+<strong>Pleasant surprise:</strong> Sammy Watkins - Duh, top-scoring receiver.
+<strong>Unpleasant surprise:</strong> JuJu and Cam - Neither are producing at their ADP.</p>
+<h1><strong>10. MORNING CHUBB (0-2)</strong></h1>
+<p>Week 2 ranking: 1 <strong>↔</strong>
+Another tough week, Kris stays at the bottom with a 97. Less than 100 each week.
+<strong>Pleasant surprise:</strong> Lamar Jackson and Mark Edwards are both #1 at their position.
+<strong>Unpleasant surprise:</strong> Missing Tyreek has obviously hurt each week, especially with the Week 1 start (before the injury).</p>
+<hr>
+<p>INITIAL POWER RANKINGS</p>
+<h3>Matchup of the Week</h3>
+<p><strong>Rub a Dub Dub @ This is Wetzlemania</strong> - Will the number one pick fall to 0-2?</p>
+<h3>#1 - Ian - Return of the Mack</h3>
+<p>Cook could be a league-winner.
+Run CMC and Dalvin look to be the best RB pair in the league, though RB depth is thin after that. That said, McCaffery has been <em>insane</em> over the last 8 weeks or so - no sign of slowing, and he’s way fucking bigger this year - it showed on his grown man 3-yd TD late in the day.
+Kupp and Allen are staples for consistency, too, for a nice solid #1 ranking. T.J. Hockenson looks like the real deal too - but he’s a Lion so I’m not ready to be all-in.</p>
+<h3>#2 - Jake - Saved by the Bell</h3>
+<p>After stashing Bell for like a year, I finally got a point from him - and he was pretty good! That Bills D is tough!
+It may be difficult to figure out Cooper v Gallup some weeks, but I’m liking what I saw out of him on Sunday, even after no camp time with Dak. RB might be tough for me if Henry ends up my RB2. Lindsay does seem to be in a timeshare now, but I think the Broncos will open him back up soon.
+Quick shoutout to Emmanuel Sanders getting his after tearing his Achilles! Go Broncos!</p>
+<h3>#3 - Andy - Rick ‘n More TD’s</h3>
+<p>Oh man - AB. That’s enough since it’s all they talked about during every game this weekend. Fucking Pats.
+Zeke, Eckler and Mahomes look to lock down the top three spots in the lineup every week - solid.
+Allen Robinson, who stuck at the top of our draft boards, is clearly the number one in Chicago and is trending up after getting 17pts in the Bear’s dumpster fire. How many could he get in a good week.</p>
+<h3>#4 - Anthony - Rub a Dub Dub</h3>
+<p>Huge weeks out of Dak and Engram nudged Anthony passed PJ. Don’t know how sustainable Engram’s is, but he could lead the Giants in targets.
+This team is probably the most intriguing to me, I could see it going a number of different ways. With some gambles on the bench, if injuries arise, will Anthony start a Guice or Miles Sanders-type or drop for a more consistent, lower ceiling player?
+This TD got called back. Nice celebration though.</p>
+<h3>#5 - PJ - DK Metca$h</h3>
+<p>Channeling their inner-Ke$ha, DK and PJ looked primed to steal away a W on Monday, only to fall flat (not a bad showing from Kamara though). Sucks to go 140+ in week one and come away with an L. This seems to have been a theme for PJ last year if I remember correctly.
+To be frank, I don’t want to ever play against Kamara and Mack - But I guess I have to this week (and late year). Both guys should get insane shares in their offense - and so should Kittle. If Kittle doesn’t lose two TDs to penalties, maybe PJs team is fighting for #1.</p>
+<h3>#6 - Matt - Bear Down</h3>
+<p>As pointed out in the draft, Matt has no Bears, earning him the <em>bad team name</em> award. We all know the impact a bad team name can have, but luckily Matt’s 2nd lowest score was good enough to beat the lowest.
+I worry about Mixon and McDonald, but Carson and Jacobs could be a nasty RB pair - both are gonna dominate their team’s touches. Baker’s only going up from here too — right?</p>
+<h3>#7 - Neil - Unpaid Bills</h3>
+<p>Damn. 60+ out of Watson/Hopkins but came up short. Makes you wonder what weeks without the two hooking up so well will look like.
+Conner could be a <em>huge</em> bust if the Steelers are really that whack. The oft-injured Shepherd is… well, you guessed it, injured. In my experience, Michel and Jones are both hit or miss week-to-week. But there’s still a lot of potential here. Matching up against the last place Chubbs may help with a rebound.
+Ingram doing Ingram things…</p>
+<h3>#8 - Chris - This is Wentzlemania!</h3>
+<p>Honestly, Barkley worries me a teensy bit after this week. But Ingram looks to be a solid AF pick. I think he gets 2TD+ a handful of games this year.
+Wentz looks like the next Tom Brady (again).
+A nice pickup with Tyrell Williams - the Raiders shredded the just-less-than-healthy Broncos pass D. So they should shred a lot of teams as well. Oakland looks to play in a fast decision offense, where Williams will get a ton of short targets - and he’s their big play guy.</p>
+<h3>#9 - Joel - Kerryon My Wayward SoN</h3>
+<p>Honestly, I don’t want to lecture Joel since we know his wife already did during our draft (for those of us on the voice channel). But okay, I have to… Here’s how I expect Joel’s year to go, sorry bud.
+*   Starts Watkins -&gt; Egg, Jeffery goes off
+*   Starts Jeffery -&gt; Egg, Gallup goes off
+*   Stats Gallup -&gt; Egg, Watkins goes off
+What do I have to back this up? Not much, I just think a couple of those guys are hard to figure out especially.
+This plus Gurley is not good anymore - which is probably the most important factor.</p>
+<h3>#10 - Kris - Morning Chubb</h3>
+<p>Brady and Jackson both looked great (obviously), but outside that, it’s looking grim.
+Kris needed Hill’s explosiveness on this team, so while he’s out he’ll need to get creative. What are the odds DeSean outscores Tyreek this year? And will Edelman’s consistency decline with AB inbound?
+Is starting Montgomery and McCoy together a disaster waiting to happen? I’m excited to watch this team closely to see what Kris has up his sleeve.</p>
+<hr>
+<p>DRAFT GRADES (‘19-’20)
+Matt: <strong>A+</strong>
+Liked Matt’s draft a lot as it unfolded, and looking at his team now, the only guys I don’t love are Mixon and Golladay—and both of them are probably going to produce. Nice sniping with Duke and Murray, one should produce at a high level, should Carson, Jacobs or Mixon drop off. I’m gonna go barf now after giving this grade.
+PJ with the steal of the draft
+PJ: <strong>A</strong>
+Love the value out of Mack and Adams (the steal of the draft). Rivers and Wilson look primed to have great seasons, along with Kamara having the backfield with himself and Kittle doing Kittle things, I think this is the team to beat. Best D too, but WR depth is shaky. Great use of the IR already though to help there.
+Chris: <strong>A-</strong>
+Hard to get things wrong with Saquon on the squad. Lockett, Evans and Kelce are super consistent (along with Barkley). Good balance of consistency and potential with Wentz, Ridley and Ingram II.
+Ian: <strong>B</strong>
+Love CMC and Dalvin in the RB spots. Kupp looks to rebound in the flex, but could be in trouble at WR if Diggs is out an extended amount of time. Bench is too full of question marks for me to love this team, as I suspect a dropoff on Boyd, Cohen, Tate (SSPD), and I’m not all-in on Coleman—thought McKinnon would take a lot of touches, now I just think it’ll be Breida doing the same.
+Anthony: <strong>B</strong>
+DJ and Fournette could both bounce back to have huge years. (DJ wasn’t <em>bad</em> last year, but could be even better.) Pair that with two of the four great receivers in the starting lineup and things look good for Anthony—nice young fellas on the bench too. Three Jags, a Skin and a Titan, that scares me.
+Neil: <strong>B-</strong>
+Doubling down on Watson and Hopkins could win him the league or plummet the squad. Lots of question marks at RB: Michel, Conner, Breida, Freeman and A. Jones. Any of these guys could ball out, but in my experience Jones and Michel have been difficult to get right any week. Two guys likely will emerge and he’ll be find. WR2 is fuckin real bleak.
+Jake: <strong>C+</strong>
+I’m a gambling man - and it fucking shows. Wow, I normally go for consistency over everything. This year I’m going full on “Who knows?“ with Bell, Freeman, M Gordon, J Gordon, OBJ, Henry, K Murray, and E Sanders. League-winning potential, but I could easily miss out on half these guys and be a butler by next year. Really, no consistent player outside Bell who’s coming off, well, ya know.
+Andy: <strong>C-</strong>
+Like some of the picks: Zeke, Ekeler and DJ Moore. Don’t like a lot: Mahomes goes early, could pay off but we’ll see. AB is off his fucking rocker, and Fitz and Ben are just old. And for some reason I see Cooks being third-fiddle this year. Love to see Big Ben and AB reunited though 💗
+Kris: <strong>C</strong>
+Old guys, same places. Hard for me to see a handful of these guys not being washed: Brady, Edelman (should be find but see: Brady), McCoy and DeSean. Liking Lamar, Hill, Montgomery and Howard though. Cook could be revived in NO too. Very middle of the road - Great kicker!
+Joel: <strong>D+</strong>
+Gurley could turn this all around. But if not, there’s not a ton of potency. Juju should be amazing, but relying on any of these guys is scary: Kerryon, Alshon, D Williams, Gallup, Watkins, and Penny. Lots of guys with stiff competition around them, though I expect a couple to break out. Hopefully McCoy is washed. Never take two Lions.</p>
+<hr>
+  </article>
+  
+</main>
+<footer class="site">Exported from ClickUp Doc a4475-167.</footer>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="../../site.js"></script>
+</body>
+</html>

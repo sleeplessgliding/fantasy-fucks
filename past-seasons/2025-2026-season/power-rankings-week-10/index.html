@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Power Rankings (Week 10) — Fantasy Fucks</title>
+<link rel="stylesheet" href="../../../site.css">
+<script>
+  // Apply theme and sidebar state before first paint to avoid a flash.
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+</head>
+<body>
+<!-- clickup-export:a4475-5211 -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="../../../index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node"><a class="nav-link" href="../../../index.html" title="2026 Keeper Info">2026 Keeper Info</a></li><li class="nav-node"><a class="nav-link" href="../../../rules/" title="Rules">Rules</a></li><li class="nav-node has-kids is-branch" data-key="past-seasons/" data-open="true"><div class="nav-row"><a class="nav-link" href="../../" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="true" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids is-branch" data-key="past-seasons/2025-2026-season/" data-open="true"><div class="nav-row"><a class="nav-link" href="../" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="true" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node is-branch"><a class="nav-link" href="./" title="Power Rankings (Week 10)" aria-current="page">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="../../2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node"><a class="nav-link" href="../../2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a></li><li class="nav-node"><a class="nav-link" href="../../2019-2020-season/" title="2019 - 2020 Season">2019 - 2020 Season</a></li><li class="nav-node"><a class="nav-link" href="../../2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">Power Rankings (Week 10)</span>
+  </header>
+<main class="page" id="main">
+  <p class="crumbs"><a href="../../">Past Seasons</a> / <a href="../">2025 - 2026 Season</a> / Power Rankings (Week 10)</p>
+  <h1>Power Rankings (Week 10)</h1>
+  
+  <p class="meta">Updated 2025-11-16</p>
+  <article class="prose">
+<p>As we enter Week 10, there&rsquo;s a clear cluster of teams, and the playoff picture is heating up. In the four previous years, since we&rsquo;ve been on Sleeper only two teams with six losses have made the playoffs, so it&rsquo;s put up or shut up time for the bottom cluster.</p>
+<ul>
+<li>6-3: Kris, Neil, Andy</li>
+<li>5-4: PJ, Jake, Joel</li>
+<li>3-6: Seif, Tony, Pangy and CJ</li>
+</ul>
+<p><img alt="" src="../../../assets/45058f319a5a7c01.png"></p>
+<p>Putting up&hellip; that&rsquo;s exactly what Seif did last week, nearly hitting 200, propelled by Bowers&rsquo; 43.3, yeeeeeesh. His team&rsquo;s healthy, and CMC has been unstoppable. Can he rattle off some W&rsquo;s and stay in the mix? (hopefully not this week, though!)</p>
+<p><strong>Matchup of the Week</strong>
+<strong>Brother Bowl: Spitters not Quitters (6-3) vs. Turner 2-uh-4 (6-3)</strong>
+A little lame to repeated a matchup, but these guys deserve it, sitting at #1 and #3 in the standings. It doesn&rsquo;t appear to be like a competitive matchup, but there&rsquo;s a reason we lace &lsquo;em up every week.</p>
+<p><strong>What to watch:</strong>
+*   WR Glory - JSN (KT) and Nacua (AT) square off to see who is the ultimate WR1
+*   Pretty good TE matchup too, this could be where the game&rsquo;s won or lost, with a couple of proven, but up and down guys in Kittle (KT) and Laporta (AT)
+*   RB disparity - KJT trots out the best RB room with Taylor and Bijan, where Andy really hurts, starting Harvey and Monty, and already getting a dud out of Harvey (in the best game of the year!)</p>
+<p><strong>Waiver Wire Spice</strong> 🌶️
+*   Getting less spicy with less dollars, but&hellip;
+*   Tony grabs the new WR1 in Las Vegas, Tre Tucker, for $8
+*   Joel chapped the shit out of my hide by snagging the Texans Defense for $6 - I literally went back through all transactions this year to see what the most someone had spent on a defense before making my $3 bid. He spent more.</p>
+<hr>
+<h2><img alt="" src="../../../assets/35ede8f98e02b980.png"></h2>
+<h2>1. Neil (6-3) ⬆️</h2>
+<h3><strong>PF: 1100.68</strong><strong>,</strong> <strong>FAAB: $0</strong><strong>,</strong> <strong>W6</strong></h3>
+<p>Neil moves into the top spot, and it only took him winning six straight games and number seven looks locked up before it&rsquo;s even started (sorry, Pangy). Great pick up last week with Monangai - could be someone that delivers down the stretch and into the playoffs, though we&rsquo;ll see how it goes with Swift back this week.</p>
+<p><img alt="" src="../../../assets/e2e392e12c5d3c48.png"></p>
+<h2>2. Kris (6-3) ⬇️</h2>
+<h3><strong>PF: 1249.58</strong><strong>,</strong> <strong>FAAB: $25</strong><strong>,</strong> <strong>L1</strong></h3>
+<p>Finally dethroned, but still looking very strong, leading PF by a bunch still. Should be interesting to see if Bijan and JT can be their normal selves in Germany&hellip; never know with these Euro games. Kris now has a legitimate question to ask each week as well, Caleb or Dak?</p>
+<p><img alt="" src="../../../assets/5aa2b471ab006600.png"></p>
+<h2>3. PJ (5-4) ↔️</h2>
+<h3><strong>PF: 1168.70</strong><strong>,</strong> <strong>FAAB: $23</strong><strong>,</strong> <strong>W3</strong></h3>
+<p>Three straight weeks over 160 points has PJ into 2nd for PF. His team is getting stronger at the right time, with key pickups over the last few weeks, with Herbert, Dowdle, Kincaid and Pittman (oh, and Broncos D).</p>
+<p><img alt="" src="../../../assets/d7ba4c7fee7c3dd6.png"></p>
+<h2>4. Andy (6-3) ⬆️</h2>
+<h3><strong>PF: 1054.48</strong><strong>,</strong> <strong>FAAB: $0</strong><strong>,</strong> <strong>W1</strong></h3>
+<p>Andy pulled off a miracle on MNF, with CJ only needing 8pts from Aubrey, and having is lowest output of the season, and missing a FG (I mean, at least it was a 68-yarder). The cracks are starting to show this week as he sits on $0, with a sketchy lineup fielded&hellip; though those guys got some nice green matchups, like Addison against Baltimore&rsquo;s Swiss Cheese D.</p>
+<p><img alt="" src="../../../assets/6fdeaf5a320ef6dc.png"></p>
+<h2>5. Jake (5-4) ⬆️ ⬆️</h2>
+<h3><strong>PF: 1121.82</strong><strong>,</strong> <strong>FAAB: $39</strong><strong>,</strong> <strong>W1</strong></h3>
+<p>Nice showing after three straight duds. My team finally had their first London +Tee game, even though I had Tee on the bench. Let&rsquo;s see if London can be a little more Hyde than Jekyll going forward, too. Excited to see Egbuka coming back after a nice rest, too.</p>
+<p><img alt="" src="../../../assets/8f7640875101373a.png"></p>
+<h2>6. Joel (5-4) ⬇️ ⬇️</h2>
+<h3><strong>PF: 1072.20</strong><strong>,</strong> <strong>FAAB: $10</strong><strong>,</strong> <strong>L1</strong></h3>
+<p>Joel&rsquo;s team is the only team to score more than 100 in every game. He&rsquo;s also the only team to not score 140 in any week. That&rsquo;s the kinda guy you take home to meet your parents.</p>
+<p><img alt="" src="../../../assets/63c0ecafdbabdfe3.png"></p>
+<h2>7. Seif (3-6) ⬆️ ⬆️</h2>
+<h3><strong>PF: 1125.26</strong><strong>,</strong> <strong>FAAB: $0</strong><strong>,</strong> <strong>W1</strong></h3>
+<p>Third in points for now, coming off the highest score of the year so far (197.26)&hellip; but I couldn&rsquo;t thrust him higher than this, being two games back from everyone above. Last week he showed what he could do - let&rsquo;s hope there&rsquo;s not enough air to feed that flame each week. God it&rsquo;s terrifying facing Lamar, CMC and Bowers, but glad Denver held Bowers in check to start the week.</p>
+<p><img alt="" src="../../../assets/7648047d859fa464.png"></p>
+<h2>8. Tony (3-6) ⬇️ ⬇️</h2>
+<h3><strong>PF: 1067.92</strong><strong>,</strong> <strong>FAAB: $67</strong><strong>,</strong> <strong>L1</strong></h3>
+<p>Tony came back to earth after a couple of really nice weeks, with some pedestrian performances from BCM, Sutton, Tyler Warren and Daniels Jones. With no Chase this week, he&rsquo;ll have a tough time against CJ, in bottom of the league jockeying. Slow start with Sutton&rsquo;s 5.4, again.</p>
+<p><img alt="" src="../../../assets/a4711c52a04adda5.png"></p>
+<h2>9. CJ (3-6) ⬇️</h2>
+<h3><strong>PF: 976.72</strong><strong>,</strong> <strong>FAAB: $52</strong><strong>,</strong> <strong>L2</strong></h3>
+<p>Well, at least Bo got CJ&rsquo;s squad started slowly, too, with a measly 5.8 from TNF. He&rsquo;ll also have to fill in for his Chiefs and his best player, Aubrey - that kicker spot could swing the game with Tony, as it looks pretty close right now.</p>
+<p><img alt="" src="../../../assets/6ca787d54bbb3248.png"></p>
+<h2>10. Pangy (3-6) ↔️</h2>
+<h3><strong>PF: 887.44</strong><strong>,</strong> <strong>FAAB: $10</strong><strong>,</strong> <strong>L5</strong></h3>
+<p>It&rsquo;s still not going so great for Pangy, but I got a good feeling this week. His five game losing streak and Neil&rsquo;s six game winning streak meet, and just like the NFL, weird stuff happens every week, so I think we&rsquo;re in for a good one. I&rsquo;d like one JA17 40-bomb on Neil&rsquo;s head, please. Thank you.</p>
+<hr>
+<p><img alt="" src="../../../assets/5fcbab50d217274d.png"></p>
+<blockquote>
+<p>“Winning isn’t getting ahead of others. It’s getting ahead of yourself.”  </p>
+<p><em>- Roger Staubach, Dallas Cowboys</em></p>
+</blockquote>
+<p>Don&rsquo;t beat yourself, fellas. Good luck to everyone besides Seif!
+- Jake 🐍</p>
+  </article>
+  
+</main>
+<footer class="site">Exported from ClickUp Doc a4475-167.</footer>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="../../../site.js"></script>
+</body>
+</html>

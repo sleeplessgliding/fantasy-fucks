@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>League Info / Rules — Fantasy Fucks</title>
+<link rel="stylesheet" href="../site.css">
+<script>
+  // Apply theme and sidebar state before first paint to avoid a flash.
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+</head>
+<body>
+<!-- clickup-export:a4475-3291 -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node"><a class="nav-link" href="../index.html" title="2026 Keeper Info">2026 Keeper Info</a></li><li class="nav-node is-branch"><a class="nav-link" href="./" title="Rules" aria-current="page">Rules</a></li><li class="nav-node has-kids" data-key="past-seasons/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids" data-key="past-seasons/2025-2026-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2025-2026-season/" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2019-2020-season/" title="2019 - 2020 Season">2019 - 2020 Season</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">League Info / Rules</span>
+  </header>
+<main class="page" id="main">
+  <p class="crumbs">League Info / Rules</p>
+  <h1>League Info / Rules</h1>
+  
+  <p class="meta">Updated 2025-11-27</p>
+  <article class="prose">
+<h1>League Rules (as of August 17, 2024)</h1>
+<ol>
+<li>FAAB Budget: $100 + $25 when playoffs begin</li>
+<li>$0 bids are allowed for any player who will play before the next waiver period processes. (Updated for 2024-2025 season)<ol>
+<li>Ex. you can pick up a player for $0 on Saturday, if he plays at 4:00am, Sunday, in London, etc.</li>
+<li>Ex. a player playing on TNF can be picked up on Thursday for $0</li>
+<li>Ex. a player not playing on TNF can be picked up on Thursday for $1 or more</li>
+</ol>
+</li>
+<li>A member who violates this rule will be penalized with the following:<ol>
+<li>$5 FAAB fine</li>
+<li>The player will be dropped to free agency. If another player was dropped from their team in this transaction, they will remain a free agent.</li>
+</ol>
+</li>
+<li>Trades will be immediately processed (manually).<ol>
+<li>Commissioners hold the right to create a league vote if there is really shady business happening.</li>
+<li>Trades will be processed immediately unless a player in the trade has already been locked into a lineup/bench. If a player is locked, the trade will be processed after Monday Night Football.</li>
+</ol>
+</li>
+</ol>
+<h2>Keeper Rules</h2>
+<p>For a player to be kept the following year, they must be on your roster the day the playoff begins and the day they end. (Updated for 2024-2025 season)
+<strong>Keep any undrafted player or drafted in the third round or later.</strong>
+If the player was drafted, they take the round they were drafted in, then subtract one round for their keeper price.</p>
+<p><em>Ex. a 6th round pick costs a 5th rounder, 4th costs a 3rd.</em></p>
+<p>If you choose to repeat keep, you’ll pay in triplicate for your picks (not $ buy-in). This ensures a player can’t be kept super long-term, in most cases two years maximum unless you scored a HoF talent in the late-late rounds and kept them for three years.</p>
+<p>Multiple-Year Keeper Example:
+*   First year: Keeper’s round-drafted, minus 1
+    *   1 round penalty
+*   Second year:
+    *   1 x 3 = 3 round penalty
+*   Third year: Last year’s penalty times 3
+    *   3 x 3 = 9 round penalty
+*   Fourth year: Cannot be re-kept as penalty would be -27 rounds</p>
+<p>If you want to keep a player that was <strong>undrafted</strong>, you can keep them at the cost of their ADP round plus <strong>two</strong> rounds based on their Sleeper ADP. The ADP will be locked in <strong>one week</strong> before the draft. This will also &ldquo;set&rdquo; the players original drafted position.</p>
+<p>Example:
+*   Chase Claypool is projected in the 8th round in the ADP.
+*   He can be kept as a 10th rounder, as if you drafted him in the 11th the previous year.
+*   Next year, he would be a 8th rounder.</p>
+<p><strong>Players kept in the 2023-2024 draft</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Fucker</strong></th>
+<th><strong>Player</strong></th>
+<th><strong>Round Drafted in 2023</strong></th>
+<th><strong>Cost if kept in 2024</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pangy</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Seif</td>
+<td>Ja&rsquo;Marr Chase</td>
+<td>4th</td>
+<td>1st - second year keep, originally drafted in 7th</td>
+</tr>
+<tr>
+<td>Tony</td>
+<td>Amari Cooper</td>
+<td>6th</td>
+<td>4th</td>
+</tr>
+<tr>
+<td>Joel</td>
+<td>Jalen Hurts</td>
+<td>7th</td>
+<td>5th</td>
+</tr>
+<tr>
+<td>Andy</td>
+<td>DeVonta Smith</td>
+<td>7th</td>
+<td>5th</td>
+</tr>
+<tr>
+<td>PJ</td>
+<td>Ken Walker</td>
+<td>8th</td>
+<td>6th</td>
+</tr>
+<tr>
+<td>CJ</td>
+<td>Tyler Lockett</td>
+<td>8th</td>
+<td>6th</td>
+</tr>
+<tr>
+<td>Jake</td>
+<td>Tony Pollard</td>
+<td>9th</td>
+<td>7th</td>
+</tr>
+<tr>
+<td>Neil</td>
+<td>Drake London</td>
+<td>9th</td>
+<td>7th</td>
+</tr>
+<tr>
+<td>Kris</td>
+<td>Alexander Mattison</td>
+<td>11th</td>
+<td>9th</td>
+</tr>
+</tbody>
+</table>
+<h1>Playoffs, Slutler Pool and Payouts</h1>
+<blockquote>
+<p><strong>League Buy-in: $225</strong></p>
+</blockquote>
+<p><strong>Playoffs Payout:</strong>
+*   1st: $1400, 2nd: $400, 3rd: $200
+<strong>Slutler Pool:</strong>
+*   $100 winner-take-all.
+<strong>Bonuses:</strong>
+*   $25 - Each team making the playoffs will receive a $25 bonus
+*   $50 - Survivor Pool - Starting Week 1, the team with the lowest PF will be removed from the pool. In week 9, only two teams will remain; the team with the higher score will win $50.</p>
+<p><strong>Slutler Pool Structure</strong>
+*   To keep things spicy for all teams involved during the postseason, there will be two pools for the consolation bracket.
+*   $100 Pool - Teams 5-10 will be in a points pool. The team that finishes with the most points wins $100.
+*   Slutler Pool - Teams 7-10 will be in a Slutler Pool. The team that finishes with the least points, is the Slutler. Teams 8-10 will start the pool at a disadvantage based on their regular season finish.
+    *   7th: - no penalty
+    *   8th: - 20pt penalty
+    *   9th: - 40pt penalty
+    *   10th: - 60pt penalty
+Example: Using last year&rsquo;s data, Neil would have won the $100 pool, while Kris would be Slutler.
+<img alt="" src="../assets/cd742c543319c2c9.png"></p>
+<hr>
+<h1>Archive</h1>
+<p><strong>OLD KEEPER RULES - FOR 2022 AND BEFORE</strong></p>
+<p>If you want to keep a player that was <strong>undrafted</strong>, you can keep them at the cost of their ADP round plus one round based on their Sleeper ADP. The ADP will be locked in <strong>one week</strong> before the draft.</p>
+<p>Example:
+*   Chase Claypool is projected in the 8th round in the ADP.
+*   He can be kept as a 9th rounder, as if you drafted him in the 10th the previous year.
+*   Next year, he would be a 7th rounder.</p>
+<ul>
+<li>
+<p><strong>2022 - 2023 Keepers</strong></p>
+<p>Tony - Mark Andrews 4th Round</p>
+<p>Jake - DeAndre Swift 3rd Round <strong>(2nd-year keep)</strong></p>
+<p>PJizzle - Michael Thomas 6th Round</p>
+<p>seifzilla - Jamarr Chase 6th Round</p>
+<p>RipCity - Javonte Williams 5th Round</p>
+<p>Joel - Dallas Goedert 12th Round</p>
+<p>DeFi_Mon$ter - Tee Higgins 5th Round</p>
+<p>an_d - Justin Herbert 6th Round</p>
+<p>KJT09 or BROWNS?? - Marquese Brown 10th Round</p>
+<p>PangREEE - Elijah Mitchell 7th Round</p>
+<p><img alt="" src="../assets/4c83b72d59cd6a8e.png"></p>
+</li>
+<li>
+<p><strong>2021 - 2022 Keepers</strong></p>
+<p>Jake - Derrick Henry - 3rd (2nd-year keep)</p>
+<p>PJ - DK Metcalf - 9th (2nd-year keep)</p>
+<p>Kris - Lamar Jackson - 9th (2nd year?)</p>
+<p>Ian - Terry McLaurin - 4th</p>
+<p>CJ - Bradin Cooks - 8th</p>
+<p>Seif - Antonio Gibson - 10th</p>
+<p>Joel - Dionte Johnson - 7th</p>
+<p>Neil - JK Dobbins - 7th</p>
+<p>Andy - D’Andre Swift - 5th</p>
+<p>Tony - Calvin Ridley - 4th</p>
+</li>
+</ul>
+  </article>
+  
+</main>
+<footer class="site">Exported from ClickUp Doc a4475-167.</footer>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="../site.js"></script>
+</body>
+</html>

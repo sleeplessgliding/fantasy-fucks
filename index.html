@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>2026 Keeper Info — Fantasy Fucks</title>
+<link rel="stylesheet" href="site.css">
+<script>
+  // Apply theme and sidebar state before first paint to avoid a flash.
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+<style>
+  /* Keeper-page specifics. Shared tokens and layout live in site.css. */
+  .content { padding-bottom: 80px; }
+
+  header.page {
+    padding: 32px 24px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0 0 4px;
+    font-size: 30px;
+    letter-spacing: -.02em;
+    font-weight: 700;
+  }
+  .legend {
+    max-width: 1500px;
+    margin: 0 auto 22px;
+    padding: 0 24px;
+  }
+  .legend h2 { margin: 0 0 8px; }
+  .legend p { margin: 0 0 5px; color: var(--text-dim); font-size: 13.5px; }
+  .legend p:last-child { margin-bottom: 0; }
+  .legend ul {
+    margin: 0 0 5px;
+    padding-left: 34px;
+    color: var(--text-dim);
+    font-size: 13.5px;
+  }
+  .legend li { margin: 2px 0; }
+
+  .rules {
+    margin-top: 18px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .rules > summary {
+    padding: 11px 16px;
+    cursor: pointer;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    list-style: none;
+  }
+  .rules > summary::-webkit-details-marker { display: none; }
+  .rules > summary::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    color: var(--text-faint);
+  }
+  .rules[open] > summary::before { content: "▾"; }
+  .rules > summary:hover { color: var(--text); }
+  .rules-body {
+    padding: 4px 16px 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px 40px;
+  }
+  @media (min-width: 900px) {
+    .rules-body { grid-template-columns: 1fr 1fr; }
+  }
+  .rule { padding: 10px 0; min-width: 0; }
+  .rule h2 {
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .rule p { margin: 0 0 8px; color: var(--text-dim); font-size: 13.5px; }
+  .rule p:last-child { margin-bottom: 0; }
+  .rule em { color: var(--text-faint); font-style: normal; }
+  .rule .ex {
+    border-left: 2px solid var(--border);
+    padding: 8px 0 8px 12px;
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+  .rule .ex b {
+    display: block;
+    color: var(--text-dim);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .rule p.ex b {
+    display: inline;
+    font-size: inherit;
+    letter-spacing: 0;
+    text-transform: none;
+    margin: 0;
+  }
+  .rule .ex ul { margin: 0; padding: 0; list-style: none; }
+  .rule .ex li { margin-bottom: 3px; }
+  .rule .ex li span {
+    display: inline-block;
+    min-width: 88px;
+    color: var(--text-dim);
+    font-weight: 600;
+  }
+
+  /* controls */
+  .controls {
+    position: sticky;
+    top: var(--topbar-h);
+    z-index: 20;
+    background: var(--controls-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    margin-bottom: 24px;
+  }
+  .controls-inner {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  input[type="search"] {
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    min-width: 260px;
+  }
+  input[type="search"]:focus { border-color: var(--accent); }
+  input[type="search"]::placeholder { color: var(--text-faint); }
+
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    background: var(--bg-elev-2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 7px 13px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .12s;
+    user-select: none;
+  }
+  .chip:hover { color: var(--text); border-color: var(--chip-hover-border); }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .spacer { flex: 1; }
+  .count { color: var(--text-faint); font-size: 13px; white-space: nowrap; }
+  button.chip {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* grid */
+  .grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 18px;
+    align-items: start;
+  }
+
+  .team {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .team.hidden { display: none; }
+  .team.champ { border-color: color-mix(in srgb, var(--gold) 50%, transparent); }
+
+  .team-head {
+    padding: 14px 16px;
+    background: var(--bg-elev-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .avatar {
+    width: 40px; height: 40px;
+    border-radius: 9px;
+    background: var(--avatar-bg);
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .team-id { min-width: 0; flex: 1; }
+  .team-name {
+    font-weight: 700;
+    font-size: 15.5px;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .team-owner { color: var(--text-faint); font-size: 12.5px; }
+  .keeper {
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--text-faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .keeper b { color: var(--text-dim); font-weight: 600; }
+  .team-meta { text-align: right; flex-shrink: 0; }
+
+  .badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 5px;
+  }
+  .badge.p1 { background: color-mix(in srgb, var(--gold) var(--tint), transparent); color: var(--gold); }
+  .badge.p2 { background: color-mix(in srgb, var(--silver) var(--tint), transparent); color: var(--silver); }
+  .badge.p3 { background: color-mix(in srgb, var(--bronze) var(--tint), transparent); color: var(--bronze); }
+  .badge.p4 { background: color-mix(in srgb, var(--text-dim) var(--tint-soft), transparent); color: var(--text-dim); }
+  .badge.slutler { background: color-mix(in srgb, var(--slutler) var(--tint), transparent); color: var(--slutler); }
+
+  table { width: 100%; border-collapse: collapse; }
+  tbody.bench-body tr td { color: var(--text-dim); }
+  tr.row { border-top: 1px solid var(--row-border); }
+  tr.row:first-child { border-top: none; }
+  tr.row.hidden { display: none; }
+  tr.row.hit td { background: var(--hit-bg); }
+  td { padding: 9px 10px; vertical-align: middle; }
+
+  td.slot {
+    width: 44px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-align: center;
+    color: var(--text-faint);
+  }
+  .pos-pill {
+    display: inline-block;
+    min-width: 34px;
+    padding: 2px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .03em;
+  }
+  .QB { background: color-mix(in srgb, var(--qb) var(--tint), transparent); color: var(--qb); }
+  .RB { background: color-mix(in srgb, var(--rb) var(--tint), transparent); color: var(--rb); }
+  .WR { background: color-mix(in srgb, var(--wr) var(--tint), transparent); color: var(--wr); }
+  .TE { background: color-mix(in srgb, var(--te) var(--tint), transparent); color: var(--te); }
+  .K  { background: color-mix(in srgb, var(--k) var(--tint), transparent); color: var(--k); }
+  .DEF{ background: color-mix(in srgb, var(--def) var(--tint), transparent); color: var(--def); }
+  .FLEX { background: color-mix(in srgb, var(--def) var(--tint-soft), transparent); color: var(--text-dim); }
+  .IR { background: color-mix(in srgb, var(--ir) var(--tint), transparent); color: var(--ir); }
+
+  td.name { font-weight: 500; }
+  td.name .pick {
+    color: var(--text-faint);
+    font-size: 12.5px;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  .tag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    vertical-align: 1px;
+    white-space: nowrap;
+    cursor: help;
+  }
+  .tag.held { background: color-mix(in srgb, var(--held) var(--tint), transparent); color: var(--held); }
+  .tag.miss { background: color-mix(in srgb, var(--miss) var(--tint), transparent); color: var(--miss); }
+  .tag.early { background: color-mix(in srgb, var(--early) var(--tint), transparent); color: var(--early); }
+  .tag.other { background: color-mix(in srgb, var(--other) var(--tint), transparent); color: var(--other); }
+  .tag.keep { background: color-mix(in srgb, var(--accent) var(--tint), transparent); color: var(--accent); }
+
+  .section-label {
+    padding: 7px 12px 5px;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    background: var(--label-bg);
+    border-top: 1px solid var(--border);
+  }
+  .empty-msg {
+    max-width: 1500px;
+    margin: 40px auto;
+    padding: 0 24px;
+    color: var(--text-dim);
+    text-align: center;
+  }
+  .empty-msg.hidden { display: none; }
+  footer.page {
+    max-width: 1500px;
+    margin: 40px auto 0;
+    padding: 20px 24px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-faint);
+    font-size: 12.5px;
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node is-branch"><a class="nav-link" href="index.html" title="2026 Keeper Info" aria-current="page">2026 Keeper Info</a></li><li class="nav-node"><a class="nav-link" href="rules/" title="Rules">Rules</a></li><li class="nav-node has-kids" data-key="past-seasons/" data-open="false"><div class="nav-row"><a class="nav-link" href="past-seasons/" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="past-seasons/hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids" data-key="past-seasons/2025-2026-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="past-seasons/2025-2026-season/" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2025-2026-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="past-seasons/2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="past-seasons/2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="past-seasons/2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="past-seasons/2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="past-seasons/2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node"><a class="nav-link" href="past-seasons/2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2019-2020-season/" title="2019 - 2020 Season">2019 - 2020 Season</a></li><li class="nav-node"><a class="nav-link" href="past-seasons/2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">2026 Keeper Info</span>
+  </header>
+
+<header class="page" id="main">
+  <h1 id="title">Keeper Information</h1>
+
+  <details class="rules" open>
+    <summary>League keeper rules</summary>
+    <div class="rules-body">
+      <div class="rule">
+        <h2>Eligibility</h2>
+        <p>
+          For a player to be kept the following year, they must be on your roster the day the playoffs
+          begin and the day they end. <em>(Updated for 2024-2025 season)</em>
+        </p>
+        <p>Keep any undrafted player, or any player drafted in the third round or later.</p>
+      </div>
+
+      <div class="rule">
+        <h2>Keeper price</h2>
+        <p>
+          If the player was drafted, they take the round they were drafted in, then subtract one round
+          for their keeper price.
+        </p>
+        <p class="ex"><b>Ex.</b> a 6th round pick costs a 5th rounder, 4th costs a 3rd.</p>
+      </div>
+
+      <div class="rule">
+        <h2>Repeat keepers</h2>
+        <p>
+          If you choose to repeat keep, you'll pay in triplicate for your picks (not $ buy-in). This
+          ensures a player can't be kept super long-term, in most cases two years maximum unless you
+          scored a HoF talent in the late-late rounds and kept them for three years.
+        </p>
+        <div class="ex">
+          <b>Multiple-year keeper example</b>
+          <ul>
+            <li><span>First year</span> Keeper's round drafted, minus 1 = 1 round penalty</li>
+            <li><span>Second year</span> 1 &times; 3 = 3 round penalty</li>
+            <li><span>Third year</span> Last year's penalty times 3 = 3 &times; 3 = 9 round penalty</li>
+            <li><span>Fourth year</span> Cannot be re-kept, as penalty would be &minus;27 rounds</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rule">
+        <h2>Undrafted players</h2>
+        <p>
+          If you want to keep a player that was undrafted, you can keep them at the cost of their ADP
+          round plus two rounds, based on their Sleeper ADP. The ADP will be locked in one week before
+          the draft. This will also "set" the player's original drafted position.
+        </p>
+        <p class="ex">
+          <b>Ex.</b> Chase Claypool is projected in the 8th round in the ADP. He can be kept as a 10th
+          rounder, as if you drafted him in the 11th the previous year. Next year, he would be an 8th
+          rounder.
+        </p>
+      </div>
+    </div>
+  </details>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <input type="search" id="search" placeholder="Search player" autocomplete="off">
+    <div class="chips" id="posChips"></div>
+    <div class="chip" id="keeperOnly">Keeper eligible</div>
+    <div class="spacer"></div>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<section class="legend" id="legend"></section>
+
+<div class="grid" id="grid"></div>
+<div class="empty-msg hidden" id="emptyMsg">No players match your filters.</div>
+
+<footer class="page" id="foot"></footer>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="site.js"></script>
+
+<script>
+const DATA = {"league":{"name":"Fantasy Fucks","season":"2025","week":17,"reg_week":13,"league_id":"1257449569814323200","roster_positions":["QB","RB","RB","WR","WR","TE","FLEX","K","DEF"],"num_teams":10,"adp":{"source":"Fantasy Football Calculator","format":"PPR","teams":10,"drafts":6466,"window":"2026-08-08 to 2026-08-15","fetched":"2026-08-15"}},"teams":[{"roster_id":1,"team_name":"Achane Reaction","owner":"Joel004","avatar":"fe67a961eee976a06801616753fcbe56","wins":7,"losses":6,"ties":0,"fpts":1605.44,"place":2,"week_points":108.06,"players":[{"id":"421","name":"Matthew Stafford","pos":"QB","team":"LAR","opp":"ATL","pick":null,"w13":"same","slot":"QB","starter":true,"pts":12.76,"adp":{"fmt":"9.03","pick":83.2}},{"id":"9226","name":"De'Von Achane","pos":"RB","team":"MIA","opp":"TB","pick":"2.02","w13":"same","slot":"RB","starter":true,"pts":14.2},{"id":"7607","name":"Michael Carter","pos":"RB","team":"ARI","opp":"CIN","pick":null,"w13":null,"slot":"RB","starter":true,"pts":6.3,"adp":null},{"id":"7547","name":"Amon-Ra St. Brown","pos":"WR","team":"DET","opp":"MIN","pick":"1.09","w13":"same","slot":"WR","starter":true,"pts":14.8},{"id":"11631","name":"Brian Thomas","pos":"WR","team":"JAX","opp":"IND","pick":"9.09","w13":"same","slot":"WR","starter":true,"pts":7.9},{"id":"5022","name":"Dallas Goedert","pos":"TE","team":"PHI","opp":"BUF","pick":null,"w13":"same","slot":"TE","starter":true,"pts":9.8,"adp":{"fmt":"12.03","pick":113.1}},{"id":"8126","name":"Wan'Dale Robinson","pos":"WR","team":"NYG","opp":"LV","pick":null,"w13":"same","slot":"FLEX","starter":true,"pts":22.3,"adp":{"fmt":"8.08","pick":77.9}},{"id":"2747","name":"Jason Myers","pos":"K","team":"SEA","opp":"CAR","pick":"14.08","w13":"same","slot":"K","starter":true,"pts":10.0},{"id":"HOU","name":"Houston Texans","pos":"DEF","team":"HOU","opp":"LAC","pick":null,"w13":"same","slot":"DEF","starter":true,"pts":10.0,"adp":{"fmt":"11.04","pick":104.0}},{"id":"12484","name":"Jayden Higgins","pos":"WR","team":"HOU","opp":"LAC","pick":"13.06","w13":null,"slot":"BN","starter":false,"pts":16.8},{"id":"6865","name":"Colby Parkinson","pos":"TE","team":"LAR","opp":"ATL","pick":null,"w13":null,"slot":"BN","starter":false,"pts":11.3,"adp":null},{"id":"11586","name":"Blake Corum","pos":"RB","team":"LAR","opp":"ATL","pick":null,"w13":null,"slot":"BN","starter":false,"pts":1.8,"adp":{"fmt":"13.03","pick":122.5}},{"id":"2133","name":"Davante Adams","pos":"WR","team":"LAR","opp":null,"pick":"3.09","w13":"same","slot":"BN","starter":false,"pts":0.0}]},{"roster_id":2,"team_name":"Egboogadaba","owner":"Snaaaake","avatar":"59c4939c35bf28dbc386314fc788afa7","wins":7,"losses":6,"ties":0,"fpts":1578.7,"place":3,"week_points":123.8,"players":[{"id":"6904","name":"Jalen Hurts","pos":"QB","team":"PHI","opp":"BUF","pick":"3.08","w13":"same","slot":"QB","starter":true,"pts":8.9},{"id":"12527","name":"Ashton Jeanty","pos":"RB","team":"LV","opp":"NYG","pick":"2.01","w13":"same","slot":"RB","starter":true,"pts":9.3},{"id":"3198","name":"Derrick Henry","pos":"RB","team":"BAL","opp":"GB","pick":"1.08","w13":"same","slot":"RB","starter":true,"pts":45.6},{"id":"6801","name":"Tee Higgins","pos":"WR","team":"CIN","opp":"ARI","pick":"6.03","w13":"same","slot":"WR","starter":true,"pts":9.9},{"id":"9997","name":"Zay Flowers","pos":"WR","team":"BAL","opp":"GB","pick":"5.07","w13":"same","slot":"WR","starter":true,"pts":13.0},{"id":"12506","name":"Harold Fannin","pos":"TE","team":"CLE","opp":"PIT","pick":null,"w13":null,"slot":"TE","starter":true,"pts":11.0,"adp":{"fmt":"9.01","pick":80.8}},{"id":"2216","name":"Mike Evans","pos":"WR","team":"TB","opp":"MIA","pick":"3.06","w13":null,"slot":"FLEX","starter":true,"pts":12.1},{"id":"5189","name":"Eddy Pineiro","pos":"K","team":"SF","opp":"CHI","pick":null,"w13":null,"slot":"K","starter":true,"pts":6.0,"adp":{"fmt":"16.09","pick":159.4}},{"id":"DEN","name":"Denver Broncos","pos":"DEF","team":"DEN","opp":"KC","pick":"12.02","w13":"other","slot":"DEF","starter":true,"pts":8.0},{"id":"9753","name":"Zach Charbonnet","pos":"RB","team":"SEA","opp":"CAR","pick":"9.08","w13":"same","slot":"BN","starter":false,"pts":26.2},{"id":"7588","name":"Javonte Williams","pos":"RB","team":"DAL","opp":"WAS","pick":"10.03","w13":"same","slot":"BN","starter":false,"pts":11.4},{"id":"9480","name":"Brenton Strange","pos":"TE","team":"JAX","opp":"IND","pick":null,"w13":null,"slot":"BN","starter":false,"pts":8.4,"adp":{"fmt":"17.04","pick":164.0}},{"id":"8110","name":"Jake Ferguson","pos":"TE","team":"DAL","opp":"WAS","pick":null,"w13":"same","slot":"BN","starter":false,"pts":7.6,"adp":{"fmt":"14.07","pick":137.2}},{"id":"12514","name":"Emeka Egbuka","pos":"WR","team":"TB","opp":"MIA","pick":"8.03","w13":"same","slot":"BN","starter":false,"pts":5.0}]},{"roster_id":3,"team_name":"It’s just a Ladd","owner":"arw5046","avatar":"3c7def417a4613d104ae66403af0e0e7","wins":5,"losses":8,"ties":0,"fpts":1488.1,"place":null,"week_points":128.42,"players":[{"id":"7523","name":"Trevor Lawrence","pos":"QB","team":"JAX","opp":"IND","pick":null,"w13":null,"slot":"QB","starter":true,"pts":23.12,"adp":{"fmt":"10.01","pick":90.8}},{"id":"8150","name":"Kyren Williams","pos":"RB","team":"LAR","opp":"ATL","pick":"2.10","w13":"same","slot":"RB","starter":true,"pts":16.0},{"id":"6790","name":"D'Andre Swift","pos":"RB","team":"CHI","opp":"SF","pick":"6.10","w13":"same","slot":"RB","starter":true,"pts":21.9},{"id":"7564","name":"Ja'Marr Chase","pos":"WR","team":"CIN","opp":"ARI","pick":"1.01","w13":"same","slot":"WR","starter":true,"pts":25.0},{"id":"5045","name":"Courtland Sutton","pos":"WR","team":"DEN","opp":"KC","pick":"5.01","w13":"same","slot":"WR","starter":true,"pts":8.0},{"id":"12518","name":"Tyler Warren","pos":"TE","team":"IND","opp":"JAX","pick":"8.10","w13":"same","slot":"TE","starter":true,"pts":9.3},{"id":"10222","name":"Jayden Reed","pos":"WR","team":"GB","opp":"BAL","pick":"14.03","w13":null,"slot":"FLEX","starter":true,"pts":8.1},{"id":"3451","name":"Ka'imi Fairbairn","pos":"K","team":"HOU","opp":"LAC","pick":null,"w13":"same","slot":"K","starter":true,"pts":10.0,"adp":{"fmt":"14.10","pick":140.2}},{"id":"BUF","name":"Buffalo Bills","pos":"DEF","team":"BUF","opp":"PHI","pick":"12.10","w13":"same","slot":"DEF","starter":true,"pts":7.0},{"id":"8155","name":"Breece Hall","pos":"RB","team":"NYJ","opp":"NE","pick":"4.10","w13":"same","slot":"BN","starter":false,"pts":20.9},{"id":"10232","name":"Michael Wilson","pos":"WR","team":"ARI","opp":"CIN","pick":null,"w13":"same","slot":"BN","starter":false,"pts":19.9,"adp":{"fmt":"9.04","pick":83.8}},{"id":"96","name":"Aaron Rodgers","pos":"QB","team":"PIT","opp":"CLE","pick":null,"w13":null,"slot":"BN","starter":false,"pts":7.32,"adp":{"fmt":"18.05","pick":174.6}},{"id":"11635","name":"Ladd McConkey","pos":"WR","team":"LAC","opp":"HOU","pick":"7.01","w13":"same","slot":"BN","starter":false,"pts":4.1},{"id":"11439","name":"Jaleel McLaughlin","pos":"RB","team":"DEN","opp":"KC","pick":null,"w13":null,"slot":"BN","starter":false,"pts":4.0,"adp":null}]},{"roster_id":4,"team_name":"Im sorry, Mc-Jackson, ooh","owner":"Zilla23","avatar":"71f50fcc84b2872a1ae18f3261fa6c27","wins":6,"losses":7,"ties":0,"fpts":1624.98,"place":null,"week_points":134.94,"players":[{"id":"4892","name":"Baker Mayfield","pos":"QB","team":"TB","opp":"MIA","pick":"6.02","w13":null,"slot":"QB","starter":true,"pts":17.44},{"id":"5967","name":"Tony Pollard","pos":"RB","team":"TEN","opp":"NO","pick":"6.04","w13":"same","slot":"RB","starter":true,"pts":11.5},{"id":"9224","name":"Chase Brown","pos":"RB","team":"CIN","opp":"ARI","pick":"10.01","w13":"same","slot":"RB","starter":true,"pts":29.1},{"id":"7569","name":"Nico Collins","pos":"WR","team":"HOU","opp":"LAC","pick":"2.04","w13":"same","slot":"WR","starter":true,"pts":8.7},{"id":"2449","name":"Stefon Diggs","pos":"WR","team":"NE","opp":"NYJ","pick":"9.07","w13":"same","slot":"WR","starter":true,"pts":22.1},{"id":"4381","name":"Taysom Hill","pos":"TE","team":"NO","opp":"TEN","pick":null,"w13":null,"slot":"TE","starter":true,"pts":0.0,"adp":null},{"id":"4034","name":"Christian McCaffrey","pos":"RB","team":"SF","opp":"CHI","pick":"1.07","w13":"same","slot":"FLEX","starter":true,"pts":28.1},{"id":"4195","name":"Jake Elliott","pos":"K","team":"PHI","opp":"BUF","pick":null,"w13":"same","slot":"K","starter":true,"pts":8.0,"adp":null},{"id":"JAX","name":"Jacksonville Jaguars","pos":"DEF","team":"JAX","opp":"IND","pick":null,"w13":"other","slot":"DEF","starter":true,"pts":10.0,"adp":{"fmt":"16.05","pick":154.7}},{"id":"8167","name":"Christian Watson","pos":"WR","team":"GB","opp":"BAL","pick":null,"w13":null,"slot":"BN","starter":false,"pts":22.3,"adp":{"fmt":"7.07","pick":67.0}},{"id":"5872","name":"Deebo Samuel","pos":"WR","team":"WAS","opp":"DAL","pick":"8.04","w13":"same","slot":"BN","starter":false,"pts":11.3},{"id":"11628","name":"Marvin Harrison","pos":"WR","team":"ARI","opp":"CIN","pick":"4.04","w13":"same","slot":"BN","starter":false,"pts":0.0},{"id":"12512","name":"Quinshon Judkins","pos":"RB","team":"CLE","opp":null,"pick":"7.07","w13":"same","slot":"BN","starter":false,"pts":0.0},{"id":"4881","name":"Lamar Jackson","pos":"QB","team":"BAL","opp":null,"pick":"3.07","w13":"same","slot":"BN","starter":false,"pts":0.0},{"id":"11604","name":"Brock Bowers","pos":"TE","team":"LV","opp":null,"pick":"10.04","w13":"same","slot":"IR","starter":false,"pts":0.0}]},{"roster_id":5,"team_name":"Spitters not Quiters ","owner":"kjt2009","avatar":"8eb8f8bf999945d523f2c4033f70473e","wins":10,"losses":3,"ties":0,"fpts":1848.46,"place":1,"week_points":143.08,"players":[{"id":"3294","name":"Dak Prescott","pos":"QB","team":"DAL","opp":"WAS","pick":"9.02","w13":"same","slot":"QB","starter":true,"pts":22.68},{"id":"7543","name":"Travis Etienne","pos":"RB","team":"JAX","opp":"IND","pick":"8.09","w13":"same","slot":"RB","starter":true,"pts":11.2},{"id":"6813","name":"Jonathan Taylor","pos":"RB","team":"IND","opp":"JAX","pick":"2.09","w13":"same","slot":"RB","starter":true,"pts":17.4},{"id":"8137","name":"George Pickens","pos":"WR","team":"DAL","opp":"WAS","pick":"6.09","w13":"same","slot":"WR","starter":true,"pts":11.8},{"id":"9488","name":"Jaxon Smith-Njigba","pos":"WR","team":"SEA","opp":"CAR","pick":"3.02","w13":"same","slot":"WR","starter":true,"pts":16.2},{"id":"3214","name":"Hunter Henry","pos":"TE","team":"NE","opp":"NYJ","pick":null,"w13":null,"slot":"TE","starter":true,"pts":13.9,"adp":{"fmt":"16.07","pick":156.6}},{"id":"9509","name":"Bijan Robinson","pos":"RB","team":"ATL","opp":"LAR","pick":"1.02","w13":"same","slot":"FLEX","starter":true,"pts":39.9},{"id":"11539","name":"Jake Bates","pos":"K","team":"DET","opp":"MIN","pick":"12.09","w13":"same","slot":"K","starter":true,"pts":5.0},{"id":"TB","name":"Tampa Bay Buccaneers","pos":"DEF","team":"TB","opp":"MIA","pick":null,"w13":"same","slot":"DEF","starter":true,"pts":5.0,"adp":null},{"id":"PHI","name":"Philadelphia Eagles","pos":"DEF","team":"PHI","opp":"BUF","pick":"10.09","w13":"same","slot":"BN","starter":false,"pts":13.0},{"id":"PIT","name":"Pittsburgh Steelers","pos":"DEF","team":"PIT","opp":"CLE","pick":"12.07","w13":null,"slot":"BN","starter":false,"pts":12.0},{"id":"DET","name":"Detroit Lions","pos":"DEF","team":"DET","opp":"MIN","pick":"14.04","w13":null,"slot":"BN","starter":false,"pts":10.0},{"id":"7526","name":"Jaylen Waddle","pos":"WR","team":"MIA","opp":"TB","pick":"7.02","w13":"same","slot":"BN","starter":false,"pts":0.7},{"id":"4217","name":"George Kittle","pos":"TE","team":"SF","opp":null,"pick":"5.02","w13":"same","slot":"BN","starter":false,"pts":0.0}]},{"roster_id":6,"team_name":"Barbeque Gibbs 🔥","owner":"ChrisJohnson12s","avatar":"8eb8f8bf999945d523f2c4033f70473e","wins":6,"losses":7,"ties":0,"fpts":1497.62,"place":null,"week_points":127.5,"players":[{"id":"6770","name":"Joe Burrow","pos":"QB","team":"CIN","opp":"ARI","pick":"10.06","w13":"same","slot":"QB","starter":true,"pts":20.4},{"id":"7567","name":"Kenny Gainwell","pos":"RB","team":"PIT","opp":"CLE","pick":null,"w13":"same","slot":"RB","starter":true,"pts":6.8,"adp":{"fmt":"9.08","pick":88.5}},{"id":"9221","name":"Jahmyr Gibbs","pos":"RB","team":"DET","opp":"MIN","pick":"1.06","w13":"same","slot":"RB","starter":true,"pts":6.4},{"id":"8148","name":"Jameson Williams","pos":"WR","team":"DET","opp":"MIN","pick":"5.10","w13":"same","slot":"WR","starter":true,"pts":5.7},{"id":"8144","name":"Chris Olave","pos":"WR","team":"NO","opp":"TEN","pick":"7.09","w13":"same","slot":"WR","starter":true,"pts":25.9},{"id":"7002","name":"Juwan Johnson","pos":"TE","team":"NO","opp":"TEN","pick":null,"w13":"same","slot":"TE","starter":true,"pts":13.5,"adp":{"fmt":"16.09","pick":159.0}},{"id":"5859","name":"A.J. Brown","pos":"WR","team":"PHI","opp":"BUF","pick":"2.05","w13":"same","slot":"FLEX","starter":true,"pts":11.8},{"id":"11533","name":"Brandon Aubrey","pos":"K","team":"DAL","opp":"WAS","pick":"12.05","w13":"same","slot":"K","starter":true,"pts":17.0},{"id":"NYG","name":"New York Giants","pos":"DEF","team":"NYG","opp":"LV","pick":null,"w13":null,"slot":"DEF","starter":true,"pts":20.0,"adp":{"fmt":"17.10","pick":170.3}},{"id":"4037","name":"Chris Godwin","pos":"WR","team":"TB","opp":"MIA","pick":"11.01","w13":"same","slot":"BN","starter":false,"pts":23.8},{"id":"3257","name":"Jacoby Brissett","pos":"QB","team":"ARI","opp":"CIN","pick":null,"w13":"same","slot":"BN","starter":false,"pts":16.48,"adp":{"fmt":"17.08","pick":168.4}},{"id":"1466","name":"Travis Kelce","pos":"TE","team":"KC","opp":"DEN","pick":"7.06","w13":"same","slot":"BN","starter":false,"pts":8.6},{"id":"8228","name":"Jaylen Warren","pos":"RB","team":"PIT","opp":"CLE","pick":"9.06","w13":"same","slot":"BN","starter":false,"pts":6.4},{"id":"4035","name":"Alvin Kamara","pos":"RB","team":"NO","opp":null,"pick":"3.01","w13":"other","slot":"BN","starter":false,"pts":0.0}]},{"roster_id":7,"team_name":"Neon Keon","owner":"RipCity14","avatar":"a70d1a727209416310d2c90455f3c832","wins":7,"losses":6,"ties":0,"fpts":1542.46,"place":null,"week_points":104.74,"players":[{"id":"11564","name":"Drake Maye","pos":"QB","team":"NE","opp":"NYJ","pick":null,"w13":"same","slot":"QB","starter":true,"pts":32.44,"adp":{"fmt":"5.10","pick":50.0}},{"id":"12507","name":"Omarion Hampton","pos":"RB","team":"LAC","opp":"HOU","pick":"4.06","w13":"same","slot":"RB","starter":true,"pts":20.0},{"id":"5850","name":"Josh Jacobs","pos":"RB","team":"GB","opp":"BAL","pick":"2.06","w13":"same","slot":"RB","starter":true,"pts":1.3},{"id":"5947","name":"Jakobi Meyers","pos":"WR","team":"JAX","opp":"IND","pick":"8.06","w13":"same","slot":"WR","starter":true,"pts":7.9},{"id":"7525","name":"DeVonta Smith","pos":"WR","team":"PHI","opp":"BUF","pick":"5.05","w13":"same","slot":"WR","starter":true,"pts":4.5},{"id":"8130","name":"Trey McBride","pos":"TE","team":"ARI","opp":"CIN","pick":"3.05","w13":"same","slot":"TE","starter":true,"pts":23.6},{"id":"6794","name":"Justin Jefferson","pos":"WR","team":"MIN","opp":"DET","pick":"1.05","w13":"same","slot":"FLEX","starter":true,"pts":7.0},{"id":"17","name":"Matt Prater","pos":"K","team":"FA","opp":null,"pick":null,"w13":"same","slot":"K","starter":true,"pts":0.0,"adp":null},{"id":"LAR","name":"Los Angeles Rams","pos":"DEF","team":"LAR","opp":"ATL","pick":"13.05","w13":"same","slot":"DEF","starter":true,"pts":8.0},{"id":"7049","name":"Jauan Jennings","pos":"WR","team":"SF","opp":"CHI","pick":"12.04","w13":"same","slot":"BN","starter":false,"pts":12.2},{"id":"331","name":"Philip Rivers","pos":"QB","team":"IND","opp":"JAX","pick":null,"w13":null,"slot":"BN","starter":false,"pts":7.78,"adp":null},{"id":"12534","name":"Kyle Monangai","pos":"RB","team":"CHI","opp":"SF","pick":null,"w13":"same","slot":"BN","starter":false,"pts":7.7,"adp":{"fmt":"11.08","pick":107.8}},{"id":"3163","name":"Jared Goff","pos":"QB","team":"DET","opp":"MIN","pick":"11.09","w13":null,"slot":"BN","starter":false,"pts":2.08},{"id":"12526","name":"Tetairoa McMillan","pos":"WR","team":"CAR","opp":"SEA","pick":"6.06","w13":"same","slot":"BN","starter":false,"pts":1.5}]},{"roster_id":8,"team_name":"Mr. Turna 2-to-uh-Titanic","owner":"turrrner","avatar":"bbc16a3ce4b6016ce233040ceffafdc2","wins":6,"losses":7,"ties":0,"fpts":1410.3,"place":null,"week_points":127.6,"players":[{"id":"11560","name":"Caleb Williams","pos":"QB","team":"CHI","opp":"SF","pick":null,"w13":"other","slot":"QB","starter":true,"pts":23.0,"adp":{"fmt":"11.01","pick":101.1}},{"id":"12489","name":"RJ Harvey","pos":"RB","team":"DEN","opp":"KC","pick":"6.01","w13":"same","slot":"RB","starter":true,"pts":18.6},{"id":"7611","name":"Rhamondre Stevenson","pos":"RB","team":"NE","opp":"NYJ","pick":"11.07","w13":null,"slot":"RB","starter":true,"pts":27.2},{"id":"9756","name":"Jordan Addison","pos":"WR","team":"MIN","opp":"DET","pick":"8.01","w13":"same","slot":"WR","starter":true,"pts":12.5},{"id":"9493","name":"Puka Nacua","pos":"WR","team":"LAR","opp":"ATL","pick":"1.10","w13":"same","slot":"WR","starter":true,"pts":15.7},{"id":"7553","name":"Kyle Pitts","pos":"TE","team":"ATL","opp":"LAR","pick":"13.04","w13":null,"slot":"TE","starter":true,"pts":3.6},{"id":"5892","name":"David Montgomery","pos":"RB","team":"DET","opp":"MIN","pick":"5.08","w13":"same","slot":"FLEX","starter":true,"pts":6.0},{"id":"3678","name":"Wil Lutz","pos":"K","team":"DEN","opp":"KC","pick":null,"w13":"same","slot":"K","starter":true,"pts":8.0,"adp":{"fmt":"17.04","pick":164.1}},{"id":"NO","name":"New Orleans Saints","pos":"DEF","team":"NO","opp":"TEN","pick":null,"w13":null,"slot":"DEF","starter":true,"pts":13.0,"adp":{"fmt":"18.02","pick":171.9}},{"id":"9754","name":"Quentin Johnston","pos":"WR","team":"LAC","opp":"HOU","pick":null,"w13":"same","slot":"BN","starter":false,"pts":14.8,"adp":{"fmt":"10.04","pick":93.9}},{"id":"8151","name":"Kenneth Walker","pos":"RB","team":"SEA","opp":"CAR","pick":"4.02","w13":"other","slot":"BN","starter":false,"pts":7.7},{"id":"7594","name":"Chuba Hubbard","pos":"RB","team":"CAR","opp":"SEA","pick":"4.08","w13":null,"slot":"BN","starter":false,"pts":2.8},{"id":"4983","name":"DJ Moore","pos":"WR","team":"CHI","opp":"SF","pick":"4.05","w13":null,"slot":"BN","starter":false,"pts":1.7},{"id":"8142","name":"Alec Pierce","pos":"WR","team":"IND","opp":"JAX","pick":null,"w13":"same","slot":"BN","starter":false,"pts":0.0,"adp":{"fmt":"6.08","pick":57.6}},{"id":"12481","name":"Cam Skattebo","pos":"RB","team":"NYG","opp":null,"pick":"9.10","w13":"same","slot":"IR","starter":false,"pts":0.0}]},{"roster_id":9,"team_name":"Boswell that ends well.","owner":"HardcastlePJ","avatar":"15d7cf259bc30eab8f6120f45f652fb6","wins":7,"losses":6,"ties":0,"fpts":1618.4,"place":4,"week_points":78.48,"players":[{"id":"12508","name":"Jaxson Dart","pos":"QB","team":"NYG","opp":"LV","pick":null,"w13":"same","slot":"QB","starter":true,"pts":25.08,"adp":{"fmt":"11.05","pick":105.2}},{"id":"8138","name":"James Cook","pos":"RB","team":"BUF","opp":"PHI","pick":"3.03","w13":"same","slot":"RB","starter":true,"pts":8.7},{"id":"7021","name":"Rico Dowdle","pos":"RB","team":"CAR","opp":"SEA","pick":null,"w13":"same","slot":"RB","starter":true,"pts":9.3,"adp":{"fmt":"8.01","pick":70.5}},{"id":"6819","name":"Michael Pittman","pos":"WR","team":"IND","opp":"JAX","pick":null,"w13":"same","slot":"WR","starter":true,"pts":3.6,"adp":{"fmt":"8.03","pick":72.9}},{"id":"6786","name":"CeeDee Lamb","pos":"WR","team":"DAL","opp":"WAS","pick":"1.03","w13":"same","slot":"WR","starter":true,"pts":9.6},{"id":"2505","name":"Darren Waller","pos":"TE","team":"MIA","opp":"TB","pick":null,"w13":"same","slot":"TE","starter":true,"pts":1.0,"adp":null},{"id":"12529","name":"TreVeyon Henderson","pos":"RB","team":"NE","opp":"NYJ","pick":"5.03","w13":"same","slot":"FLEX","starter":true,"pts":8.2},{"id":"8259","name":"Cameron Dicker","pos":"K","team":"LAC","opp":"HOU","pick":"13.01","w13":null,"slot":"K","starter":true,"pts":3.0},{"id":"NE","name":"New England Patriots","pos":"DEF","team":"NE","opp":"NYJ","pick":null,"w13":"same","slot":"DEF","starter":true,"pts":10.0,"adp":{"fmt":"14.01","pick":130.9}},{"id":"8183","name":"Brock Purdy","pos":"QB","team":"SF","opp":"CHI","pick":null,"w13":null,"slot":"BN","starter":false,"pts":36.92,"adp":{"fmt":"9.04","pick":83.6}},{"id":"6797","name":"Justin Herbert","pos":"QB","team":"LAC","opp":"HOU","pick":null,"w13":"same","slot":"BN","starter":false,"pts":15.14,"adp":{"fmt":"11.04","pick":104.3}},{"id":"10229","name":"Rashee Rice","pos":"WR","team":"KC","opp":null,"pick":"7.03","w13":"same","slot":"BN","starter":false,"pts":0.0},{"id":"10236","name":"Dalton Kincaid","pos":"TE","team":"BUF","opp":null,"pick":null,"w13":"same","slot":"BN","starter":false,"pts":0.0,"adp":{"fmt":"16.03","pick":152.9}},{"id":"SF","name":"San Francisco 49ers","pos":"DEF","team":"SF","opp":"CHI","pick":null,"w13":"other","slot":"BN","starter":false,"pts":-4.0,"adp":{"fmt":"16.01","pick":150.7}}]},{"roster_id":10,"team_name":"Josh Allen’s New Phat Hog","owner":"YungPangy","avatar":"82aec8e811b839b8ec25d7b458afd57b","wins":4,"losses":9,"ties":0,"fpts":1373.82,"place":null,"week_points":99.28,"players":[{"id":"4984","name":"Josh Allen","pos":"QB","team":"BUF","opp":"PHI","pick":"3.04","w13":"same","slot":"QB","starter":true,"pts":23.18},{"id":"4866","name":"Saquon Barkley","pos":"RB","team":"PHI","opp":"BUF","pick":"1.04","w13":"same","slot":"RB","starter":true,"pts":6.8},{"id":"11584","name":"Bucky Irving","pos":"RB","team":"TB","opp":"MIA","pick":"2.07","w13":"same","slot":"RB","starter":true,"pts":8.3},{"id":"8134","name":"Khalil Shakir","pos":"WR","team":"BUF","opp":"PHI","pick":"11.10","w13":"same","slot":"WR","starter":true,"pts":9.5},{"id":"5927","name":"Terry McLaurin","pos":"WR","team":"WAS","opp":"DAL","pick":"6.07","w13":"same","slot":"WR","starter":true,"pts":11.3},{"id":"5001","name":"Dalton Schultz","pos":"TE","team":"HOU","opp":"LAC","pick":null,"w13":"same","slot":"TE","starter":true,"pts":4.9,"adp":{"fmt":"16.06","pick":155.7}},{"id":"4199","name":"Aaron Jones","pos":"RB","team":"MIN","opp":"DET","pick":"7.04","w13":"same","slot":"FLEX","starter":true,"pts":15.3},{"id":"6650","name":"Chase McLaughlin","pos":"K","team":"TB","opp":"MIA","pick":"14.07","w13":"same","slot":"K","starter":true,"pts":5.0},{"id":"SEA","name":"Seattle Seahawks","pos":"DEF","team":"SEA","opp":"CAR","pick":"13.03","w13":"same","slot":"DEF","starter":true,"pts":15.0},{"id":"12519","name":"Luther Burden","pos":"WR","team":"CHI","opp":"SF","pick":null,"w13":"same","slot":"BN","starter":false,"pts":27.8,"adp":{"fmt":"6.07","pick":56.8}},{"id":"11638","name":"Ricky Pearsall","pos":"WR","team":"SF","opp":"CHI","pick":"9.04","w13":"same","slot":"BN","starter":false,"pts":13.5},{"id":"12474","name":"Woody Marks","pos":"RB","team":"HOU","opp":"LAC","pick":null,"w13":"same","slot":"BN","starter":false,"pts":8.5,"adp":{"fmt":"16.01","pick":150.5}},{"id":"4098","name":"Kareem Hunt","pos":"RB","team":"KC","opp":"DEN","pick":null,"w13":"same","slot":"BN","starter":false,"pts":3.8,"adp":null},{"id":"11620","name":"Rome Odunze","pos":"WR","team":"CHI","opp":null,"pick":"8.07","w13":"same","slot":"BN","starter":false,"pts":0.0},{"id":"8146","name":"Garrett Wilson","pos":"WR","team":"NYJ","opp":null,"pick":"4.07","w13":"same","slot":"IR","starter":false,"pts":0.0}]}]};
+
+const POSITIONS = ["QB", "RB", "WR", "TE", "K", "DEF"];
+const DEFAULT_POSITIONS = ["QB", "RB", "WR", "TE"];
+const ORDINAL = { 1: "Champion", 2: "Runner-up", 3: "3rd place", 4: "4th place" };
+const SPECIAL_BADGES = { YungPangy: { label: "Slutler", cls: "slutler" } };
+
+// Who each manager kept entering 2025, keyed by Sleeper display name.
+const KEEPERS_2025 = {
+  kjt2009: { id: "4217", name: "George Kittle", round: 5 },
+  Joel004: { id: "11631", name: "Brian Thomas", round: 9 },
+  Snaaaake: { id: "6801", name: "Tee Higgins", round: 6 },
+  HardcastlePJ: { id: "10229", name: "Rashee Rice", round: 7 },
+  ChrisJohnson12s: { id: "11566", name: "Jayden Daniels", round: 10 },
+  Zilla23: { id: "11604", name: "Brock Bowers", round: 10 },
+  arw5046: { id: "11635", name: "Ladd McConkey", round: 7 },
+  turrrner: { id: "9224", name: "Chase Brown", round: 10 },
+  RipCity14: { id: "6770", name: "Joe Burrow", round: 10 },
+  YungPangy: { id: "5927", name: "Terry McLaurin", round: 6 },
+};
+
+function ordinal(n) {
+  if (n % 100 >= 11 && n % 100 <= 13) return `${n}th`;
+  return n + ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
+}
+
+const state = {
+  query: "",
+  positions: new Set(DEFAULT_POSITIONS),
+  keeperOnly: true,
+};
+
+const grid = document.getElementById("grid");
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function avatarUrl(id) {
+  return id ? `https://sleepercdn.com/avatars/thumbs/${id}` : null;
+}
+
+function draftRound(p) {
+  return p.pick ? parseInt(p.pick, 10) : null;
+}
+
+// Drafted players show their draft slot; undrafted show their current ADP instead.
+function pickLabel(p) {
+  if (p.pick) return `<span class="pick">(${esc(p.pick)})</span>`;
+  if (!p.adp) return `<span class="pick">(Undrafted - no ADP)</span>`;
+  return (
+    `<span class="pick" title="Average draft position: pick ${p.adp.pick}">` +
+    `(Undrafted - ADP ${esc(p.adp.fmt)})</span>`
+  );
+}
+
+function playerRow(p, keeperId) {
+  const slotClass = p.slot === "FLEX" || p.slot === "BN" ? "FLEX" : p.slot;
+  const round = draftRound(p);
+  const earlyPick = round !== null && round <= 2;
+  const eligible = p.w13 === "same" && !earlyPick;
+
+  const mark = eligible
+    ? `<span class="tag held" title="On roster at end of Regular Season and Postseason">&#10003;</span>`
+    : `<span class="tag miss" title="${
+        earlyPick
+          ? "Drafted in the first two rounds — cannot be kept"
+          : "Not on roster at end of Regular Season"
+      }">&#10007;</span>`;
+  const notes =
+    (p.id && p.id === keeperId
+      ? `<span class="tag keep" title="This manager's 2025 keeper">2025 KEEP</span>`
+      : "") +
+    (earlyPick ? `<span class="tag early" title="Drafted in round ${round}">R1-R2</span>` : "") +
+    (p.w13 === "other"
+      ? `<span class="tag other" title="On another team's roster at the end of Week 13">OTHER TEAM</span>`
+      : "");
+
+  return `<tr class="row"
+      data-name="${esc((p.name || "").toLowerCase())}"
+      data-team="${esc((p.team || "").toLowerCase())}"
+      data-pos="${esc(p.pos || "")}"
+      data-keep="${eligible ? 1 : 0}">
+    <td class="slot"><span class="pos-pill ${slotClass}">${esc(p.slot)}</span></td>
+    <td class="name">${esc(p.name)} ${pickLabel(p)}${mark}${notes}</td>
+  </tr>`;
+}
+
+function teamCard(t) {
+  const starters = t.players.filter((p) => p.starter);
+  const bench = t.players.filter((p) => !p.starter);
+  const av = avatarUrl(t.avatar);
+  const badge = t.place
+    ? `<div class="badge p${t.place}">${ORDINAL[t.place]}</div>`
+    : SPECIAL_BADGES[t.owner]
+    ? `<div class="badge ${SPECIAL_BADGES[t.owner].cls}">${SPECIAL_BADGES[t.owner].label}</div>`
+    : "";
+
+  const k = KEEPERS_2025[t.owner];
+  const onRoster = k && t.players.some((p) => p.id === k.id);
+  const keeper = k
+    ? `<div class="keeper"${onRoster ? "" : ` title="No longer on this roster"`}>2025 keeper: ` +
+      `<b>${esc(k.name)}</b> (${ordinal(k.round)} round)</div>`
+    : "";
+
+  return `<section class="team ${t.place === 1 ? "champ" : ""}"
+      data-owner="${esc((t.owner || "").toLowerCase())} ${esc((t.team_name || "").toLowerCase())}"
+      data-rid="${t.roster_id}">
+    <div class="team-head">
+      ${av ? `<img class="avatar" src="${av}" alt="" loading="lazy">` : `<div class="avatar"></div>`}
+      <div class="team-id">
+        <div class="team-name">${esc(t.team_name)}</div>
+        <div class="team-owner">@${esc(t.owner)}</div>
+        ${keeper}
+      </div>
+      <div class="team-meta">${badge}</div>
+    </div>
+    <table>
+      <tbody class="starter-body">${starters.map((p) => playerRow(p, k && k.id)).join("")}</tbody>
+    </table>
+    <div class="section-label bench-label">Bench</div>
+    <table>
+      <tbody class="bench-body">${bench.map((p) => playerRow(p, k && k.id)).join("")}</tbody>
+    </table>
+  </section>`;
+}
+
+function sortedTeams() {
+  const rank = (t) => (SPECIAL_BADGES[t.owner] ? 999 : t.place || 99);
+  return [...DATA.teams].sort(
+    (a, b) => rank(a) - rank(b) || a.team_name.localeCompare(b.team_name)
+  );
+}
+
+function render() {
+  grid.innerHTML = sortedTeams().map(teamCard).join("");
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = state.query.trim().toLowerCase();
+  let shown = 0;
+  let visibleTeams = 0;
+
+  grid.querySelectorAll(".team").forEach((card) => {
+    const ownerMatch = q && card.dataset.owner.includes(q);
+    let cardHits = 0;
+
+    card.querySelectorAll("tr.row").forEach((row) => {
+      const d = row.dataset;
+      const posOk = state.positions.has(d.pos);
+      const keepOk = !state.keeperOnly || d.keep === "1";
+      const hit = q ? d.name.includes(q) || d.team.includes(q) : false;
+      const textOk = !q || hit || ownerMatch;
+      const visible = posOk && keepOk && textOk;
+      row.classList.toggle("hidden", !visible);
+      row.classList.toggle("hit", Boolean(visible && q && hit));
+      if (visible) {
+        shown++;
+        cardHits++;
+      }
+    });
+
+    const benchVisible = [...card.querySelectorAll(".bench-body tr.row")]
+      .some((r) => !r.classList.contains("hidden"));
+    card.querySelector(".bench-label").style.display = benchVisible ? "" : "none";
+
+    const keep = cardHits > 0;
+    card.classList.toggle("hidden", !keep);
+    if (keep) visibleTeams++;
+  });
+
+  document.getElementById("count").textContent =
+    `${shown} player${shown === 1 ? "" : "s"} · ${visibleTeams} team${visibleTeams === 1 ? "" : "s"}`;
+  document.getElementById("emptyMsg").classList.toggle("hidden", shown > 0);
+}
+
+function buildChips() {
+  const wrap = document.getElementById("posChips");
+  wrap.innerHTML = POSITIONS.map(
+    (p) => `<div class="chip ${state.positions.has(p) ? "on" : ""}" data-pos="${p}">${p}</div>`
+  ).join("");
+  wrap.querySelectorAll(".chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const p = chip.dataset.pos;
+      state.positions.has(p) ? state.positions.delete(p) : state.positions.add(p);
+      chip.classList.toggle("on");
+      applyFilters();
+    });
+  });
+}
+
+function init() {
+  const L = DATA.league;
+  document.title = `2026 Keeper Info — ${L.name}`;
+  document.getElementById("title").textContent = "2026 Keeper Information";
+  document.getElementById("legend").innerHTML =
+    `<h2 class="badge p1">Key</h2>` +
+    `<p><span class="tag held">&#10003;</span> Can be kept: on this roster at the end of Week ${L.reg_week}, ` +
+    `the last week of the regular season, and at the end of the Postseason.</p>` +
+    `<p><span class="tag miss">&#10007;</span> Cannot be kept, either:</p>` +
+    `<ul>` +
+    `<li>Not on this roster at the end of Regular Season, ` +
+    `and at the end of the Postseason.</li>` +
+    `<li>Only players drafted in the 3rd round or later can be kept.</li>` +
+    `</ul>` +
+    `<p><br>Note: Undrafted players show their current 2026 ADP as round and pick. Final ADP will be set next Saturday, August 22nd</p>`;
+  document.getElementById("foot").innerHTML =
+    `Rosters from the Sleeper API (league <code>${esc(L.league_id)}</code>), Week ${L.week} matchup data. ` +
+    `ADP from ${esc(L.adp.source)}: ${esc(L.adp.format)}, ${L.adp.teams}-team, ` +
+    `${L.adp.drafts.toLocaleString()} drafts (${esc(L.adp.window)}), captured ${esc(L.adp.fetched)}.`;
+
+  buildChips();
+  render();
+
+  document.getElementById("search").addEventListener("input", (e) => {
+    state.query = e.target.value;
+    applyFilters();
+  });
+  const keeper = document.getElementById("keeperOnly");
+  keeper.classList.toggle("on", state.keeperOnly);
+  keeper.addEventListener("click", () => {
+    state.keeperOnly = !state.keeperOnly;
+    keeper.classList.toggle("on", state.keeperOnly);
+    applyFilters();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && document.activeElement.id !== "search") {
+      e.preventDefault();
+      document.getElementById("search").focus();
+    }
+    if (e.key === "Escape" && document.activeElement.id === "search") {
+      document.getElementById("search").value = "";
+      state.query = "";
+      applyFilters();
+      document.activeElement.blur();
+    }
+  });
+}
+
+init();
+</script>
+</body>
+</html>
