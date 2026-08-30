@@ -51,6 +51,7 @@ PROTECTED = {
 
 SITE_NAV = (
     ("2026 Draft and Keeper Info", "index.html"),
+    ("2026 Keepers", "2026-keepers/"),
     ("Rules", "rules/"),
     ("Past Seasons", "past-seasons/"),
 )
