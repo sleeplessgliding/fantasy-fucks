@@ -34,7 +34,7 @@
     font-size: 34px;
     letter-spacing: -.03em;
     font-weight: 800;
-    text-transform: uppercase;
+    text-transform: none;
   }
   .draft-when {
     margin: 0 0 2px;
@@ -55,7 +55,7 @@
     font-weight: 800;
     letter-spacing: .11em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
   }
   .draft-slots {
     display: grid;
@@ -69,15 +69,15 @@
     min-width: 0;
     padding: 8px 10px;
     background: var(--bg-elev-2);
-    border-radius: 2px;
+    border-radius: 12px;
   }
   .draft-pick .n {
     flex: 0 0 22px;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
-    color: var(--accent);
+    color: var(--accent-text);
   }
-  .draft-pick .avatar { width: 32px; height: 32px; border-radius: 2px; }
+  .draft-pick .avatar { width: 32px; height: 32px; border-radius: 50%; }
   .draft-pick .who { min-width: 0; }
   .draft-pick .tn {
     font-weight: 700;
@@ -88,7 +88,7 @@
   }
   .draft-pick .to { color: var(--text-faint); font-size: 12px; }
   .draft-pick .keep {
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 11.5px;
     font-weight: 600;
     white-space: nowrap;
@@ -102,8 +102,8 @@
   }
   .draft-board-foot a { color: var(--accent); }
   .badge.pick {
-    background: color-mix(in srgb, var(--accent) var(--tint-soft), transparent);
-    color: var(--accent);
+    background: var(--accent);
+    color: var(--accent-ink);
     margin-bottom: 4px;
   }
   .legend {
@@ -164,7 +164,7 @@
     font-weight: 800;
     letter-spacing: .11em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
   }
   .rule p { margin: 0 0 8px; color: var(--text-dim); font-size: 13.5px; }
   .rule p:last-child { margin-bottom: 0; }
@@ -206,7 +206,6 @@
     top: var(--topbar-h);
     z-index: 20;
     background: var(--controls-bg);
-    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 12px 0;
     margin-bottom: 24px;
@@ -221,11 +220,11 @@
     align-items: center;
   }
   input[type="search"] {
-    background: var(--bg-elev-2);
+    background: var(--bg-elev);
     border: 1px solid var(--border);
     color: var(--text);
-    padding: 8px 12px;
-    border-radius: 2px;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
     font-size: 14px;
     font-family: inherit;
     outline: none;
@@ -236,28 +235,28 @@
 
   .chips { display: flex; gap: 6px; flex-wrap: wrap; }
   .chip {
-    background: var(--bg-elev-2);
+    background: var(--bg-elev);
     border: 1px solid var(--border);
-    color: var(--text-dim);
-    padding: 7px 13px;
-    border-radius: 0;
-    font-family: var(--font-display);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .04em;
-    text-transform: uppercase;
+    color: var(--text);
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
     cursor: pointer;
     transition: .12s;
     user-select: none;
   }
   .chip:hover { color: var(--text); border-color: var(--chip-hover-border); }
-  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
   .spacer { flex: 1; }
   .count { color: var(--text-faint); font-size: 13px; white-space: nowrap; }
   button.chip {
     font-family: inherit;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 13px;
+    font-weight: 700;
   }
 
   /* grid */
@@ -290,7 +289,7 @@
   }
   .avatar {
     width: 40px; height: 40px;
-    border-radius: 2px;
+    border-radius: 50%;
     background: var(--avatar-bg);
     flex-shrink: 0;
     object-fit: cover;
@@ -322,8 +321,8 @@
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 2px;
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
   }
   .badge.p1 { background: color-mix(in srgb, var(--gold) var(--tint), transparent); color: var(--gold); }
   .badge.p2 { background: color-mix(in srgb, var(--silver) var(--tint), transparent); color: var(--silver); }
@@ -351,7 +350,7 @@
     display: inline-block;
     min-width: 34px;
     padding: 2px 0;
-    border-radius: 2px;
+    border-radius: var(--radius-pill);
     text-align: center;
     font-size: 10.5px;
     font-weight: 800;
@@ -376,8 +375,8 @@
   .tag {
     display: inline-block;
     margin-left: 6px;
-    padding: 1px 6px;
-    border-radius: 2px;
+    padding: 1px 7px;
+    border-radius: var(--radius-pill);
     font-size: 10.5px;
     font-weight: 700;
     letter-spacing: .04em;
@@ -389,7 +388,7 @@
   .tag.miss { background: color-mix(in srgb, var(--miss) var(--tint), transparent); color: var(--miss); }
   .tag.early { background: color-mix(in srgb, var(--early) var(--tint), transparent); color: var(--early); }
   .tag.other { background: color-mix(in srgb, var(--other) var(--tint), transparent); color: var(--other); }
-  .tag.keep { background: color-mix(in srgb, var(--accent) var(--tint), transparent); color: var(--accent); }
+  .tag.keep { background: var(--accent); color: var(--accent-ink); }
 
   .section-label {
     padding: 7px 12px 5px;
