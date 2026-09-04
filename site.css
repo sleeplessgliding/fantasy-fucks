@@ -226,7 +226,7 @@ img { max-width: 100%; height: auto; }
 }
 .nav-sub .nav-link { font-size: 13px; font-weight: 500; color: #8a8a8a; }
 .nav-link:hover { color: var(--chrome-text); background: #2a2a2a; }
-.nav-node.is-branch > .nav-row > .nav-link { color: var(--chrome-text); }
+.nav-node.is-branch > .nav-row > .nav-link:not([aria-current="page"]) { color: var(--chrome-text); }
 .nav-link[aria-current="page"] {
   color: var(--accent-ink);
   background: var(--accent);

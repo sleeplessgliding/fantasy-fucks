@@ -50,11 +50,9 @@ PROTECTED = {
 }
 
 SITE_NAV = (
-    ("2026 Draft and Keeper Info", "index.html"),
-    ("2026 Keepers", "2026-keepers/"),
-    ("Rules", "rules/"),
-    ("This Season", "this-season/"),
+    ("2026 Season", "this-season/"),
     ("Past Seasons", "past-seasons/"),
+    ("Rules", "rules/"),
 )
 
 # Top-level ClickUp pages are re-homed here; everything else nests under its parent.
@@ -72,6 +70,7 @@ PAGE_TITLES = {
 # Children pulled to the top of their nav section, in the order listed.
 NAV_FIRST = {
     "past-seasons/": ("past-seasons/hall-of-champions/",),
+    "rules/": ("index.html", "2026-keepers/"),
 }
 
 SITE_CSS = """\
@@ -303,7 +302,7 @@ img { max-width: 100%; height: auto; }
 }
 .nav-sub .nav-link { font-size: 13px; font-weight: 500; color: #8a8a8a; }
 .nav-link:hover { color: var(--chrome-text); background: #2a2a2a; }
-.nav-node.is-branch > .nav-row > .nav-link { color: var(--chrome-text); }
+.nav-node.is-branch > .nav-row > .nav-link:not([aria-current="page"]) { color: var(--chrome-text); }
 .nav-link[aria-current="page"] {
   color: var(--accent-ink);
   background: var(--accent);
@@ -1068,16 +1067,17 @@ def site_key(rel: Path) -> str:
 
 
 def nav_items(tree: list[dict], rel: Path, current: str) -> str:
-    def is_ancestor(node: dict) -> bool:
-        href = node["href"]
-        return href.endswith("/") and current.startswith(href) and current != href
+    def contains_current(node: dict) -> bool:
+        if node["href"] == current:
+            return True
+        return any(contains_current(kid) for kid in node.get("children") or [])
 
     def render(nodes: list[dict], depth: int) -> str:
         out = []
         for node in nodes:
             kids = node.get("children") or []
             active = node["href"] == current
-            branch = active or is_ancestor(node)
+            branch = contains_current(node)
             classes = ["nav-node"]
             if kids:
                 classes.append("has-kids")
@@ -1278,7 +1278,7 @@ def nav_from_pages(roots: list[dict]) -> list[dict]:
     ]
     by_href = {node["href"]: node for node in nodes}
 
-    tree: list[dict] = [{"label": "2026 Draft and Keeper Info", "href": "index.html", "children": []}]
+    tree: list[dict] = []
     for node in nodes:
         parent = None
         for href, candidate in by_href.items():
@@ -1288,6 +1288,21 @@ def nav_from_pages(roots: list[dict]) -> list[dict]:
                 parent = candidate
         (parent["children"] if parent else tree).append(node)
 
+    extra = [
+        {"label": "2026 Draft and Keeper Info", "href": "index.html", "children": []},
+        {"label": "2026 Keepers", "href": "2026-keepers/", "children": []},
+    ]
+    skip = {item["href"] for item in extra}
+    tree = [node for node in tree if node["href"] not in skip]
+    rules = next((node for node in tree if node["href"] == "rules/"), None)
+    if rules is None:
+        rules = {"label": "Rules", "href": "rules/", "children": []}
+        tree.append(rules)
+    have = {child["href"] for child in rules["children"]}
+    for item in reversed(extra):
+        if item["href"] not in have:
+            rules["children"].insert(0, item)
+
     def reorder(nodes: list[dict], parent_href: str) -> None:
         pinned = NAV_FIRST.get(parent_href, ())
         nodes.sort(key=lambda n: pinned.index(n["href"]) if n["href"] in pinned else len(pinned))
@@ -1296,6 +1311,9 @@ def nav_from_pages(roots: list[dict]) -> list[dict]:
 
     for node in tree:
         reorder(node["children"], node["href"])
+
+    order = {target: i for i, (_, target) in enumerate(SITE_NAV)}
+    tree.sort(key=lambda n: order.get(n["href"], len(order)))
 
     for item in tree:
         for label, target in SITE_NAV:

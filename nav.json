@@ -1,21 +1,6 @@
 [
   {
-    "label": "2026 Draft and Keeper Info",
-    "href": "index.html",
-    "children": []
-  },
-  {
-    "label": "2026 Keepers",
-    "href": "2026-keepers/",
-    "children": []
-  },
-  {
-    "label": "Rules",
-    "href": "rules/",
-    "children": []
-  },
-  {
-    "label": "This Season",
+    "label": "2026 Season",
     "href": "this-season/",
     "children": [
       {
@@ -446,6 +431,22 @@
             "children": []
           }
         ]
+      }
+    ]
+  },
+  {
+    "label": "Rules",
+    "href": "rules/",
+    "children": [
+      {
+        "label": "2026 Draft and Keeper Info",
+        "href": "index.html",
+        "children": []
+      },
+      {
+        "label": "2026 Keepers",
+        "href": "2026-keepers/",
+        "children": []
       }
     ]
   }
