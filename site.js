@@ -62,7 +62,7 @@
     store.set("ff-nav-sections", JSON.stringify(saved));
   }
 
-  paintTheme(root.dataset.theme || "dark");
+  paintTheme(root.dataset.theme || "light");
   restoreSections();
 
   document.addEventListener("click", (event) => {
@@ -101,9 +101,4 @@
   });
 
   mobile.addEventListener("change", () => setDrawer(false));
-
-  // Follow the OS palette until an explicit choice has been stored.
-  window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (event) => {
-    if (!store.get("ff-theme")) paintTheme(event.matches ? "light" : "dark");
-  });
 })();

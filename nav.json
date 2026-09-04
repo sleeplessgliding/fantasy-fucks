@@ -15,6 +15,17 @@
     "children": []
   },
   {
+    "label": "This Season",
+    "href": "this-season/",
+    "children": [
+      {
+        "label": "Preseason Draft Grades",
+        "href": "this-season/preseason-draft-grades/",
+        "children": []
+      }
+    ]
+  },
+  {
     "label": "Past Seasons",
     "href": "past-seasons/",
     "children": [
