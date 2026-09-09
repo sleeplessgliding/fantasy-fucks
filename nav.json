@@ -11,6 +11,11 @@
     ]
   },
   {
+    "label": "George Pick'ems",
+    "href": "george-pickems/",
+    "children": []
+  },
+  {
     "label": "Past Seasons",
     "href": "past-seasons/",
     "children": [

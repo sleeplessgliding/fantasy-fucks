@@ -51,6 +51,7 @@ PROTECTED = {
 
 SITE_NAV = (
     ("2026 Season", "this-season/"),
+    ("George Pick'ems", "george-pickems/"),
     ("Past Seasons", "past-seasons/"),
     ("Rules", "rules/"),
 )

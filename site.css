@@ -394,6 +394,37 @@ h1 {
   border-bottom: 1px solid var(--border);
   font-weight: 700;
 }
+.prose.pickems > h2 {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--accent-ink);
+  background: var(--accent);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  margin: 1.6em 0 .55em;
+}
+.prose table.pickems-grid th {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+.prose table.pickems-grid th:first-child {
+  border-radius: 8px 0 0 0;
+}
+.prose table.pickems-grid th:last-child {
+  border-radius: 0 8px 0 0;
+}
+.prose table.pickems-grid td {
+  padding: 10px 12px;
+}
 .prose code {
   background: var(--bg-elev-2);
   padding: 1px 5px;
