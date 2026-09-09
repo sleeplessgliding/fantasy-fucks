@@ -406,6 +406,9 @@ h1 {
   border-radius: var(--radius-pill);
   margin: 1.6em 0 .55em;
 }
+.prose.pickems > h3 {
+  font-size: 24px;
+}
 .prose table.pickems-grid th {
   background: color-mix(in srgb, var(--accent) 16%, transparent);
   color: var(--text-dim);
