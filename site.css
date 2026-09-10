@@ -419,20 +419,31 @@ h1 {
   padding: 8px 12px;
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
 }
-.prose table.pickems-grid th:first-child {
+.prose table.pickems-grid thead tr:first-child th:first-child {
   border-radius: 8px 0 0 0;
 }
-.prose table.pickems-grid th:last-child {
+.prose table.pickems-grid thead tr:first-child th:last-child {
   border-radius: 0 8px 0 0;
 }
 .prose table.pickems-grid td {
   padding: 10px 12px;
   vertical-align: middle;
 }
+.prose table.pickems-lines th[colspan] {
+  text-align: center;
+}
+.prose table.pickems-lines thead tr:last-child th {
+  text-align: center;
+}
+.prose table.pickems-lines td:nth-child(2),
+.prose table.pickems-lines td:nth-child(3) {
+  text-align: center;
+}
 .result-badge {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: 1px;
   padding: 6px 12px;
@@ -450,6 +461,10 @@ h1 {
 .result-badge.push {
   background: #f6e59b;
   color: #4a3e08;
+}
+.result-badge.under {
+  background: #cfe4f7;
+  color: #1a3d5c;
 }
 .prose code {
   background: var(--bg-elev-2);
