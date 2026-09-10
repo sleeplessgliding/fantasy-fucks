@@ -427,6 +427,29 @@ h1 {
 }
 .prose table.pickems-grid td {
   padding: 10px 12px;
+  vertical-align: middle;
+}
+.result-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.result-badge-pick { font-size: 1em; }
+.result-badge-score {
+  font-size: .66em;
+  font-weight: 600;
+}
+.result-badge.push {
+  background: #f6e59b;
+  color: #4a3e08;
 }
 .prose code {
   background: var(--bg-elev-2);
