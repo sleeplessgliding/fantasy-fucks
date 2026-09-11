@@ -466,6 +466,10 @@ h1 {
   background: #cfe4f7;
   color: #1a3d5c;
 }
+.result-badge.cover {
+  background: #c8e6c9;
+  color: #1b4332;
+}
 .prose code {
   background: var(--bg-elev-2);
   padding: 1px 5px;
