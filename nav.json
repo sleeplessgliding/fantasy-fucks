@@ -1,7 +1,7 @@
 [
   {
     "label": "2026 Season",
-    "href": "this-season/",
+    "href": "./",
     "children": [
       {
         "label": "Preseason Draft Grades",
@@ -445,7 +445,7 @@
     "children": [
       {
         "label": "2026 Draft and Keeper Info",
-        "href": "index.html",
+        "href": "2026-draft/",
         "children": []
       },
       {

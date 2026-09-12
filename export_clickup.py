@@ -2,7 +2,7 @@
 """One-time ClickUp Doc → local HTML export.
 
 Reads CLICKUP_API_KEY (or CLICKUP_API_TOKEN) from the environment.
-Writes the Doc root to index.html and nested pages as slug/index.html.
+Writes nested pages as slug/index.html. Root index.html is the 2026 Season homepage.
 """
 
 from __future__ import annotations
@@ -50,7 +50,7 @@ PROTECTED = {
 }
 
 SITE_NAV = (
-    ("2026 Season", "this-season/"),
+    ("2026 Season", "./"),
     ("George Pick'ems", "george-pickems/"),
     ("Past Seasons", "past-seasons/"),
     ("Rules", "rules/"),
@@ -71,7 +71,7 @@ PAGE_TITLES = {
 # Children pulled to the top of their nav section, in the order listed.
 NAV_FIRST = {
     "past-seasons/": ("past-seasons/hall-of-champions/",),
-    "rules/": ("index.html", "2026-keepers/"),
+    "rules/": ("2026-draft/", "2026-keepers/"),
 }
 
 SITE_CSS = """\
@@ -906,7 +906,7 @@ def unique_slug(name: str, used: set[str]) -> str:
 
 
 def assign_paths(roots: list[dict]) -> Path:
-    """Give every page a folder. Root index.html is reserved for the keeper page.
+    """Give every page a folder. Root index.html is the 2026 Season homepage.
 
     Returns the folder of the Doc's first top-level page, used as the Doc's local home.
     """
@@ -1063,7 +1063,7 @@ def href_from(rel: Path, target: str) -> str:
 def site_key(rel: Path) -> str:
     """Root-relative key used to match a page against the nav tree."""
     if rel in (Path("."), Path("")):
-        return "index.html"
+        return "./"
     return rel.as_posix() + "/"
 
 
@@ -1290,7 +1290,7 @@ def nav_from_pages(roots: list[dict]) -> list[dict]:
         (parent["children"] if parent else tree).append(node)
 
     extra = [
-        {"label": "2026 Draft and Keeper Info", "href": "index.html", "children": []},
+        {"label": "2026 Draft and Keeper Info", "href": "2026-draft/", "children": []},
         {"label": "2026 Keepers", "href": "2026-keepers/", "children": []},
     ]
     skip = {item["href"] for item in extra}

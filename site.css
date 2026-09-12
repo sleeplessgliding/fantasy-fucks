@@ -417,6 +417,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 700;
   padding: 8px 12px;
+  text-align: center;
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
 }
 .prose table.pickems-grid thead tr:first-child th:first-child {
@@ -428,12 +429,6 @@ h1 {
 .prose table.pickems-grid td {
   padding: 10px 12px;
   vertical-align: middle;
-}
-.prose table.pickems-grid td:not(:first-child),
-.prose table.pickems-grid thead tr:last-child th:not(:first-child) {
-  text-align: center;
-}
-.prose table.pickems-lines th[colspan] {
   text-align: center;
 }
 .result-badge {
@@ -442,7 +437,9 @@ h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  box-sizing: border-box;
   gap: 1px;
+  min-height: 40px;
   padding: 6px 12px;
   border-radius: 12px;
   font-family: var(--font-sans);
