@@ -429,14 +429,11 @@ h1 {
   padding: 10px 12px;
   vertical-align: middle;
 }
+.prose table.pickems-grid td:not(:first-child),
+.prose table.pickems-grid thead tr:last-child th:not(:first-child) {
+  text-align: center;
+}
 .prose table.pickems-lines th[colspan] {
-  text-align: center;
-}
-.prose table.pickems-lines thead tr:last-child th {
-  text-align: center;
-}
-.prose table.pickems-lines td:nth-child(2),
-.prose table.pickems-lines td:nth-child(3) {
   text-align: center;
 }
 .result-badge {
@@ -469,6 +466,10 @@ h1 {
 .result-badge.cover {
   background: #c8e6c9;
   color: #1b4332;
+}
+.result-badge.open {
+  background: color-mix(in srgb, var(--text) 10%, var(--bg-elev));
+  color: var(--text-dim);
 }
 .prose code {
   background: var(--bg-elev-2);
