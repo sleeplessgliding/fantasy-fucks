@@ -464,6 +464,10 @@ h1 {
   background: #c8e6c9;
   color: #1b4332;
 }
+.result-badge.loss {
+  background: #f5c2c2;
+  color: #7f1d1d;
+}
 .result-badge.open {
   background: color-mix(in srgb, var(--text) 10%, var(--bg-elev));
   color: var(--text-dim);
