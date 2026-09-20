@@ -4,6 +4,11 @@
     "href": "./",
     "children": [
       {
+        "label": "Power Rankings (Week 2)",
+        "href": "this-season/power-rankings-week-2/",
+        "children": []
+      },
+      {
         "label": "Preseason Draft Grades",
         "href": "this-season/preseason-draft-grades/",
         "children": []
