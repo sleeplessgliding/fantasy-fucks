@@ -459,6 +459,9 @@ h1 {
   vertical-align: middle;
   text-align: center;
 }
+.prose table.pickems-grid tr.pickems-unlocked-break td {
+  padding: 16px 12px 12px;
+}
 .result-badge {
   display: inline-flex;
   flex-direction: column;
