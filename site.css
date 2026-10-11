@@ -1353,6 +1353,9 @@ h1 {
   border-radius: 8px 8px 0 0;
   background: var(--held);
 }
+.score-bar.is-hot { background: var(--held); }
+.score-bar.is-mid { background: var(--gold); }
+.score-bar.is-cold,
 .score-bar.is-loss { background: var(--miss); }
 .score-h.is-best,
 .score-bar.is-best {
