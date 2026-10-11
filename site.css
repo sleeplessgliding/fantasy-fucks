@@ -945,6 +945,10 @@ h1 {
 
 .rank-banner { margin: 0 0 12px; }
 .rank-banner img { width: 100%; height: auto; display: block; }
+.rank-banner.is-poster img {
+  max-width: 28rem;
+  margin-inline: auto;
+}
 .rank-banner.is-tall img {
   max-height: 420px;
   object-fit: cover;
