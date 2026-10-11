@@ -891,6 +891,11 @@ h1 {
   text-transform: uppercase;
 }
 .motw > p { margin: 0 0 .7em; }
+.motw h3 {
+  margin: 1em 0 .3em;
+  font-size: 15px;
+}
+.motw h3:first-of-type { margin-top: .4em; }
 .motw-watch {
   margin: .9em 0 0;
   padding: 12px 14px;
@@ -900,10 +905,14 @@ h1 {
 }
 .motw-watch + .motw-watch { border-left-color: var(--te); }
 .motw-watch.is-doom { border-left-color: var(--miss); }
-.motw-watch.is-over { border-left-color: var(--miss); }
-.motw-watch.is-over h3 { color: var(--miss); }
-.motw-watch.is-back { border-left-color: var(--held); }
-.motw-watch.is-back h3 { color: var(--held); }
+.motw-watch.is-over,
+.motw-watch.is-trepidation { border-left-color: var(--miss); }
+.motw-watch.is-over h3,
+.motw-watch.is-trepidation h3 { color: var(--miss); }
+.motw-watch.is-back,
+.motw-watch.is-optimism { border-left-color: var(--held); }
+.motw-watch.is-back h3,
+.motw-watch.is-optimism h3 { color: var(--held); }
 .rank-intro:empty,
 .motw-watch p:empty {
   min-height: 1.35em;

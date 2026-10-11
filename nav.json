@@ -4,6 +4,11 @@
     "href": "./",
     "children": [
       {
+        "label": "Power Rankings (Week 5)",
+        "href": "this-season/power-rankings-week-5/",
+        "children": []
+      },
+      {
         "label": "Power Rankings (Week 4)",
         "href": "this-season/power-rankings-week-4/",
         "children": []
