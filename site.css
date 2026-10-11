@@ -597,8 +597,22 @@ h1 {
   padding: 4px 12px;
 }
 .stat-badge.truth-or .or { color: var(--text-faint); font-weight: 700; }
+.prose h2:has(.rank-name) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+.prose h2 .rank-name {
+  flex: 1 0 auto;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.prose h2:has(.rank-name) .rank-grade { margin-left: 0; }
 .prose h2 .rank-grade {
   display: inline-block;
+  flex: 0 0 auto;
   margin: 0 0 0 10px;
   padding: 3px 10px;
   vertical-align: middle;
@@ -820,6 +834,19 @@ h1 {
     border-top: 1px solid var(--border);
   }
   .matchup-lineups { grid-template-columns: 1fr; gap: 4px; }
+  .prose h2:has(.rank-name) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .prose h2 .rank-name { flex: 1 1 auto; width: 100%; }
+  .score-pulse > summary,
+  .score-log > summary {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .score-chart { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .score-plot { gap: 16px; min-width: 0; }
+  .score-bar { width: 36px; }
 }
 
 .motw {
