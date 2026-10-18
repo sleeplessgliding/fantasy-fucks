@@ -1641,6 +1641,45 @@ h2.silver-linings-title {
 }
 .children a:hover { color: var(--text); background: transparent; }
 
+.page-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 28px 0 48px;
+}
+.page-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+}
+.page-card:hover {
+  color: var(--text);
+  background: var(--bg-elev);
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--border));
+}
+.page-card h2 {
+  margin: 0;
+  padding: 14px 16px 12px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+.page-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
+}
+
 footer.site {
   max-width: 740px;
   margin: 48px auto 0;
@@ -1673,6 +1712,10 @@ footer.site {
   main.page { padding: 24px 20px 10px; }
   footer.site { padding: 18px 20px 56px; }
   h1 { font-size: 32px; }
+}
+
+@media (max-width: 700px) {
+  .page-cards { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
