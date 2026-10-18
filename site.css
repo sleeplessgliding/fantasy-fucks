@@ -940,6 +940,69 @@ h1 {
 .motw-watch.is-optimism { border-left-color: var(--held); }
 .motw-watch.is-back h3,
 .motw-watch.is-optimism h3 { color: var(--held); }
+.motw-watch.is-silver {
+  border-left-color: #c4c4c4;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #c8c8c8 12%, var(--bg-elev-2)) 0%,
+    var(--bg-elev-2) 44%
+  );
+}
+.motw-watch.is-silver h3,
+h2.silver-linings-title {
+  width: max-content;
+  max-width: 100%;
+  background-image: linear-gradient(
+    105deg,
+    #8d8d8d 0%,
+    #bdbdbd 35%,
+    #d8d8d8 50%,
+    #bdbdbd 65%,
+    #8d8d8d 100%
+  );
+  background-size: 160% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: silver-shimmer 11s ease-in-out infinite;
+}
+[data-theme="dark"] .motw-watch.is-silver {
+  border-left-color: #cfcfcf;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #efefef 8%, var(--bg-elev-2)) 0%,
+    var(--bg-elev-2) 44%
+  );
+}
+[data-theme="dark"] .motw-watch.is-silver h3,
+[data-theme="dark"] h2.silver-linings-title {
+  background-image: linear-gradient(
+    105deg,
+    #9a9a9a 0%,
+    #c8c8c8 35%,
+    #e6e6e6 50%,
+    #c8c8c8 65%,
+    #9a9a9a 100%
+  );
+}
+@keyframes silver-shimmer {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motw-watch.is-silver h3,
+  h2.silver-linings-title {
+    animation: none;
+    background: none;
+    color: #8a8a8a;
+    -webkit-text-fill-color: unset;
+  }
+  [data-theme="dark"] .motw-watch.is-silver h3,
+  [data-theme="dark"] h2.silver-linings-title {
+    color: #d4d4d4;
+  }
+}
 .rank-intro:empty,
 .motw-watch p:empty {
   min-height: 1.35em;
@@ -1079,6 +1142,17 @@ h1 {
 .roster tr.bench td:nth-child(2),
 .roster tr.ir td:nth-child(2) { color: var(--text-dim); }
 .roster tr.ir .pos { color: var(--ir); }
+.waiver-log .waiver-heading {
+  margin: 0;
+  padding: 11px 16px 4px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.prose .waiver-log .waiver-heading { margin: 0; }
 .waiver-log .waiver-group {
   padding: 10px 16px 12px;
 }
