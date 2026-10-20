@@ -483,7 +483,8 @@ h1 {
   font-size: .66em;
   font-weight: 600;
 }
-.result-badge.push {
+.result-badge.push,
+.result-badge.is-warn {
   background: #f6e59b;
   color: #4a3e08;
 }
