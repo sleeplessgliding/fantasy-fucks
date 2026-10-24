@@ -161,6 +161,10 @@ main.futures-page { max-width: 760px; }
   padding: 0;
 }
 .future-slate li + li { margin-top: 3px; }
+.slate-result.is-good { color: #157a3a; font-weight: 700; }
+.slate-result.is-bad { color: #c42318; font-weight: 700; }
+[data-theme="dark"] .slate-result.is-good { color: #7ddea0; }
+[data-theme="dark"] .slate-result.is-bad { color: #ff8d86; }
 @media (max-width: 560px) {
   .future-team-head { flex-wrap: wrap; }
   .future-proj { text-align: left; }
@@ -215,7 +219,7 @@ main.futures-page { max-width: 760px; }
   </div>
   <p class="futures-note">Projected finish carries the current win, loss, and tie rate across the games left in the regular season: 17 for the NFL, 82 for the NBA. Refresh pulls those standings from ESPN.</p>
   <h2 class="sport-head">NFL</h2>
-  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG">
+  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG" data-good="L">
     <div class="future-team-head">
       <h3>New York Giants</h3>
       <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">8.5 – 5.7 – 2.8</span></p>
@@ -225,12 +229,12 @@ main.futures-page { max-width: 760px; }
       <li class="bet-row"><span class="bet-desc">Under 7.5 wins</span><span class="bet-meta"><span class="bet-odds">-120</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span data-field="last">L 27–34 vs Saints · Sun, Oct 18</span></div>
+      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-good" data-field="last">L 27–34 vs Saints · Sun, Oct 18</span></div>
       <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Texans · Sun, Oct 25</li><li>@ Eagles · Sun, Nov 8</li><li>vs Commanders · Thu, Nov 12</li></ul></div>
     </div>
   </section>
   <h2 class="sport-head">NBA</h2>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND" data-good="W">
     <div class="future-team-head">
       <h3>Indiana Pacers</h3>
       <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">41.0 – 41.0</span></p>
@@ -240,11 +244,11 @@ main.futures-page { max-width: 760px; }
       <li class="bet-row"><span class="bet-desc">Over 44.5 wins</span><span class="bet-meta"><span class="bet-odds">-105</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span data-field="last">L 105–121 vs Mavericks · Fri, Oct 23</span></div>
+      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-bad" data-field="last">L 105–121 vs Mavericks · Fri, Oct 23</span></div>
       <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Nets · Sun, Oct 25</li><li>@ Bucks · Mon, Oct 26</li><li>vs 76ers · Wed, Oct 28</li></ul></div>
     </div>
   </section>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU" data-good="W">
     <div class="future-team-head">
       <h3>Houston Rockets</h3>
       <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">82.0 – 0.0</span></p>
@@ -254,11 +258,11 @@ main.futures-page { max-width: 760px; }
       <li class="bet-row"><span class="bet-desc">Over 47.5 wins</span><span class="bet-meta"><span class="bet-odds">-130</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span data-field="last">W 114–110 @ Spurs · Fri, Oct 23</span></div>
+      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-good" data-field="last">W 114–110 @ Spurs · Fri, Oct 23</span></div>
       <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Hawks · Sat, Oct 24</li><li>vs Hawks · Mon, Oct 26</li><li>@ Bucks · Wed, Oct 28</li></ul></div>
     </div>
   </section>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN" data-good="L">
     <div class="future-team-head">
       <h3>Brooklyn Nets</h3>
       <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">0.0 – 82.0</span></p>
@@ -268,7 +272,7 @@ main.futures-page { max-width: 760px; }
       <li class="bet-row"><span class="bet-desc">Under 24.5 wins</span><span class="bet-meta"><span class="bet-odds">+100</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span data-field="last">L 103–110 vs Hornets · Wed, Oct 21</span></div>
+      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-good" data-field="last">L 103–110 vs Hornets · Wed, Oct 21</span></div>
       <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Cavaliers · Sat, Oct 24</li><li>vs Pacers · Sun, Oct 25</li><li>@ Celtics · Tue, Oct 27</li></ul></div>
     </div>
   </section>
@@ -364,9 +368,15 @@ main.futures-page { max-width: 760px; }
     const last = section.querySelector("[data-field=last]");
     const next = section.querySelector("[data-field=next]");
     if (last) {
-      last.textContent = slate.last
-        ? `${slate.last.result} ${slate.last.us}–${slate.last.them} ${slate.last.ha} ${slate.last.name} · ${slate.last.when}`
-        : "No games yet";
+      last.classList.remove("is-good", "is-bad");
+      if (slate.last) {
+        const good = section.dataset.good;
+        if (good && slate.last.result === good) last.classList.add("is-good");
+        else if (slate.last.result === "W" || slate.last.result === "L") last.classList.add("is-bad");
+        last.textContent = `${slate.last.result} ${slate.last.us}–${slate.last.them} ${slate.last.ha} ${slate.last.name} · ${slate.last.when}`;
+      } else {
+        last.textContent = "No games yet";
+      }
     }
     if (!next) return;
     next.replaceChildren();
