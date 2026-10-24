@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<title>Futures — Fantasy Fucks</title>
+<link rel="stylesheet" href="../site.css">
+<style>
+main.futures-page { max-width: 760px; }
+.futures-summary {
+  margin: 0 0 18px;
+  font: 600 14px/1.4 var(--font-sans);
+  color: var(--text-dim);
+}
+.futures-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 0 0 10px;
+}
+.futures-refresh {
+  font: 700 13px/1 var(--font-sans);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.futures-refresh:hover { filter: brightness(.97); }
+.futures-refresh:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+.futures-refresh:disabled { opacity: .55; cursor: wait; }
+.futures-status {
+  margin: 0;
+  color: var(--text-faint);
+  font: 13px/1.35 var(--font-sans);
+}
+.futures-note {
+  margin: 0 0 8px;
+  color: var(--text-faint);
+  font: 13px/1.45 var(--font-sans);
+}
+.future-team {
+  padding: 22px 0 6px;
+  border-top: 1px solid var(--border);
+}
+.future-team-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px 20px;
+}
+.sport-head {
+  display: inline-block;
+  margin: 28px 0 0;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+  color: var(--accent-ink);
+  background: var(--accent);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+.future-team h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  font-weight: 800;
+}
+.future-proj {
+  margin: 0;
+  text-align: right;
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+.future-proj-label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 700;
+}
+.future-proj [data-field="proj"] {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--text);
+}
+.future-now {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin: 6px 0 4px;
+  color: var(--text-dim);
+  font: 600 13px/1.3 var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+.future-now span + span::before {
+  content: "·";
+  margin: 0 8px;
+  color: var(--text-faint);
+  font-weight: 500;
+}
+.bet-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.bet-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px 18px;
+  padding: 9px 0;
+  border-top: 1px solid var(--border);
+  font: 15px/1.35 var(--font-sans);
+}
+.bet-desc { min-width: 0; }
+.bet-meta {
+  display: flex;
+  gap: 12px;
+  flex: 0 0 auto;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+.bet-odds.is-missing {
+  color: var(--text-faint);
+  font-weight: 600;
+  font-style: italic;
+}
+.bet-units { min-width: 3.2em; text-align: right; }
+@media (max-width: 560px) {
+  .future-team-head { flex-wrap: wrap; }
+  .future-proj { text-align: left; }
+  .bet-row { flex-direction: column; gap: 3px; }
+  .bet-units { text-align: left; }
+}
+</style>
+<script>
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || "light";
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+</head>
+<body>
+<!-- futures: unlisted, not in nav.json -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node has-kids" data-key="./" data-open="false"><div class="nav-row"><a class="nav-link" href="../" title="2026 Season">2026 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../this-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../this-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../this-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../this-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../this-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../this-season/preseason-draft-grades/" title="Preseason Draft Grades">Preseason Draft Grades</a></li></ul></li><li class="nav-node"><a class="nav-link" href="../george-pickems/" title="George Pick'ems">George Pick'ems</a></li><li class="nav-node has-kids" data-key="past-seasons/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids" data-key="past-seasons/2025-2026-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2025-2026-season/" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2025-2026-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../past-seasons/2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2020-2021-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2020 - 2021 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2020-2021-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2019-2020-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2019-2020-season/" title="2019 - 2020 Season">2019 - 2020 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2019 - 2020 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2019-2020-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2018-2019-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../past-seasons/2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2018 - 2019 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../past-seasons/2018-2019-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li></ul></li><li class="nav-node has-kids" data-key="rules/" data-open="false"><div class="nav-row"><a class="nav-link" href="../rules/" title="Rules">Rules</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle Rules"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../2026-draft/" title="2026 Draft and Keeper Info">2026 Draft and Keeper Info</a></li><li class="nav-node"><a class="nav-link" href="../2026-keepers/" title="2026 Keepers">2026 Keepers</a></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">Futures</span>
+  </header>
+<main class="page futures-page" id="main">
+  <p class="crumbs">Futures</p>
+  <h1>Futures</h1>
+  <p class="subtitle">Open bets, and the season pace of every team on a ticket.</p>
+  <div class="futures-bar">
+    <button class="futures-refresh" type="button" id="refresh-standings">Refresh standings</button>
+    <p class="futures-status" id="standings-status" role="status">ESPN regular season · Oct 22, 2026</p>
+  </div>
+  <p class="futures-note">Projected finish carries the current win, loss, and tie rate across the games left in the regular season: 17 for the NFL, 82 for the NBA. Refresh pulls those standings from ESPN.</p>
+  <h2 class="sport-head">NFL</h2>
+  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG">
+    <div class="future-team-head">
+      <h3>New York Giants</h3>
+      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">8.5 – 5.7 – 2.8</span></p>
+    </div>
+    <p class="future-now"><span data-field="record">3–2–1</span><span data-field="played">6 played</span><span data-field="left">11 games left</span></p>
+    <ul class="bet-list">
+      <li class="bet-row"><span class="bet-desc">Under 7.5 wins</span><span class="bet-meta"><span class="bet-odds">-120</span></span></li>
+    </ul>
+  </section>
+  <h2 class="sport-head">NBA</h2>
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND">
+    <div class="future-team-head">
+      <h3>Indiana Pacers</h3>
+      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">82.0 – 0.0</span></p>
+    </div>
+    <p class="future-now"><span data-field="record">1–0</span><span data-field="played">1 played</span><span data-field="left">81 games left</span></p>
+    <ul class="bet-list">
+      <li class="bet-row"><span class="bet-desc">Over 44.5 wins</span><span class="bet-meta"><span class="bet-odds">-105</span></span></li>
+    </ul>
+  </section>
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU">
+    <div class="future-team-head">
+      <h3>Houston Rockets</h3>
+      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">82.0 – 0.0</span></p>
+    </div>
+    <p class="future-now"><span data-field="record">1–0</span><span data-field="played">1 played</span><span data-field="left">81 games left</span></p>
+    <ul class="bet-list">
+      <li class="bet-row"><span class="bet-desc">Over 47.5 wins</span><span class="bet-meta"><span class="bet-odds">-130</span></span></li>
+    </ul>
+  </section>
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN">
+    <div class="future-team-head">
+      <h3>Brooklyn Nets</h3>
+      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">0.0 – 82.0</span></p>
+    </div>
+    <p class="future-now"><span data-field="record">0–1</span><span data-field="played">1 played</span><span data-field="left">81 games left</span></p>
+    <ul class="bet-list">
+      <li class="bet-row"><span class="bet-desc">Under 24.5 wins</span><span class="bet-meta"><span class="bet-odds">+100</span></span></li>
+    </ul>
+  </section>
+</main>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="../site.js"></script>
+<script>
+(() => {
+  const SOURCES = [
+    { sport: "nfl", url: "https://site.api.espn.com/apis/v2/sports/football/nfl/standings?season=2026&seasontype=2" },
+    { sport: "nba", url: "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings?season=2027&seasontype=2" },
+  ];
+  const button = document.getElementById("refresh-standings");
+  const status = document.getElementById("standings-status");
+
+  function paint(section, wins, losses, ties) {
+    const seasonGames = Number(section.dataset.games);
+    const played = wins + losses + ties;
+    const left = Math.max(0, seasonGames - played);
+    const record = ties ? `${wins}–${losses}–${ties}` : `${wins}–${losses}`;
+    let proj = "—";
+    if (played > 0) {
+      const pw = wins + (wins / played) * left;
+      const pl = losses + (losses / played) * left;
+      const pt = ties + (ties / played) * left;
+      proj = `${pw.toFixed(1)} – ${pl.toFixed(1)}` + (ties ? ` – ${pt.toFixed(1)}` : "");
+    }
+    const set = (field, text) => {
+      const node = section.querySelector(`[data-field="${field}"]`);
+      if (node) node.textContent = text;
+    };
+    set("record", record);
+    set("played", played === 1 ? "1 played" : `${played} played`);
+    set("left", left === 1 ? "1 game left" : `${left} games left`);
+    set("proj", proj);
+  }
+
+  async function refresh() {
+    button.disabled = true;
+    status.textContent = "Refreshing standings…";
+    try {
+      const payloads = await Promise.all(SOURCES.map(async (source) => {
+        const response = await fetch(source.url, { cache: "no-store" });
+        if (!response.ok) throw new Error(String(response.status));
+        return { sport: source.sport, data: await response.json() };
+      }));
+      const byTeam = {};
+      for (const { sport, data } of payloads) {
+        for (const conference of data.children || []) {
+          for (const entry of (conference.standings && conference.standings.entries) || []) {
+            const stats = {};
+            for (const stat of entry.stats || []) stats[stat.name] = stat.value || 0;
+            byTeam[`${sport}:${entry.team.abbreviation}`] = {
+              wins: Math.round(stats.wins || 0),
+              losses: Math.round(stats.losses || 0),
+              ties: Math.round(stats.ties || 0),
+            };
+          }
+        }
+      }
+      const sections = document.querySelectorAll(".future-team[data-abbr]");
+      let updated = 0;
+      sections.forEach((section) => {
+        const rec = byTeam[`${section.dataset.sport}:${section.dataset.abbr}`];
+        if (!rec) return;
+        paint(section, rec.wins, rec.losses, rec.ties);
+        updated += 1;
+      });
+      if (sections.length && updated < sections.length) throw new Error("no teams");
+      if (!updated) {
+        status.textContent = "No bets on the page yet.";
+        return;
+      }
+      const when = new Date().toLocaleString(undefined, {
+        month: "short", day: "numeric", hour: "numeric", minute: "2-digit",
+      });
+      status.textContent = `Updated ${when} from ESPN`;
+    } catch (error) {
+      status.textContent = "ESPN didn't respond. Still showing the Oct 22 snapshot.";
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  button.addEventListener("click", refresh);
+  if (document.querySelector(".future-team[data-abbr]")) refresh();
+})();
+</script>
+</body>
+</html>

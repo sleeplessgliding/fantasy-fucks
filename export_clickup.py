@@ -1630,7 +1630,7 @@ def patch_chrome(root: Path, tree: list[dict], site_name: str = "Fantasy Fucks")
         rel = path.parent.relative_to(root)
         heading = H1_RE.search(text)
         heading_text = html_lib.unescape(heading.group(1).strip()) if heading else ""
-        title = (heading_text if is_export else "") or nav_label(tree, current) or site_name
+        title = (heading_text if is_export else "") or nav_label(tree, current) or heading_text or site_name
         chrome = site_chrome(rel, tree, site_name, title, current)
 
         if CHROME_RE.search(text):
