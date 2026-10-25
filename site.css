@@ -866,6 +866,14 @@ h1 {
   padding-bottom: 14px;
   border-bottom: 1px solid var(--row-border);
 }
+.motw-watch + .motw-bill {
+  margin-top: 1.5em;
+}
+.motw-watch ul {
+  margin: .2em 0 0;
+  padding-left: 1.2em;
+}
+.motw-watch li { margin: .15em 0; }
 .motw-side {
   display: flex;
   gap: 12px;
@@ -1036,6 +1044,14 @@ h2.silver-linings-title {
 
 .rank-banner { margin: 0 0 12px; }
 .rank-banner img { width: 100%; height: auto; display: block; }
+.rank-banner figcaption {
+  margin: 6px 2px 0;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text-faint);
+}
 .rank-banner.is-poster img {
   max-width: 28rem;
   margin-inline: auto;
