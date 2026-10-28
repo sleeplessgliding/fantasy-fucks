@@ -8,7 +8,7 @@
 <title>Futures — Fantasy Fucks</title>
 <link rel="stylesheet" href="../site.css">
 <style>
-main.futures-page { max-width: 760px; }
+main.futures-page { max-width: 880px; }
 .futures-summary {
   margin: 0 0 18px;
   font: 600 14px/1.4 var(--font-sans);
@@ -136,19 +136,15 @@ main.futures-page { max-width: 760px; }
 }
 .bet-units { min-width: 3.2em; text-align: right; }
 .future-slate {
-  margin: 2px 0 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+  margin: 12px 0 8px;
   font: 14px/1.4 var(--font-sans);
   color: var(--text-dim);
 }
-.slate-row {
-  display: grid;
-  grid-template-columns: 3.4em 1fr;
-  gap: 10px;
-  align-items: start;
-  padding-top: 8px;
-}
 .slate-label {
-  padding-top: 2px;
+  margin: 0 0 6px;
   font-size: 11px;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -160,16 +156,26 @@ main.futures-page { max-width: 760px; }
   margin: 0;
   padding: 0;
 }
-.future-slate li + li { margin-top: 3px; }
-.slate-result.is-good { color: #157a3a; font-weight: 700; }
-.slate-result.is-bad { color: #c42318; font-weight: 700; }
-[data-theme="dark"] .slate-result.is-good { color: #7ddea0; }
-[data-theme="dark"] .slate-result.is-bad { color: #ff8d86; }
-@media (max-width: 560px) {
+.slate-game {
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+.slate-game + .slate-game { margin-top: 2px; }
+.slate-game.is-good { color: #157a3a; font-weight: 700; }
+.slate-game.is-bad { color: #c42318; font-weight: 700; }
+.slate-game.is-live {
+  background: color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--text);
+  font-weight: 700;
+}
+[data-theme="dark"] .slate-game.is-good { color: #7ddea0; }
+[data-theme="dark"] .slate-game.is-bad { color: #ff8d86; }
+@media (max-width: 640px) {
   .future-team-head { flex-wrap: wrap; }
   .future-proj { text-align: left; }
   .bet-row { flex-direction: column; gap: 3px; }
   .bet-units { text-align: left; }
+  .future-slate { grid-template-columns: 1fr; }
 }
 </style>
 <script>
@@ -217,63 +223,131 @@ main.futures-page { max-width: 760px; }
     <button class="futures-refresh" type="button" id="refresh-standings">Refresh standings</button>
     <p class="futures-status" id="standings-status" role="status">ESPN regular season · Oct 22, 2026</p>
   </div>
-  <p class="futures-note">Projected finish carries the current win, loss, and tie rate across the games left in the regular season: 17 for the NFL, 82 for the NBA. Refresh pulls those standings from ESPN.</p>
+  <p class="futures-note">The projected number carries the current win or loss rate across the games left in the regular season: 17 for the NFL, 82 for the NBA. Refresh pulls standings and scores from ESPN.</p>
   <h2 class="sport-head">NFL</h2>
-  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG" data-good="L">
+  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG" data-good="L" data-proj="wins">
     <div class="future-team-head">
       <h3>New York Giants</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">8.5 – 5.7 – 2.8</span></p>
+      <p class="future-proj"><span class="future-proj-label">Projected wins</span><span data-field="proj">9.7</span></p>
     </div>
-    <p class="future-now"><span data-field="record">3–2–1</span><span data-field="played">6 played</span><span data-field="left">11 games left</span></p>
+    <p class="future-now"><span data-field="record">4–2–1</span><span data-field="played">7 played</span><span data-field="left">10 games left</span></p>
     <ul class="bet-list">
       <li class="bet-row"><span class="bet-desc">Under 7.5 wins</span><span class="bet-meta"><span class="bet-odds">-120</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-good" data-field="last">L 27–34 vs Saints · Sun, Oct 18</span></div>
-      <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Texans · Sun, Oct 25</li><li>@ Eagles · Sun, Nov 8</li><li>vs Commanders · Thu, Nov 12</li></ul></div>
+      <div class="slate-col">
+        <p class="slate-label">Last five</p>
+        <ul data-field="last">
+          <li class="slate-game is-bad">W 27–21 @ Texans · Sun, Oct 25</li>
+          <li class="slate-game is-good">L 27–34 vs Saints · Sun, Oct 18</li>
+          <li class="slate-game">T 27–27 @ Commanders · Sun, Oct 11</li>
+          <li class="slate-game is-bad">W 36–24 vs Cardinals · Sun, Oct 4</li>
+          <li class="slate-game is-bad">W 12–7 vs Titans · Sun, Sep 27</li>
+        </ul>
+      </div>
+      <div class="slate-col">
+        <p class="slate-label">Next five</p>
+        <ul data-field="next">
+          <li class="slate-game">@ Eagles · Sun, Nov 8</li>
+          <li class="slate-game">vs Commanders · Thu, Nov 12</li>
+          <li class="slate-game">vs Jaguars · Sun, Nov 22</li>
+          <li class="slate-game">@ Colts · Sun, Nov 29</li>
+          <li class="slate-game">vs 49ers · Sun, Dec 6</li>
+        </ul>
+      </div>
     </div>
   </section>
   <h2 class="sport-head">NBA</h2>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND" data-good="W">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND" data-good="W" data-proj="wins">
     <div class="future-team-head">
       <h3>Indiana Pacers</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">41.0 – 41.0</span></p>
+      <p class="future-proj"><span class="future-proj-label">Projected wins</span><span data-field="proj">41.0</span></p>
     </div>
-    <p class="future-now"><span data-field="record">1–1</span><span data-field="played">2 played</span><span data-field="left">80 games left</span></p>
+    <p class="future-now"><span data-field="record">2–2</span><span data-field="played">4 played</span><span data-field="left">78 games left</span></p>
     <ul class="bet-list">
       <li class="bet-row"><span class="bet-desc">Over 44.5 wins</span><span class="bet-meta"><span class="bet-odds">-105</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-bad" data-field="last">L 105–121 vs Mavericks · Fri, Oct 23</span></div>
-      <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Nets · Sun, Oct 25</li><li>@ Bucks · Mon, Oct 26</li><li>vs 76ers · Wed, Oct 28</li></ul></div>
+      <div class="slate-col">
+        <p class="slate-label">Last five</p>
+        <ul data-field="last">
+          <li class="slate-game is-bad">L 102–110 @ Bucks · Mon, Oct 26</li>
+          <li class="slate-game is-good">W 136–109 @ Nets · Sun, Oct 25</li>
+          <li class="slate-game is-bad">L 105–121 vs Mavericks · Fri, Oct 23</li>
+          <li class="slate-game is-good">W 123–120 @ Pelicans · Wed, Oct 21</li>
+        </ul>
+      </div>
+      <div class="slate-col">
+        <p class="slate-label">Next five</p>
+        <ul data-field="next">
+          <li class="slate-game">vs 76ers · Wed, Oct 28</li>
+          <li class="slate-game">@ Heat · Fri, Oct 30</li>
+          <li class="slate-game">vs Nets · Sun, Nov 1</li>
+          <li class="slate-game">vs Hawks · Mon, Nov 2</li>
+          <li class="slate-game">@ Grizzlies · Wed, Nov 4</li>
+        </ul>
+      </div>
     </div>
   </section>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU" data-good="W">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU" data-good="W" data-proj="wins">
     <div class="future-team-head">
       <h3>Houston Rockets</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">82.0 – 0.0</span></p>
+      <p class="future-proj"><span class="future-proj-label">Projected wins</span><span data-field="proj">82.0</span></p>
     </div>
-    <p class="future-now"><span data-field="record">2–0</span><span data-field="played">2 played</span><span data-field="left">80 games left</span></p>
+    <p class="future-now"><span data-field="record">4–0</span><span data-field="played">4 played</span><span data-field="left">78 games left</span></p>
     <ul class="bet-list">
       <li class="bet-row"><span class="bet-desc">Over 47.5 wins</span><span class="bet-meta"><span class="bet-odds">-130</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-good" data-field="last">W 114–110 @ Spurs · Fri, Oct 23</span></div>
-      <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Hawks · Sat, Oct 24</li><li>vs Hawks · Mon, Oct 26</li><li>@ Bucks · Wed, Oct 28</li></ul></div>
+      <div class="slate-col">
+        <p class="slate-label">Last five</p>
+        <ul data-field="last">
+          <li class="slate-game is-good">W 120–110 vs Hawks · Mon, Oct 26</li>
+          <li class="slate-game is-good">W 121–114 @ Hawks · Sat, Oct 24</li>
+          <li class="slate-game is-good">W 114–110 @ Spurs · Fri, Oct 23</li>
+          <li class="slate-game is-good">W 128–110 vs Mavericks · Wed, Oct 21</li>
+        </ul>
+      </div>
+      <div class="slate-col">
+        <p class="slate-label">Next five</p>
+        <ul data-field="next">
+          <li class="slate-game">@ Bucks · Wed, Oct 28</li>
+          <li class="slate-game">@ Mavericks · Fri, Oct 30</li>
+          <li class="slate-game">vs Thunder · Sat, Oct 31</li>
+          <li class="slate-game">vs Celtics · Mon, Nov 2</li>
+          <li class="slate-game">vs Timberwolves · Wed, Nov 4</li>
+        </ul>
+      </div>
     </div>
   </section>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN" data-good="L">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN" data-good="L" data-proj="losses">
     <div class="future-team-head">
       <h3>Brooklyn Nets</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected</span><span data-field="proj">0.0 – 82.0</span></p>
+      <p class="future-proj"><span class="future-proj-label">Projected losses</span><span data-field="proj">82.0</span></p>
     </div>
-    <p class="future-now"><span data-field="record">0–1</span><span data-field="played">1 played</span><span data-field="left">81 games left</span></p>
+    <p class="future-now"><span data-field="record">0–3</span><span data-field="played">3 played</span><span data-field="left">79 games left</span></p>
     <ul class="bet-list">
       <li class="bet-row"><span class="bet-desc">Under 24.5 wins</span><span class="bet-meta"><span class="bet-odds">+100</span></span></li>
     </ul>
     <div class="future-slate">
-      <div class="slate-row"><span class="slate-label">Last</span><span class="slate-result is-good" data-field="last">L 103–110 vs Hornets · Wed, Oct 21</span></div>
-      <div class="slate-row"><span class="slate-label">Next</span><ul data-field="next"><li>@ Cavaliers · Sat, Oct 24</li><li>vs Pacers · Sun, Oct 25</li><li>@ Celtics · Tue, Oct 27</li></ul></div>
+      <div class="slate-col">
+        <p class="slate-label">Last five</p>
+        <ul data-field="last">
+          <li class="slate-game is-good">L 109–136 vs Pacers · Sun, Oct 25</li>
+          <li class="slate-game is-good">L 121–125 @ Cavaliers · Sat, Oct 24</li>
+          <li class="slate-game is-good">L 103–110 vs Hornets · Wed, Oct 21</li>
+        </ul>
+      </div>
+      <div class="slate-col">
+        <p class="slate-label">Next five</p>
+        <ul data-field="next">
+          <li class="slate-game is-live">66–59 @ Celtics · 10:36 - 3rd</li>
+          <li class="slate-game">vs Pistons · Fri, Oct 30</li>
+          <li class="slate-game">@ Pacers · Sun, Nov 1</li>
+          <li class="slate-game">@ Knicks · Mon, Nov 2</li>
+          <li class="slate-game">vs Hornets · Wed, Nov 4</li>
+        </ul>
+      </div>
     </div>
   </section>
 </main>
@@ -291,6 +365,10 @@ main.futures-page { max-width: 760px; }
     nfl: (abbr) => `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${abbr.toLowerCase()}/schedule?season=2026`,
     nba: (abbr) => `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${abbr.toLowerCase()}/schedule?season=2027`,
   };
+  const SCOREBOARDS = {
+    nfl: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+    nba: "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+  };
   const button = document.getElementById("refresh-standings");
   const status = document.getElementById("standings-status");
 
@@ -299,13 +377,15 @@ main.futures-page { max-width: 760px; }
     const played = wins + losses + ties;
     const left = Math.max(0, seasonGames - played);
     const record = ties ? `${wins}–${losses}–${ties}` : `${wins}–${losses}`;
+    const focus = section.dataset.proj === "losses" ? "losses" : "wins";
     let proj = "—";
     if (played > 0) {
-      const pw = wins + (wins / played) * left;
-      const pl = losses + (losses / played) * left;
-      const pt = ties + (ties / played) * left;
-      proj = `${pw.toFixed(1)} – ${pl.toFixed(1)}` + (ties ? ` – ${pt.toFixed(1)}` : "");
+      const rate = (focus === "losses" ? losses : wins) / played;
+      proj = (focus === "losses" ? losses : wins) + rate * left;
+      proj = proj.toFixed(1);
     }
+    const label = section.querySelector(".future-proj-label");
+    if (label) label.textContent = focus === "losses" ? "Projected losses" : "Projected wins";
     const set = (field, text) => {
       const node = section.querySelector(`[data-field="${field}"]`);
       if (node) node.textContent = text;
@@ -314,6 +394,36 @@ main.futures-page { max-width: 760px; }
     set("played", played === 1 ? "1 played" : `${played} played`);
     set("left", left === 1 ? "1 game left" : `${left} games left`);
     set("proj", proj);
+  }
+
+  function scoreText(side) {
+    const score = side && side.score;
+    if (score == null || score === "") return "";
+    if (typeof score === "object") return score.displayValue || "";
+    return String(score);
+  }
+
+  function liveIndex(data) {
+    const byAbbr = {};
+    for (const event of data.events || []) {
+      const competition = (event.competitions || [])[0];
+      if (!competition) continue;
+      const statusType = (competition.status && competition.status.type) || {};
+      if (statusType.state !== "in") continue;
+      const sides = competition.competitors || [];
+      for (const side of sides) {
+        const abbr = side.team && side.team.abbreviation;
+        const them = sides.find((other) => other !== side);
+        if (!abbr || !them) continue;
+        byAbbr[abbr] = {
+          opp: them.team.abbreviation,
+          us: scoreText(side),
+          them: scoreText(them),
+          detail: statusType.shortDetail || statusType.detail || "Live",
+        };
+      }
+    }
+    return byAbbr;
   }
 
   function formatWhen(iso) {
@@ -329,7 +439,7 @@ main.futures-page { max-width: 760px; }
     return type === 2;
   }
 
-  function readSlate(data, abbr) {
+  function readSlate(data, abbr, live) {
     const games = [];
     for (const event of data.events || []) {
       if (!isRegularSeason(event)) continue;
@@ -340,52 +450,81 @@ main.futures-page { max-width: 760px; }
       const us = sides.find((side) => side.team && side.team.abbreviation === abbr);
       const them = sides.find((side) => side !== us);
       if (!us || !them) continue;
-      const completed = Boolean(statusType.completed) || statusType.state === "post";
-      const usScore = (us.score && us.score.displayValue) || "";
-      const themScore = (them.score && them.score.displayValue) || "";
+      const state = statusType.state;
+      const completed = Boolean(statusType.completed) || state === "post";
+      const usScore = scoreText(us);
+      const themScore = scoreText(them);
       let result = "";
       if (us.winner === true) result = "W";
       else if (them.winner === true) result = "L";
       else if (completed && usScore && usScore === themScore) result = "T";
       games.push({
         completed,
+        live: state === "in",
         result,
         us: usScore,
         them: themScore,
+        opp: them.team.abbreviation,
         ha: us.homeAway === "home" ? "vs" : "@",
         name: them.team.shortDisplayName || them.team.displayName,
         when: formatWhen(event.date),
+        detail: statusType.shortDetail || statusType.detail || "",
       });
+    }
+    if (live) {
+      const match = games.find((game) => !game.completed && game.opp === live.opp);
+      if (match) {
+        match.live = true;
+        if (live.us) match.us = live.us;
+        if (live.them) match.them = live.them;
+        if (live.detail) match.detail = live.detail;
+      }
     }
     const done = games.filter((game) => game.completed);
     return {
-      last: done[done.length - 1] || null,
-      next: games.filter((game) => !game.completed).slice(0, 3),
+      last: done.slice(-5).reverse(),
+      next: games.filter((game) => !game.completed).slice(0, 5),
     };
+  }
+
+  function gameLine(game) {
+    if (game.live) {
+      const score = game.us && game.them ? `${game.us}–${game.them} ` : "";
+      const detail = game.detail ? ` · ${game.detail}` : "";
+      return `${score}${game.ha} ${game.name}${detail}`;
+    }
+    if (game.completed) {
+      return `${game.result} ${game.us}–${game.them} ${game.ha} ${game.name} · ${game.when}`;
+    }
+    return `${game.ha} ${game.name} · ${game.when}`;
+  }
+
+  function fillGames(list, games, empty, section, colorResults) {
+    list.replaceChildren();
+    const rows = games.length ? games : [{ empty }];
+    for (const game of rows) {
+      const item = document.createElement("li");
+      item.className = "slate-game";
+      if (game.empty) {
+        item.textContent = game.empty;
+      } else {
+        item.textContent = gameLine(game);
+        if (game.live) item.classList.add("is-live");
+        else if (colorResults && game.completed) {
+          const good = section.dataset.good;
+          if (good && game.result === good) item.classList.add("is-good");
+          else if (game.result === "W" || game.result === "L") item.classList.add("is-bad");
+        }
+      }
+      list.append(item);
+    }
   }
 
   function paintSlate(section, slate) {
     const last = section.querySelector("[data-field=last]");
     const next = section.querySelector("[data-field=next]");
-    if (last) {
-      last.classList.remove("is-good", "is-bad");
-      if (slate.last) {
-        const good = section.dataset.good;
-        if (good && slate.last.result === good) last.classList.add("is-good");
-        else if (slate.last.result === "W" || slate.last.result === "L") last.classList.add("is-bad");
-        last.textContent = `${slate.last.result} ${slate.last.us}–${slate.last.them} ${slate.last.ha} ${slate.last.name} · ${slate.last.when}`;
-      } else {
-        last.textContent = "No games yet";
-      }
-    }
-    if (!next) return;
-    next.replaceChildren();
-    const upcoming = slate.next.length ? slate.next : [{ ha: "", name: "No games left", when: "" }];
-    for (const game of upcoming) {
-      const item = document.createElement("li");
-      item.textContent = game.when ? `${game.ha} ${game.name} · ${game.when}` : game.name;
-      next.append(item);
-    }
+    if (last) fillGames(last, slate.last, "No games yet", section, true);
+    if (next) fillGames(next, slate.next, "No games left", section, false);
   }
 
   async function refresh() {
@@ -424,6 +563,17 @@ main.futures-page { max-width: 760px; }
         status.textContent = "No bets on the page yet.";
         return;
       }
+      const boardPayloads = await Promise.all(Object.entries(SCOREBOARDS).map(async ([sport, url]) => {
+        try {
+          const response = await fetch(url, { cache: "no-store" });
+          if (!response.ok) throw new Error(String(response.status));
+          return { sport, live: liveIndex(await response.json()) };
+        } catch (error) {
+          return { sport, live: {} };
+        }
+      }));
+      const liveBySport = {};
+      for (const board of boardPayloads) liveBySport[board.sport] = board.live;
       const schedules = await Promise.all([...sections].map(async (section) => {
         const url = SCHEDULES[section.dataset.sport](section.dataset.abbr);
         try {
@@ -440,7 +590,8 @@ main.futures-page { max-width: 760px; }
           missed += 1;
           continue;
         }
-        paintSlate(section, readSlate(data, section.dataset.abbr));
+        const live = (liveBySport[section.dataset.sport] || {})[section.dataset.abbr];
+        paintSlate(section, readSlate(data, section.dataset.abbr, live));
       }
       const when = new Date().toLocaleString(undefined, {
         month: "short", day: "numeric", hour: "numeric", minute: "2-digit",
