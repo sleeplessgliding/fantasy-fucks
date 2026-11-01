@@ -1738,3 +1738,69 @@ footer.site {
 @media (prefers-reduced-motion: reduce) {
   .sidebar, .nav-caret::before { transition: none; }
 }
+
+/* Midseason awards */
+.awards { display: grid; gap: 12px; margin: .6em 0 1.4em; }
+.award {
+  padding: 14px 16px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+}
+.award-label {
+  margin: 0;
+  font: 700 11px/1.2 var(--font-sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.award-player {
+  margin: .2em 0 .35em;
+  font: 800 22px/1.15 var(--font-display);
+  color: var(--text);
+}
+.award-owner { font-weight: 500; font-size: .7em; color: var(--text-faint); }
+.award > p:not([class]) { margin: 0; }
+.award.is-mvp { border-left-color: var(--gold); background: color-mix(in srgb, var(--gold) 8%, var(--bg-elev)); }
+.award.is-mvp .award-label { color: var(--gold); }
+.award.is-mvp .award-player { font-size: 28px; }
+.award.is-lvp,
+.award.is-bad { border-left-color: var(--miss); }
+.award.is-lvp .award-label,
+.award.is-bad .award-label { color: var(--miss); }
+.award-hm {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: .88em;
+  color: var(--text-dim);
+}
+.award-hm strong { color: var(--text-dim); }
+.award-hm .award-label { display: inline; font-size: 10px; margin-right: .4em; }
+.award-last {
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-faint);
+}
+.award-last.is-repeat { font-style: normal; font-weight: 700; color: var(--miss); }
+.award-repeat {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--miss);
+  color: #fff;
+  font: 700 10px/1.2 var(--font-sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.team-mvp {
+  margin: .9em 0 0;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--gold) 8%, var(--bg-elev));
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+}
+.team-mvp .award-label { display: inline; margin-right: .4em; color: var(--gold); }
