@@ -1811,3 +1811,11 @@ footer.site {
   border-radius: 10px;
 }
 .team-mvp .award-label { display: inline; margin-right: .4em; color: var(--gold); }
+.award-banner {
+  display: block;
+  width: calc(100% + 32px);
+  max-width: none;
+  height: auto;
+  margin: -14px -16px 14px;
+  border-radius: 8px 11px 0 0;
+}
