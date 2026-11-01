@@ -1755,16 +1755,23 @@ footer.site {
   text-transform: uppercase;
   color: var(--text-faint);
 }
-.award-player {
-  margin: .2em 0 .35em;
-  font: 800 22px/1.15 var(--font-display);
+.award > .award-label {
+  font: 800 24px/1.15 var(--font-display);
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--text);
 }
-.award-owner { font-weight: 500; font-size: .7em; color: var(--text-faint); }
+.award-player {
+  margin: .3em 0 .45em;
+  font: 700 17px/1.2 var(--font-sans);
+  color: var(--text-dim);
+}
+.award-owner { font-weight: 500; font-size: .85em; color: var(--text-faint); }
 .award > p:not([class]) { margin: 0; }
 .award.is-mvp { border-left-color: var(--gold); background: color-mix(in srgb, var(--gold) 8%, var(--bg-elev)); }
 .award.is-mvp .award-label { color: var(--gold); }
-.award.is-mvp .award-player { font-size: 28px; }
+.award.is-mvp > .award-label { font-size: 32px; }
+.award.is-mvp .award-player { font-size: 20px; }
 .award.is-lvp,
 .award.is-bad { border-left-color: var(--miss); }
 .award.is-lvp .award-label,
