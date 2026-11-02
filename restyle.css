@@ -1,0 +1,295 @@
+/* Fantasy Fucks - restyle foundation. Loads after site.css: tokens, type, and page chrome. */
+
+:root,
+[data-theme="light"] {
+  --bg: #f5f4ef;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #ebe9e2;
+  --border: #d5d2c9;
+  --text: #0b0b0b;
+  --text-dim: #3f3f3f;
+  --text-faint: #6b6b6b;
+  --rule: #0b0b0b;
+  --chrome: #0b0b0b;
+  --radius: 0;
+  --radius-pill: 0;
+  --font-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Sometype Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0b0b;
+  --bg-elev: #161616;
+  --bg-elev-2: #1f1f1f;
+  --border: #2e2e2e;
+  --text: #f5f4ef;
+  --text-dim: #bdbdb6;
+  --text-faint: #8f8f88;
+  --rule: #f5f4ef;
+  --chrome: #000000;
+}
+
+/* chrome */
+.brand-mark { border-radius: 0; }
+.brand-name { letter-spacing: -.01em; font-size: 17px; font-weight: 700; }
+.nav-link,
+.nav-sub .nav-link {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+.nav-link[aria-current="page"] { font-weight: 700; }
+.theme-btn {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.topbar-title {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* page header */
+main.page { container-type: inline-size; }
+main.page > h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 10cqi, 5.5rem);
+  font-weight: 700;
+  line-height: .88;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--rule);
+}
+.crumbs {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+main.page > .subtitle,
+main.page > .meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+main.page > .subtitle { margin: 12px 0 0; }
+main.page > .subtitle::before { content: "[ "; }
+main.page > .subtitle::after { content: " ]"; }
+main.page > .meta { margin: 4px 0 36px; color: var(--text-faint); }
+main.page > h1 + .meta { margin-top: 12px; }
+
+/* article type */
+.prose { font-size: 17px; line-height: 1.55; }
+.prose > h1,
+.prose > h2 {
+  margin: 2.4em 0 .7em;
+  padding-top: 14px;
+  border-top: 2px solid var(--rule);
+  font-size: clamp(1.9rem, 7cqi, 3.25rem);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+}
+.prose > h2:has(.rank-name) {
+  margin-top: 1em;
+  padding-top: 0;
+  border-top: 0;
+  align-items: flex-start;
+  font-size: clamp(1.6rem, 5.4cqi, 2.5rem);
+}
+.prose h3 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+.prose hr { border-top-color: var(--border); }
+.prose blockquote {
+  border-radius: 0;
+  font-style: normal;
+}
+.prose code { border-radius: 0; font-family: var(--font-mono); }
+.prose th {
+  color: var(--text-dim);
+  font: 500 12px/1.3 var(--font-mono);
+  letter-spacing: 0;
+  text-transform: none;
+}
+footer.site { font-family: var(--font-mono); }
+
+/* mono labels: every small uppercase caption on the site */
+.matchup-result,
+.lineup-label,
+.motw-vs,
+.roster > summary,
+.roster .group th,
+.waiver-log .waiver-heading,
+.waiver-log .waiver-date,
+.trades h3,
+.score-pulse > summary,
+.score-log > summary,
+.prose .standings-table thead th,
+.score-wk,
+.case h3,
+.children h2,
+.award-repeat,
+.stat-badge,
+.prose h2 .rank-grade {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.children h2::before { content: "[ "; }
+.children h2::after { content: " ]"; }
+
+/* square corners where site.css hardcodes a radius */
+.matchup-card,
+.motw-vs,
+.motw-watch,
+.slam-highlight,
+.score-bar,
+.award,
+.team-mvp,
+.award-banner,
+.ai-banner,
+.shell .draft-pick,
+.shell .slate-game { border-radius: 0; }
+
+/* home cards */
+.page-card { background: none; border: 0; border-top: 2px solid var(--rule); }
+.page-card:hover { background: none; border-color: var(--rule); }
+.page-card h2 {
+  flex: 1;
+  padding: 10px 0 12px;
+  font-size: clamp(1.15rem, 3cqi, 1.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.page-card:hover h2 { color: var(--accent-text); }
+
+/* page lists */
+.children { padding: 0; background: none; }
+.children h2 { padding: 0 0 10px; border-bottom: 2px solid var(--rule); color: var(--text-dim); font-size: 13px; text-transform: none; }
+.children a {
+  padding: 12px 0;
+  font-size: clamp(1.25rem, 4.4cqi, 1.9rem);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.children a::before { display: none; }
+.children a,
+.children a:last-child { border-bottom: 0; }
+.children li { border-bottom: 1px solid var(--border); }
+.children a:hover { color: var(--accent-text); }
+
+/* matchups: ruled rows instead of white cards */
+.matchups { gap: 0; border-top: 1px solid var(--rule); }
+.matchup-card { background: none; border-bottom: 1px solid var(--border); }
+.matchup-card > summary { padding: 14px 0 10px; }
+.matchup-card > summary::after {
+  content: "( + )";
+  width: auto;
+  height: auto;
+  margin-top: 8px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font: 500 12px/1 var(--font-mono);
+}
+.matchup-card[open] > summary::after { content: "( \2013  )"; }
+.matchup-card > summary:hover::after { background: none; color: var(--accent-text); }
+.matchup-score { font-variant-numeric: tabular-nums; }
+
+/* panels: league overview, waivers, scoring, rosters */
+.league-overview,
+.waiver-log,
+.trades,
+.score-pulse,
+.score-log,
+.roster {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.league-overview,
+.waiver-log,
+.trades,
+.score-pulse,
+.score-log,
+.roster { border-top: 1px solid var(--rule); }
+
+/* matchup of the week and awards sit flat, with the lime rule on top */
+.motw { padding-inline: 0; background: none; box-shadow: none; border-top: 2px solid var(--accent); }
+.award > .award-label { font-weight: 700; letter-spacing: -.025em; line-height: 1; text-transform: uppercase; }
+
+/* standalone pages with their own header and tiles */
+.futures-page > .subtitle { margin-bottom: 20px; }
+header.page h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: .88;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.shell .draft-board h2,
+.shell .sport-head,
+.shell .slate-label,
+.shell .future-proj-label { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0; }
+
+/* award banners run edge to edge */
+.prose .award-banner:first-child { margin-top: -14px; border-radius: 0; }
+
+/* standings fill their panel on desktop, and stay inside the page on phones */
+@media (min-width: 640px) {
+  .standings-table,
+  .standings-table thead,
+  .standings-table tbody { display: block; }
+  .standings-table tr {
+    display: grid;
+    grid-template-columns: 1.6em minmax(4.5em, 1fr) 4em 5em 58%;
+    align-items: center;
+    border-top: 1px solid var(--row-border);
+  }
+  .standings-table thead tr { border-top: 0; }
+  .prose .standings-table th,
+  .prose .standings-table td { border-top: 0; }
+  .prose .standings-table th.scoring,
+  .prose .standings-table td.scoring { width: auto; }
+}
+@media (max-width: 639px) {
+  .standings-table tr { grid-template-columns: 1.4em minmax(0, 1fr) auto auto; }
+  .standings-table td.scoring .score-nums {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2px 10px;
+  }
+  .score-plot { gap: 6px; }
+  .score-col { flex: 1 1 0; min-width: 0; }
+  .prose { overflow-wrap: break-word; }
+  .prose > table:not(.pickems-grid) { display: block; max-width: 100%; overflow-x: auto; }
+  .shell .grid { grid-template-columns: minmax(0, 1fr); padding-inline: 20px; }
+  .shell .team { min-width: 0; }
+  .shell .team-head { flex-wrap: wrap; }
+  .shell .team-meta { flex-basis: 100%; text-align: left; }
+}
+
+/* The off-canvas sidebar's shadow should only show while the drawer is open. */
+@media (max-width: 960px) {
+  html:not([data-drawer="open"]) .sidebar { box-shadow: none; }
+}

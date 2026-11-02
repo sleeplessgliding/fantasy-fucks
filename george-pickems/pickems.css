@@ -1,0 +1,252 @@
+/* George Pick'ems - page layer on top of restyle.css. */
+
+main.page:has(.pickems) { max-width: 1120px; padding-bottom: 72px; }
+main.page:has(.pickems) > .crumbs { display: none; }
+main.page:has(.pickems) > h1 { font-size: clamp(3rem, 15.5cqi, 9.5rem); line-height: .82; }
+
+.prose.pickems { counter-reset: section; font-family: var(--font-sans); }
+
+/* section headings */
+.prose.pickems > h2 {
+  display: block;
+  counter-increment: section;
+  margin: clamp(48px, 9cqi, 96px) 0 20px;
+  padding: 0;
+  border-top: 0;
+  background: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6.4cqi, 4.5rem);
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+}
+.prose.pickems > h2::before {
+  content: "[ 0" counter(section) " ]";
+  display: block;
+  margin-bottom: 12px;
+  font: 500 13px/1.4 var(--font-mono);
+  letter-spacing: 0;
+}
+.prose.pickems > p:has(.is-warn) { margin: 0 0 16px; }
+
+/* badges lose their pill and become plain type */
+.pickems .result-badge,
+.pickems .result-badge.cover,
+.pickems .result-badge.loss,
+.pickems .result-badge.under,
+.pickems .result-badge.push,
+.pickems .result-badge.open {
+  display: flex;
+  align-items: flex-start;
+  min-height: 0;
+  padding: 0;
+  gap: 3px;
+  background: none;
+  border-radius: 0;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+}
+.pickems .result-badge.is-warn {
+  display: inline-block;
+  min-height: 0;
+  padding: 3px 8px;
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 500 12px/1.4 var(--font-mono);
+}
+.pickems .result-badge-score {
+  font: 400 12px/1.3 var(--font-mono);
+  color: var(--text-faint);
+}
+.pickems .pick-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+.pickems .verdict {
+  padding: 2px 6px 1px;
+  font: 500 11px/1.3 var(--font-mono);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+.pickems .verdict.is-cover { background: var(--accent); color: var(--accent-ink); box-shadow: none; }
+.pickems .verdict.is-loss { background: var(--miss); color: var(--bg); box-shadow: none; }
+
+/* tables */
+.prose.pickems table.pickems-grid {
+  margin: 0;
+  border-top: 2px solid var(--rule);
+  table-layout: fixed;
+}
+.prose.pickems table.pickems-grid th {
+  padding: 10px 16px 10px 0;
+  background: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  color: var(--text-dim);
+  font: 500 12px/1.3 var(--font-mono);
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+}
+.prose.pickems table.pickems-grid td {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.prose.pickems table.pickems-grid tbody tr:hover td {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+/* lines: team names lead, the kickoff time recedes */
+.pickems-lines th:nth-child(1) { width: 34%; }
+.pickems-lines th:nth-child(2) { width: 28%; }
+.pickems-lines th:nth-child(3) { width: 20%; }
+.pickems-lines td:nth-child(1) .result-badge-pick { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+.pickems-lines td:nth-child(3) .result-badge-score { display: none; }
+.pickems-lines td:nth-child(4) .result-badge-pick {
+  font: 400 12px/1.5 var(--font-mono);
+  color: var(--text-faint);
+}
+
+/* picks: a leaderboard, with names and records doing the shouting */
+.pickems-grid:not(.pickems-lines) th:nth-child(1) { width: 22%; }
+.pickems-grid:not(.pickems-lines) th:nth-child(4) { width: 11%; }
+.pickems-grid:not(.pickems-lines) th:nth-child(5) { width: 17%; }
+.pickems-grid:not(.pickems-lines) td:nth-child(1) .result-badge-pick {
+  font-size: clamp(22px, 3cqi, 32px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.pickems-grid:not(.pickems-lines) td:nth-child(4) .result-badge-pick {
+  font: 500 15px/1.4 var(--font-mono);
+}
+.pickems-grid:not(.pickems-lines) td:nth-child(5) .result-badge-pick {
+  font-size: clamp(22px, 3cqi, 32px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.prose.pickems table.pickems-grid tr.is-leader td {
+  background: var(--accent);
+  --text: var(--accent-ink);
+  --text-faint: #333333;
+}
+.prose.pickems table.pickems-grid tbody tr.is-leader:hover td { background: var(--accent); }
+.prose.pickems table.pickems-grid tr.is-leader td:first-child { box-shadow: -10px 0 0 var(--accent); }
+.pickems tr.is-leader .verdict { color: var(--accent-ink); }
+.pickems tr.is-leader .verdict.is-cover { background: var(--accent-ink); color: var(--accent); }
+
+/* past weeks: an accordion list */
+.prose.pickems > table + .pickems-week { margin-top: clamp(48px, 9cqi, 96px); border-top: 2px solid var(--rule); }
+.prose.pickems > table + .pickems-week::before {
+  content: "[ Past weeks ]";
+  display: block;
+  padding: 10px 0;
+  font: 500 13px/1.4 var(--font-mono);
+}
+.pickems-week { margin: 0; border-bottom: 1px solid var(--rule); }
+.pickems-week > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0;
+  padding: 14px 0 12px;
+  background: none;
+  border-radius: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.6cqi, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.pickems-week > summary:hover { filter: none; color: var(--accent-text); }
+.pickems-week > summary::after {
+  content: "( + )";
+  flex: none;
+  font: 500 13px/1 var(--font-mono);
+  letter-spacing: 0;
+}
+.pickems-week[open] > summary::after { content: "( \2013  )"; }
+.prose.pickems .pickems-week table.pickems-grid { margin-bottom: 28px; }
+
+/* phones: rows become stacked cards */
+@media (max-width: 700px) {
+  .prose.pickems table.pickems-grid,
+  .prose.pickems table.pickems-grid tbody { display: block; width: 100%; }
+  .prose.pickems table.pickems-grid thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .prose.pickems table.pickems-grid tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .prose.pickems table.pickems-grid td {
+    display: block;
+    width: auto;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+  }
+  .prose.pickems table.pickems-grid tbody tr:hover td { background: none; }
+  .pickems .result-badge,
+  .pickems .result-badge.cover,
+  .pickems .result-badge.loss,
+  .pickems .result-badge.under,
+  .pickems .result-badge.push,
+  .pickems .result-badge.open { font-size: 14px; }
+
+  /* lines: game and status on top, then favorite beside total */
+  .prose.pickems .pickems-lines td:nth-child(1) { grid-column: 1 / -1; }
+  .pickems-lines td:nth-child(1) .result-badge {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .pickems-lines td:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .prose.pickems .pickems-lines td:nth-child(4) { grid-column: 2; grid-row: 3; margin-top: -8px; }
+  .prose.pickems .pickems-lines td:nth-child(2) { grid-column: 1; grid-row: 2 / span 2; }
+
+  /* picks: name and record on top, then the two picks, then the week */
+  .pickems-grid:not(.pickems-lines) td:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(5) { grid-column: 2; grid-row: 1; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(5) .result-badge { align-items: flex-end; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(4) { grid-column: 1 / -1; grid-row: 3; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(4) .result-badge-pick { font-size: 12px; font-weight: 400; }
+  .pickems-grid:not(.pickems-lines) td:nth-child(4) .result-badge-pick::before { content: "This week: "; color: var(--text-faint); }
+  .prose.pickems table.pickems-grid tr.is-leader {
+    margin: 0 -20px;
+    padding: 14px 20px;
+    background: var(--accent);
+    border-bottom: 0;
+  }
+  .prose.pickems table.pickems-grid tr.is-leader td { background: none; box-shadow: none; }
+  .prose.pickems table.pickems-grid tbody tr.is-leader:hover td { background: none; }
+}
