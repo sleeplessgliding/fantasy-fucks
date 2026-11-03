@@ -133,7 +133,7 @@ def _side(S, m, res):
           <img class="matchup-avatar" src="{S.avatar(rid)}" alt="" loading="lazy">
           <div class="matchup-id">
             <div class="matchup-name">{SHORT[rid]}</div>
-            <div class="matchup-team">{S.team(rid)}</div>
+            <div class="matchup-team">{EQ(S.team(rid))}</div>
             <div class="matchup-scorers">{scor}</div>
           </div>
           <div class="matchup-score">{num(m["points"])}<span class="matchup-result">{res}</span></div>
@@ -339,6 +339,11 @@ def build_html(n, s, S):
         s, k = re.subn(rf'(<div id="{tid}">\n(?:(?!<div id=).)*?<h2>.*?</h2>\n)<p class="rank-chips">.*?</details>',
                        lambda m: m.group(1) + block, s, count=1, flags=re.S)
         if k != 1: die(f"couldn't find the stat block for '{tid}' (every team needs <div id=\"{tid}\"> with its rank-chips and score-log)")
+    for rid in S.rosters:  # team names in the headers come from Sleeper, so renames show up
+        tid, name = SHORT[rid].lower(), EQ(S.team(rid))
+        s, k = re.subn(rf'(<div id="{tid}">\n(?:(?!<div id=).)*?<h2><span class="rank-name">\d+\. [^<]*? &mdash; )[^<]*(?=</span>)',
+                       lambda m: m.group(1) + name, s, count=1, flags=re.S)
+        if k != 1: die(f"couldn't find the team name in '{tid}'s header (expected: <span class=\"rank-name\">N. {SHORT[rid]} &mdash; Team Name</span>)")
     return apply_ranks(s, page_path(n - 1))
 
 
@@ -349,7 +354,7 @@ def cmd_build(n):
     p.write_text(build_html(n, p.read_text(), S))
     pending = [(SHORT[m["roster_id"]], S.player(pid)[0]) for m in S.weeks[n - 1]
                for pid, pts in zip(m["starters"], m["starters_points"]) if pid != "0" and pts == 0]
-    print(f"ff: built week {n} (Week {n - 1} recap, waivers, trades, stats, ranks); starters at 0 pts in week {n - 1}: {len(pending)}")
+    print(f"ff: built week {n} (Week {n - 1} recap, waivers, trades, stats, team names, ranks); starters at 0 pts in week {n - 1}: {len(pending)}")
 
 
 # ---- check ---------------------------------------------------------------------------------------
