@@ -1,0 +1,4 @@
+#!/bin/sh
+# Plain-git version of the publish check (for commits made outside Claude Code).
+# Turn on once per clone: python3 tools/ff.py setup
+exec python3 "$(git rev-parse --show-toplevel)/tools/ff.py" hook
