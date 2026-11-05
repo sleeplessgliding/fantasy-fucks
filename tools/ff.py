@@ -344,6 +344,9 @@ def build_html(n, s, S):
         s, k = re.subn(rf'(<div id="{tid}">\n(?:(?!<div id=).)*?<h2><span class="rank-name">\d+\. [^<]*? &mdash; )[^<]*(?=</span>)',
                        lambda m: m.group(1) + name, s, count=1, flags=re.S)
         if k != 1: die(f"couldn't find the team name in '{tid}'s header (expected: <span class=\"rank-name\">N. {SHORT[rid]} &mdash; Team Name</span>)")
+    # "Updated" is the day the page was last built; the commit hook rebuilds, so it ends up as the publish day.
+    s = sub_once(r'<p class="meta">Updated \d{4}-\d{2}-\d{2}</p>',
+                 f'<p class="meta">Updated {datetime.datetime.now(TZ).date()}</p>', s, "Updated date")
     return apply_ranks(s, page_path(n - 1))
 
 
@@ -354,7 +357,7 @@ def cmd_build(n):
     p.write_text(build_html(n, p.read_text(), S))
     pending = [(SHORT[m["roster_id"]], S.player(pid)[0]) for m in S.weeks[n - 1]
                for pid, pts in zip(m["starters"], m["starters_points"]) if pid != "0" and pts == 0]
-    print(f"ff: built week {n} (Week {n - 1} recap, waivers, trades, stats, team names, ranks); starters at 0 pts in week {n - 1}: {len(pending)}")
+    print(f"ff: built week {n} (Week {n - 1} recap, waivers, trades, stats, team names, ranks, Updated date); starters at 0 pts in week {n - 1}: {len(pending)}")
 
 
 # ---- check ---------------------------------------------------------------------------------------
