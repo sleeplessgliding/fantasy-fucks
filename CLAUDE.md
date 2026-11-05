@@ -20,3 +20,9 @@ Week N's page (`this-season/power-rankings-week-N/index.html`) recaps week N-1 a
 - If the page layout changes (restyle, new section), update `tools/ff.py` in the same change and prove it: `build` on the previous week's page should change nothing except data that really changed since it was posted.
 - League settings (league id, owner names by Sleeper roster_id, timezone, week-1 Tuesday) are in `tools/league.json`. Update it each new season.
 - Plain `git` commits outside Claude Code: run `python3 tools/ff.py setup` once per clone to turn on the same check as a git pre-commit hook.
+
+## George Pick'ems
+
+The weekly pick'ems update is documented in `AGENTS.md`:
+
+@AGENTS.md
