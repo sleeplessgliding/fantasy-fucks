@@ -54,8 +54,9 @@ main.futures-page { max-width: 880px; }
 .future-team-head {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 12px 20px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 20px;
 }
 .sport-head {
   display: inline-block;
@@ -78,32 +79,11 @@ main.futures-page { max-width: 880px; }
   letter-spacing: -.02em;
   font-weight: 800;
 }
-.future-proj {
-  margin: 0;
-  text-align: right;
-  font-family: var(--font-sans);
-  font-variant-numeric: tabular-nums;
-}
-.future-proj-label {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 11px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  font-weight: 700;
-}
-.future-proj [data-field="proj"] {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -.03em;
-  color: var(--text);
-}
 .future-now {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 0;
-  margin: 6px 0 4px;
+  margin: 0;
   color: var(--text-dim);
   font: 600 13px/1.3 var(--font-sans);
   font-variant-numeric: tabular-nums;
@@ -114,31 +94,53 @@ main.futures-page { max-width: 880px; }
   color: var(--text-faint);
   font-weight: 500;
 }
-.bet-list { list-style: none; margin: 8px 0 0; padding: 0; }
-.bet-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px 18px;
-  padding: 9px 0;
-  border-top: 1px solid var(--border);
-  font: 15px/1.35 var(--font-sans);
-}
-.bet-desc { min-width: 0; }
-.bet-meta {
-  display: flex;
-  gap: 12px;
-  flex: 0 0 auto;
-  color: var(--text-dim);
+.future-compare {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 12px 0 4px;
+  border-top: 2px solid var(--rule);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
-  font-weight: 650;
 }
-.bet-odds.is-missing {
+.compare-cell {
+  min-width: 0;
+  padding: 10px 14px 12px;
+}
+.compare-cell + .compare-cell { border-left: 1px solid var(--border); }
+.compare-cell:first-child { padding-left: 0; }
+.compare-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   color: var(--text-faint);
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 700;
 }
-.bet-units { min-width: 3.2em; text-align: right; }
+.compare-value {
+  display: block;
+  font-size: 26px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--text);
+}
+.compare-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.compare-cell.is-good .compare-value,
+.compare-cell.is-good .compare-sub { color: #157a3a; }
+.compare-cell.is-bad .compare-value,
+.compare-cell.is-bad .compare-sub { color: #c42318; }
+[data-theme="dark"] .compare-cell.is-good .compare-value,
+[data-theme="dark"] .compare-cell.is-good .compare-sub { color: #7ddea0; }
+[data-theme="dark"] .compare-cell.is-bad .compare-value,
+[data-theme="dark"] .compare-cell.is-bad .compare-sub { color: #ff8d86; }
 .future-slate {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -175,10 +177,9 @@ main.futures-page { max-width: 880px; }
 [data-theme="dark"] .slate-game.is-good { color: #7ddea0; }
 [data-theme="dark"] .slate-game.is-bad { color: #ff8d86; }
 @media (max-width: 640px) {
-  .future-team-head { flex-wrap: wrap; }
-  .future-proj { text-align: left; }
-  .bet-row { flex-direction: column; gap: 3px; }
-  .bet-units { text-align: left; }
+  .compare-cell { padding: 8px 10px 10px; }
+  .compare-value { font-size: 21px; }
+  .compare-sub { font-size: 12px; }
   .future-slate { grid-template-columns: 1fr; }
 }
 </style>
@@ -227,17 +228,18 @@ main.futures-page { max-width: 880px; }
     <button class="futures-refresh" type="button" id="refresh-standings">Refresh standings</button>
     <p class="futures-status" id="standings-status" role="status">ESPN regular season · Oct 22, 2026</p>
   </div>
-  <p class="futures-note">The projected number carries the current win or loss rate across the games left in the regular season: 17 for the NFL, 82 for the NBA. Refresh pulls standings and scores from ESPN.</p>
+  <p class="futures-note">Pace carries each team's current win rate across the games left in the regular season (17 for the NFL, 82 for the NBA). Margin is how far that pace sits on the right side of the bet: green means the ticket is winning, red means it's losing. Refresh pulls standings and scores from ESPN.</p>
   <h2 class="sport-head">NFL</h2>
-  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG" data-good="L" data-proj="wins">
+  <section class="future-team" data-sport="nfl" data-games="17" data-abbr="NYG" data-line="7.5" data-side="under">
     <div class="future-team-head">
       <h3>New York Giants</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected wins</span><span data-field="proj">9.7</span></p>
+      <p class="future-now"><span data-field="record">4–2–1</span><span data-field="played">7 played</span><span data-field="left">10 games left</span></p>
     </div>
-    <p class="future-now"><span data-field="record">4–2–1</span><span data-field="played">7 played</span><span data-field="left">10 games left</span></p>
-    <ul class="bet-list">
-      <li class="bet-row"><span class="bet-desc">Under 7.5 wins</span><span class="bet-meta"><span class="bet-odds">-120</span></span></li>
-    </ul>
+    <div class="future-compare">
+      <div class="compare-cell"><span class="compare-label">Bet</span><span class="compare-value">Under 7.5</span><span class="compare-sub">wins · -120</span></div>
+      <div class="compare-cell"><span class="compare-label">Pace</span><span class="compare-value" data-field="proj">9.7</span><span class="compare-sub">wins</span></div>
+      <div class="compare-cell is-bad" data-field="verdict"><span class="compare-label">Margin</span><span class="compare-value" data-field="margin">−2.2</span><span class="compare-sub" data-field="margin-note">behind the line</span></div>
+    </div>
     <div class="future-slate">
       <div class="slate-col">
         <p class="slate-label">Last five</p>
@@ -262,15 +264,16 @@ main.futures-page { max-width: 880px; }
     </div>
   </section>
   <h2 class="sport-head">NBA</h2>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND" data-good="W" data-proj="wins">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="IND" data-line="44.5" data-side="over">
     <div class="future-team-head">
       <h3>Indiana Pacers</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected wins</span><span data-field="proj">41.0</span></p>
+      <p class="future-now"><span data-field="record">2–2</span><span data-field="played">4 played</span><span data-field="left">78 games left</span></p>
     </div>
-    <p class="future-now"><span data-field="record">2–2</span><span data-field="played">4 played</span><span data-field="left">78 games left</span></p>
-    <ul class="bet-list">
-      <li class="bet-row"><span class="bet-desc">Over 44.5 wins</span><span class="bet-meta"><span class="bet-odds">-105</span></span></li>
-    </ul>
+    <div class="future-compare">
+      <div class="compare-cell"><span class="compare-label">Bet</span><span class="compare-value">Over 44.5</span><span class="compare-sub">wins · -105</span></div>
+      <div class="compare-cell"><span class="compare-label">Pace</span><span class="compare-value" data-field="proj">41.0</span><span class="compare-sub">wins</span></div>
+      <div class="compare-cell is-bad" data-field="verdict"><span class="compare-label">Margin</span><span class="compare-value" data-field="margin">−3.5</span><span class="compare-sub" data-field="margin-note">behind the line</span></div>
+    </div>
     <div class="future-slate">
       <div class="slate-col">
         <p class="slate-label">Last five</p>
@@ -293,15 +296,16 @@ main.futures-page { max-width: 880px; }
       </div>
     </div>
   </section>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU" data-good="W" data-proj="wins">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="HOU" data-line="47.5" data-side="over">
     <div class="future-team-head">
       <h3>Houston Rockets</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected wins</span><span data-field="proj">82.0</span></p>
+      <p class="future-now"><span data-field="record">4–0</span><span data-field="played">4 played</span><span data-field="left">78 games left</span></p>
     </div>
-    <p class="future-now"><span data-field="record">4–0</span><span data-field="played">4 played</span><span data-field="left">78 games left</span></p>
-    <ul class="bet-list">
-      <li class="bet-row"><span class="bet-desc">Over 47.5 wins</span><span class="bet-meta"><span class="bet-odds">-130</span></span></li>
-    </ul>
+    <div class="future-compare">
+      <div class="compare-cell"><span class="compare-label">Bet</span><span class="compare-value">Over 47.5</span><span class="compare-sub">wins · -130</span></div>
+      <div class="compare-cell"><span class="compare-label">Pace</span><span class="compare-value" data-field="proj">82.0</span><span class="compare-sub">wins</span></div>
+      <div class="compare-cell is-good" data-field="verdict"><span class="compare-label">Margin</span><span class="compare-value" data-field="margin">+34.5</span><span class="compare-sub" data-field="margin-note">ahead of the line</span></div>
+    </div>
     <div class="future-slate">
       <div class="slate-col">
         <p class="slate-label">Last five</p>
@@ -324,15 +328,16 @@ main.futures-page { max-width: 880px; }
       </div>
     </div>
   </section>
-  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN" data-good="L" data-proj="losses">
+  <section class="future-team" data-sport="nba" data-games="82" data-abbr="BKN" data-line="24.5" data-side="under">
     <div class="future-team-head">
       <h3>Brooklyn Nets</h3>
-      <p class="future-proj"><span class="future-proj-label">Projected losses</span><span data-field="proj">82.0</span></p>
+      <p class="future-now"><span data-field="record">0–3</span><span data-field="played">3 played</span><span data-field="left">79 games left</span></p>
     </div>
-    <p class="future-now"><span data-field="record">0–3</span><span data-field="played">3 played</span><span data-field="left">79 games left</span></p>
-    <ul class="bet-list">
-      <li class="bet-row"><span class="bet-desc">Under 24.5 wins</span><span class="bet-meta"><span class="bet-odds">+100</span></span></li>
-    </ul>
+    <div class="future-compare">
+      <div class="compare-cell"><span class="compare-label">Bet</span><span class="compare-value">Under 24.5</span><span class="compare-sub">wins · +100</span></div>
+      <div class="compare-cell"><span class="compare-label">Pace</span><span class="compare-value" data-field="proj">0.0</span><span class="compare-sub">wins</span></div>
+      <div class="compare-cell is-good" data-field="verdict"><span class="compare-label">Margin</span><span class="compare-value" data-field="margin">+24.5</span><span class="compare-sub" data-field="margin-note">ahead of the line</span></div>
+    </div>
     <div class="future-slate">
       <div class="slate-col">
         <p class="slate-label">Last five</p>
@@ -381,15 +386,14 @@ main.futures-page { max-width: 880px; }
     const played = wins + losses + ties;
     const left = Math.max(0, seasonGames - played);
     const record = ties ? `${wins}–${losses}–${ties}` : `${wins}–${losses}`;
-    const focus = section.dataset.proj === "losses" ? "losses" : "wins";
     let proj = "—";
+    let margin = null;
     if (played > 0) {
-      const rate = (focus === "losses" ? losses : wins) / played;
-      proj = (focus === "losses" ? losses : wins) + rate * left;
-      proj = proj.toFixed(1);
+      const pace = wins + (wins / played) * left;
+      proj = pace.toFixed(1);
+      const line = Number(section.dataset.line);
+      margin = Number((section.dataset.side === "under" ? line - pace : pace - line).toFixed(1));
     }
-    const label = section.querySelector(".future-proj-label");
-    if (label) label.textContent = focus === "losses" ? "Projected losses" : "Projected wins";
     const set = (field, text) => {
       const node = section.querySelector(`[data-field="${field}"]`);
       if (node) node.textContent = text;
@@ -398,6 +402,24 @@ main.futures-page { max-width: 880px; }
     set("played", played === 1 ? "1 played" : `${played} played`);
     set("left", left === 1 ? "1 game left" : `${left} games left`);
     set("proj", proj);
+    const verdict = section.querySelector('[data-field="verdict"]');
+    if (verdict) {
+      verdict.classList.toggle("is-good", margin > 0);
+      verdict.classList.toggle("is-bad", margin < 0);
+    }
+    if (margin === null) {
+      set("margin", "—");
+      set("margin-note", "no games yet");
+    } else if (margin > 0) {
+      set("margin", `+${margin.toFixed(1)}`);
+      set("margin-note", "ahead of the line");
+    } else if (margin < 0) {
+      set("margin", `−${(-margin).toFixed(1)}`);
+      set("margin-note", "behind the line");
+    } else {
+      set("margin", "0.0");
+      set("margin-note", "right on the line");
+    }
   }
 
   function scoreText(side) {
@@ -515,8 +537,8 @@ main.futures-page { max-width: 880px; }
         item.textContent = gameLine(game);
         if (game.live) item.classList.add("is-live");
         else if (colorResults && game.completed) {
-          const good = section.dataset.good;
-          if (good && game.result === good) item.classList.add("is-good");
+          const good = section.dataset.side === "under" ? "L" : "W";
+          if (game.result === good) item.classList.add("is-good");
           else if (game.result === "W" || game.result === "L") item.classList.add("is-bad");
         }
       }
