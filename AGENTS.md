@@ -103,7 +103,7 @@ Several games can share a total, so take the game from what the person said, not
    </details>
    ```
 3. Replace the old lines table with the new week's, including the banner. Old lines tables aren't kept.
-4. Add `<h2>Week Nine Picks and Season Record</h2>` and a new table, with the header `Wk 9 Result`. Sort by season record. Give everyone `&mdash;` for both picks, `0&ndash;0` for the week, and their carried-over record.
+4. Add `<h2>Week Nine Picks</h2>` and a new table, with the header `Wk 9 Result`. Sort by season record. Give everyone `&mdash;` for both picks, `0&ndash;0` for the week, and their carried-over record.
 
 ### Before finishing
 
