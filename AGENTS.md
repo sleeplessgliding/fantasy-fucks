@@ -70,7 +70,7 @@ Scores are written away team first: `(CHI 34, SEA 17)`. Add `OT` after overtime:
 | Pick won | `cover` | `DET -3: ✅ Cover` or `Under 39.5: ✅ Cover` |
 | Pick lost | `loss` | `SEA -3: ❌ Loss` |
 | Pick pushed | `push` | `SEA -7: 🤝 Push` |
-| Pick not played yet | `open` | `SEA -3` |
+| Pick not played yet | `open` | `SEA -3`, or `Over 40.5` with `(HOU @ LAC)` below |
 
 A graded cell also carries the score:
 
@@ -82,7 +82,15 @@ After grading, update each person's week result and season record, then re-sort 
 
 ### Logging picks
 
-Replace the `&mdash;` cell with an `open` cell such as `SEA -3` or `Over 54.5`, in the order the person gave them. Everyone gets two picks a week. Don't re-sort until grading.
+Replace the `&mdash;` cell with an `open` cell such as `SEA -3` or `Over 54.5`, in the order the person gave them.
+
+Over/under picks also name the game below the pick, away team first, until grading replaces it with the score:
+
+```html
+<td><span class="result-badge open"><span class="result-badge-pick">Over 40.5</span><span class="result-badge-score">(HOU @ LAC)</span></span></td>
+```
+
+Several games can share a total, so take the game from what the person said, not from the number, and ask if they didn't say. Everyone gets two picks a week. Don't re-sort until grading.
 
 ### Opening a new week
 
