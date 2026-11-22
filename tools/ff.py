@@ -250,13 +250,25 @@ def trades_html(S, n):
 
 
 # ---- team stat chips + scoring chart -------------------------------------------------------------
-def stat_blocks(S, upto):
+PA_FROM_WEEK = 11  # pages from this week on get a Points Against chip; earlier pages stay as posted
+
+
+def stat_blocks(S, upto, with_pa=False):
     res = S.results(upto)
+    pa = defaultdict(float)
+    for w in range(1, upto + 1):
+        for a, b in S.games(w):
+            pa[a["roster_id"]] += b["points"]; pa[b["roster_id"]] += a["points"]
+    pa_order = sorted(res, key=lambda r: pa[r])
     allp = [p for r in res.values() for _, p, _ in r]
     hi, lo, avg = max(allp), min(allp), sum(allp) / len(allp)
     pf = {rid: sum(p for _, p, _ in r) for rid, r in res.items()}
     order = sorted(pf, key=lambda r: -pf[r])
     budget = S.league["settings"].get("waiver_budget", 100)
+    def pa_chip(rid):  # fewest points against = luckiest = green, most = red
+        i = pa_order.index(rid)
+        c = "is-win" if i < 3 else ("is-loss" if i >= len(pa_order) - 3 else "is-warn")
+        return f'  <span class="stat-badge {c}">PA: {num(pa[rid])}</span>\n'
     out = {}
     for rid, r in res.items():
         w = sum(1 for x in r if x[2] == "W"); l = len(r) - w
@@ -277,7 +289,7 @@ def stat_blocks(S, upto):
   <span class="stat-badge {record_class(w, l)}">{w}-{l}</span>
   <span class="stat-badge {"is-win" if last == "W" else "is-loss"}">{last}{streak}</span>
   <span class="stat-badge {pc}">PF: {num(pf[rid])}</span>
-  <span class="stat-badge is-loss">FAAB: ${faab}</span>
+{pa_chip(rid) if with_pa else ""}  <span class="stat-badge is-loss">FAAB: ${faab}</span>
 </p>
 <details class="score-log">
   <summary>Week-to-week scoring <span class="score-spread">spread {num(max(pts) - min(pts))}</span></summary>
@@ -301,14 +313,18 @@ def rank_order(s):
     return [m.group(1) for m in BLOCK_RE.finditer(s)]
 
 
-def grade(prev, now):
+def grade(prev, now, big=False):
+    """big: the page opted in with <article class="prose big-moves">, so arrows show how many spots and scale with it."""
     if prev is None: return None
     if prev == now: return f'<span class="rank-grade is-same" title="Held at {now}">Last Week: {prev} <span class="rank-move">&harr;</span></span>'
-    if now < prev: return f'<span class="rank-grade is-up" title="Up {prev - now} from {prev}">Last Week: {prev} <span class="rank-move">▲</span></span>'
-    return f'<span class="rank-grade is-down" title="Down {now - prev} from {prev}">Last Week: {prev} <span class="rank-move">▼</span></span>'
+    d = abs(prev - now)
+    cls, arrow = (" is-up", "▲") if now < prev else (" is-down", "▼")
+    if big: cls, arrow = f"{cls} is-move-{min(d, 5)}", f"{arrow}{d}"
+    return f'<span class="rank-grade{cls}" title="{"Up" if now < prev else "Down"} {d} from {prev}">Last Week: {prev} <span class="rank-move">{arrow}</span></span>'
 
 
 def apply_ranks(s, prev_page):
+    big = '<article class="prose big-moves">' in s
     prev = {}
     if prev_page and prev_page.exists():
         prev = {tid: i for i, tid in enumerate(rank_order(prev_page.read_text()), 1)}
@@ -317,7 +333,7 @@ def apply_ranks(s, prev_page):
         start = s.index(f'<div id="{tid}">')
         h2s = s.index("<h2>", start); h2e = s.index("</h2>", h2s)
         h2 = re.sub(r'(<span class="rank-name">)\d+\. ', rf"\g<1>{i}. ", s[h2s:h2e], count=1)
-        g = grade(prev.get(tid), i)
+        g = grade(prev.get(tid), i, big)
         if g: h2 = GRADE_RE.sub(lambda _: g, h2, count=1)
         s = s[:h2s] + h2 + s[h2e:]
     return s
@@ -334,7 +350,7 @@ def build_html(n, s, S):
     s = sub_once(r'<h2>Week \w+ Recap</h2>\n.*?(?=\n\n<h1>)', recap_html(S, n - 1), s, "Week N Recap")
     s = sub_once(r'<div class="roster waiver-log">.*?</div>\n\n(?=<hr>)', waivers_html(S, n) + "\n" + trades_html(S, n) + "\n\n", s, "waivers/trades")
     s = sub_once(r'<h1>Week \w+ Power Rankings</h1>', f"<h1>Week {WORDS[n]} Power Rankings</h1>", s, "Power Rankings heading")
-    blocks = stat_blocks(S, n - 1)
+    blocks = stat_blocks(S, n - 1, with_pa=n >= PA_FROM_WEEK)
     for tid, block in blocks.items():
         s, k = re.subn(rf'(<div id="{tid}">\n(?:(?!<div id=).)*?<h2>.*?</h2>\n)<p class="rank-chips">.*?</details>',
                        lambda m: m.group(1) + block, s, count=1, flags=re.S)

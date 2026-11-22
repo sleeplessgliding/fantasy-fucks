@@ -293,3 +293,19 @@ header.page h1 {
 @media (max-width: 960px) {
   html:not([data-drawer="open"]) .sidebar { box-shadow: none; }
 }
+
+/* Big-move weeks (<article class="prose big-moves">): the arrow shows how many spots a team moved,
+   and the badge gets louder the further it went. Drops go red instead of lime. */
+.big-moves h2 .rank-grade.is-down { background: var(--miss); color: #fff; }
+.big-moves h2 .rank-grade.is-down .rank-move { color: #fff; }
+.big-moves h2 .rank-grade .rank-move { font-weight: 700; }
+.big-moves h2 .rank-grade.is-move-1 { font-size: 13px; }
+.big-moves h2 .rank-grade.is-move-1 .rank-move { font-size: 13px; }
+.big-moves h2 .rank-grade.is-move-2 { font-size: 15px; padding: 4px 12px; }
+.big-moves h2 .rank-grade.is-move-2 .rank-move { font-size: 17px; }
+.big-moves h2 .rank-grade.is-move-3,
+.big-moves h2 .rank-grade.is-move-4,
+.big-moves h2 .rank-grade.is-move-5 { font-size: 18px; padding: 5px 14px; }
+.big-moves h2 .rank-grade.is-move-3 .rank-move { font-size: 24px; }
+.big-moves h2 .rank-grade.is-move-4 .rank-move,
+.big-moves h2 .rank-grade.is-move-5 .rank-move { font-size: 30px; }
