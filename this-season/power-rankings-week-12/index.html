@@ -1,0 +1,2466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Power Rankings (Week 12) — Fantasy Fucks</title>
+<link rel="stylesheet" href="../../site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../../restyle.css">
+<script>
+  // Apply theme and sidebar state before first paint to avoid a flash.
+  (() => {
+    const root = document.documentElement;
+    let theme = null, collapsed = null;
+    try {
+      theme = localStorage.getItem("ff-theme");
+      collapsed = localStorage.getItem("ff-nav-collapsed");
+    } catch (e) {}
+    root.dataset.theme = theme || "light";
+    if (collapsed === "1") root.setAttribute("data-nav", "collapsed");
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">FF</span>
+      <span class="brand-name">Fantasy Fucks</span>
+    </a>
+    <button class="icon-btn sidebar-dismiss" type="button" data-nav-close aria-label="Close navigation">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list"><li class="nav-node has-kids is-branch" data-key="./" data-open="true"><div class="nav-row"><a class="nav-link" href="../../" title="2026 Season">2026 Season</a><button class="nav-caret" type="button" aria-expanded="true" aria-label="Toggle 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node is-branch"><a class="nav-link" href="./" title="Power Rankings (Week 12)" aria-current="page">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-8/" title="Power Rankings &amp; Midseason Awards (Week 8)">Power Rankings &amp; Midseason Awards (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../preseason-draft-grades/" title="Preseason Draft Grades">Preseason Draft Grades</a></li></ul></li><li class="nav-node"><a class="nav-link" href="../../george-pickems/" title="George Pick'ems">George Pick'ems</a></li><li class="nav-node has-kids" data-key="past-seasons/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/" title="Past Seasons">Past Seasons</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle Past Seasons"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/hall-of-champions/" title="Hall of Champions">Hall of Champions</a></li><li class="nav-node has-kids" data-key="past-seasons/2025-2026-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2025-2026-season/" title="2025 - 2026 Season">2025 - 2026 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2025 - 2026 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2025-2026-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2024-2025-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2024-2025-season/" title="2024 - 2025 Season">2024 - 2025 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2024 - 2025 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/postseason-week-3-of-4/" title="Postseason Week 3 of 4">Postseason Week 3 of 4</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/postseason-week-2-of-4/" title="Postseason Week 2 of 4">Postseason Week 2 of 4</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/season-awards-obituaries-postseason-preview/" title="Season Awards, Obituaries &amp; Postseason Preview">Season Awards, Obituaries &amp; Postseason Preview</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-13/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-12/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-11/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-10/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-9/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-8/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-7/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-6/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-5/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-4/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2024-2025-season/power-rankings-week-1/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2023-2024-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2023-2024-season/" title="2023 - 2024 Season">2023 - 2024 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2023 - 2024 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/postseason-preview-regular-season-awards/" title="Postseason Preview &amp; Regular Season Awards">Postseason Preview &amp; Regular Season Awards</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-13-2/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-12-2/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-10-2/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-9-2/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-8-2/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-7-2/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-6-2/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-5-2/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-4-2/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-3-2/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-2-2/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2023-2024-season/power-rankings-week-1-2/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2022-2023-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2022-2023-season/" title="2022 - 2023 Season">2022 - 2023 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2022 - 2023 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/championship-preview/" title="Championship Preview">Championship Preview</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-14/" title="Power Rankings (Week 14)">Power Rankings (Week 14)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-13-3/" title="Power Rankings (Week 13)">Power Rankings (Week 13)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-12-3/" title="Power Rankings (Week 12)">Power Rankings (Week 12)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-11-2/" title="Power Rankings (Week 11)">Power Rankings (Week 11)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-10-3/" title="Power Rankings (Week 10)">Power Rankings (Week 10)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-9-3/" title="Power Rankings (Week 9)">Power Rankings (Week 9)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-8-3/" title="Power Rankings (Week 8)">Power Rankings (Week 8)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-7-3/" title="Power Rankings (Week 7)">Power Rankings (Week 7)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-6-3/" title="Power Rankings (Week 6)">Power Rankings (Week 6)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-5-3/" title="Power Rankings (Week 5)">Power Rankings (Week 5)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-4-3/" title="Power Rankings (Week 4)">Power Rankings (Week 4)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-3-3/" title="Power Rankings (Week 3)">Power Rankings (Week 3)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-2-3/" title="Power Rankings (Week 2)">Power Rankings (Week 2)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/power-rankings-week-1-3/" title="Power Rankings (Week 1)">Power Rankings (Week 1)</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/preseason/" title="Preseason">Preseason</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2022-2023-season/slutler-interview/" title="Slutler Interview">Slutler Interview</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2021-2022-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2021-2022-season/" title="2021 - 2022 Season">2021 - 2022 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2021 - 2022 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/mid-season-awards-week-eight-power-rankings-happy-halloween/" title="Mid-Season Awards + Week Eight Power Rankings + Happy Halloween">Mid-Season Awards + Week Eight Power Rankings + Happy Halloween</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/week-10-power-rankings/" title="Week 10 Power Rankings">Week 10 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/week-11-power-rankings/" title="Week 11 Power Rankings">Week 11 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/week-12-power-rankings/" title="Week 12 Power Rankings">Week 12 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/week-13-power-rankings/" title="Week 13 Power Rankings">Week 13 Power Rankings</a></li><li class="nav-node"><a class="nav-link" href="../../past-seasons/2021-2022-season/preseason-week-7-power-rankings/" title="Preseason -&gt; Week 7 Power Rankings">Preseason -&gt; Week 7 Power Rankings</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2020-2021-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2020-2021-season/" title="2020 - 2021 Season">2020 - 2021 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2020 - 2021 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2020-2021-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2019-2020-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2019-2020-season/" title="2019 - 2020 Season">2019 - 2020 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2019 - 2020 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2019-2020-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li><li class="nav-node has-kids" data-key="past-seasons/2018-2019-season/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../past-seasons/2018-2019-season/" title="2018 - 2019 Season">2018 - 2019 Season</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle 2018 - 2019 Season"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../past-seasons/2018-2019-season/season-yearbook/" title="Season Yearbook">Season Yearbook</a></li></ul></li></ul></li><li class="nav-node has-kids" data-key="rules/" data-open="false"><div class="nav-row"><a class="nav-link" href="../../rules/" title="Rules">Rules</a><button class="nav-caret" type="button" aria-expanded="false" aria-label="Toggle Rules"></button></div><ul class="nav-list nav-sub"><li class="nav-node"><a class="nav-link" href="../../2026-draft/" title="2026 Draft and Keeper Info">2026 Draft and Keeper Info</a></li><li class="nav-node"><a class="nav-link" href="../../2026-keepers/" title="2026 Keepers">2026 Keepers</a></li></ul></li></ul>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" type="button" data-theme-toggle>&#9790; Dark mode</button>
+  </div>
+</aside>
+<div class="content">
+  <header class="topbar">
+    <button class="icon-btn" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="true" aria-label="Toggle navigation">&#9776;</button>
+    <span class="topbar-title">Power Rankings (Week 12)</span>
+  </header>
+<main class="page" id="main">
+  <p class="crumbs"><a href="../../">2026 Season</a> / Power Rankings (Week 12)</p>
+  <h1>Power Rankings (Week 12)</h1>
+  <p class="meta">Updated 2026-11-25</p>
+    <article class="prose big-moves">
+<p class="rank-banner"><img alt="Dak Prescott points to the sky after a touchdown against the Titans" src="../../assets/week12-hero.jpg"></p>
+<p><em>Another year, another thankful guy here for having this league&hellip;</em></p>
+<p>Alright fellas, it&rsquo;s &ldquo;don&rsquo;t get divorced week.&rdquo; NFL five of the next six nights, rivalry weekend for CFB. Make sure you do the dishes tomorrow and get all your brownie points.</p>
+<p>For the league, it&rsquo;s getting down to the nitty gritty. There&rsquo;s a handful of teams in the mix, with a couple looking pretty locked up. Don&rsquo;t forget, if you&rsquo;re out, you can still make some money in the Slutler Pool, so keep tryin&rsquo;, and keep sniping players on FAAB that the playoff gents are going for.</p>
+
+<h2>Week Eleven Recap</h2>
+<div class="matchups">
+<details class="matchup-card">
+  <summary class="matchup-summary">
+    <div class="matchup-scoreboard" role="group" aria-label="PJ versus Andy">
+        <div class="matchup-side is-win">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/51f3a2a0249929ee75201e9a7372e882.jpg" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">PJ</div>
+            <div class="matchup-team">The Questionables</div>
+            <div class="matchup-scorers">Prescott <span class="pts">35.9</span> &middot; Johnson <span class="pts">24.3</span></div>
+          </div>
+          <div class="matchup-score">147.5<span class="matchup-result">W</span></div>
+        </div>
+        <div class="matchup-vs" aria-hidden="true">vs</div>
+        <div class="matchup-side is-loss">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/cf93e515a951fea7813bde2e4fa1b3b6.jpg" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Andy</div>
+            <div class="matchup-team">U Sown Loik Ya Frm LONDON</div>
+            <div class="matchup-scorers">Hubbard <span class="pts">26.0</span> &middot; Kelce <span class="pts">25.4</span></div>
+          </div>
+          <div class="matchup-score">105.76<span class="matchup-result">L</span></div>
+        </div>
+    </div>
+  </summary>
+  <div class="matchup-lineups">
+    <div class="matchup-lineup is-win" aria-label="PJ lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Dak Prescott</span>
+        <span class="lineup-pts">35.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Emmett Johnson</span>
+        <span class="lineup-pts">24.3</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">James Cook III</span>
+        <span class="lineup-pts">17.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Malik Nabers</span>
+        <span class="lineup-pts">18.5</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Garrett Wilson</span>
+        <span class="lineup-pts">6.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">T.J. Hockenson</span>
+        <span class="lineup-pts">11.5</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">FLEX</span>
+        <span class="lineup-name">Christian McCaffrey</span>
+        <span class="lineup-pts">14.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Will Reichard</span>
+        <span class="lineup-pts">5.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">DEN D/ST</span>
+        <span class="lineup-pts">14.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Kirk Cousins</span>
+        <span class="lineup-pts">7.4</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Denzel Boston</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">De&#x27;Zhaun Stribling</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Deebo Samuel Sr.</span>
+        <span class="lineup-pts">7.7</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Travis Etienne Jr.</span>
+        <span class="lineup-pts">7.6</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Tucker Kraft</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      </div>
+    <div class="matchup-lineup is-loss" aria-label="Andy lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Bryce Young</span>
+        <span class="lineup-pts">15.96</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jonathan Taylor</span>
+        <span class="lineup-pts">6.7</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Chuba Hubbard</span>
+        <span class="lineup-pts">26.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">DK Metcalf</span>
+        <span class="lineup-pts">1.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Justin Jefferson</span>
+        <span class="lineup-pts">13.7</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Travis Kelce</span>
+        <span class="lineup-pts">25.4</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">FLEX</span>
+        <span class="lineup-name">Cam Skattebo</span>
+        <span class="lineup-pts">5.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Chase McLaughlin</span>
+        <span class="lineup-pts">3.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">DET D/ST</span>
+        <span class="lineup-pts">8.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Bhayshul Tuten</span>
+        <span class="lineup-pts">8.3</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Jordan Love</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Drake London</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Breece Hall</span>
+        <span class="lineup-pts">19.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Brenton Strange</span>
+        <span class="lineup-pts">4.6</span>
+      </div>
+      </div>
+  </div>
+</details>
+<details class="matchup-card">
+  <summary class="matchup-summary">
+    <div class="matchup-scoreboard" role="group" aria-label="Kris versus Pangy">
+        <div class="matchup-side is-win">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/61cef842bd16811f10a4ab604867ed4d.jpg" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Kris</div>
+            <div class="matchup-team">Spitters not Quiters</div>
+            <div class="matchup-scorers">Gibbs <span class="pts">27.8</span> &middot; Mahomes <span class="pts">24.96</span></div>
+          </div>
+          <div class="matchup-score">124.16<span class="matchup-result">W</span></div>
+        </div>
+        <div class="matchup-vs" aria-hidden="true">vs</div>
+        <div class="matchup-side is-loss">
+          <img class="matchup-avatar" src="https://sleepercdn.com/avatars/thumbs/82aec8e811b839b8ec25d7b458afd57b" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Pangy</div>
+            <div class="matchup-team">Tee &amp; Jamar’s Phat Hogz</div>
+            <div class="matchup-scorers">Burrow <span class="pts">19.9</span> &middot; Higgins <span class="pts">12.3</span></div>
+          </div>
+          <div class="matchup-score">93.4<span class="matchup-result">L</span></div>
+        </div>
+    </div>
+  </summary>
+  <div class="matchup-lineups">
+    <div class="matchup-lineup is-win" aria-label="Kris lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Patrick Mahomes</span>
+        <span class="lineup-pts">24.96</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Kyle Monangai</span>
+        <span class="lineup-pts">1.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jahmyr Gibbs</span>
+        <span class="lineup-pts">27.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Keenan Allen</span>
+        <span class="lineup-pts">6.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Nico Collins</span>
+        <span class="lineup-pts">14.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Sam LaPorta</span>
+        <span class="lineup-pts">9.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Xavier Worthy</span>
+        <span class="lineup-pts">11.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Jake Bates</span>
+        <span class="lineup-pts">9.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">CHI D/ST</span>
+        <span class="lineup-pts">18.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">RJ Harvey</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Omar Cooper Jr.</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jadarian Price</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Matthew Stafford</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Jaxon Smith-Njigba</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">SEA D/ST</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      </div>
+    <div class="matchup-lineup is-loss" aria-label="Pangy lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Joe Burrow</span>
+        <span class="lineup-pts">19.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jaylen Warren</span>
+        <span class="lineup-pts">4.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Tony Pollard</span>
+        <span class="lineup-pts">11.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Ja&#x27;Marr Chase</span>
+        <span class="lineup-pts">8.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Tee Higgins</span>
+        <span class="lineup-pts">12.3</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Colston Loveland</span>
+        <span class="lineup-pts">11.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Rashee Rice</span>
+        <span class="lineup-pts">11.3</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Brandon Aubrey</span>
+        <span class="lineup-pts">10.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">CAR D/ST</span>
+        <span class="lineup-pts">4.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Harold Fannin Jr.</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Luther Burden III</span>
+        <span class="lineup-pts">3.3</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Jordyn Tyson</span>
+        <span class="lineup-pts">2.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jeremiyah Love</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Tyler Allgeier</span>
+        <span class="lineup-pts">2.3</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">MIN D/ST</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      </div>
+  </div>
+</details>
+<details class="matchup-card">
+  <summary class="matchup-summary">
+    <div class="matchup-scoreboard" role="group" aria-label="Neil versus Joel">
+        <div class="matchup-side is-win">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/45e485c622be0141e161b8f23b55fe1b" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Neil</div>
+            <div class="matchup-team">JA17’s Hand Me Down Hog</div>
+            <div class="matchup-scorers">Coleman <span class="pts">34.9</span> &middot; Moore <span class="pts">23.1</span></div>
+          </div>
+          <div class="matchup-score">123.06<span class="matchup-result">W</span></div>
+        </div>
+        <div class="matchup-vs" aria-hidden="true">vs</div>
+        <div class="matchup-side is-loss">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/89d3e43f26c37d2e3aabd23a5b7b40f9.png" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Joel</div>
+            <div class="matchup-team">JOELLM</div>
+            <div class="matchup-scorers">Williams <span class="pts">19.3</span> &middot; Irving <span class="pts">19.0</span></div>
+          </div>
+          <div class="matchup-score">97.24<span class="matchup-result">L</span></div>
+        </div>
+    </div>
+  </summary>
+  <div class="matchup-lineups">
+    <div class="matchup-lineup is-win" aria-label="Neil lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Josh Allen</span>
+        <span class="lineup-pts">12.16</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jonah Coleman</span>
+        <span class="lineup-pts">34.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Omarion Hampton</span>
+        <span class="lineup-pts">10.3</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Jaylen Waddle</span>
+        <span class="lineup-pts">9.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">DJ Moore</span>
+        <span class="lineup-pts">23.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Rome Odunze</span>
+        <span class="lineup-pts">8.5</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Joey Slye</span>
+        <span class="lineup-pts">13.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">BUF D/ST</span>
+        <span class="lineup-pts">12.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Dalton Kincaid</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Elic Ayomanor</span>
+        <span class="lineup-pts">5.7</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Tyler Shough</span>
+        <span class="lineup-pts">14.28</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Ryan Fitzgerald</span>
+        <span class="lineup-pts">9.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Rhamondre Stevenson</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Bijan Robinson</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      </div>
+    <div class="matchup-lineup is-loss" aria-label="Joel lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Trevor Lawrence</span>
+        <span class="lineup-pts">12.74</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Bucky Irving</span>
+        <span class="lineup-pts">19.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Rachaad White</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Jameson Williams</span>
+        <span class="lineup-pts">19.3</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Stefon Diggs</span>
+        <span class="lineup-pts">8.5</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Dallas Goedert</span>
+        <span class="lineup-pts">4.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Josh Downs</span>
+        <span class="lineup-pts">9.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Cam Little</span>
+        <span class="lineup-pts">13.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">KC D/ST</span>
+        <span class="lineup-pts">10.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Blake Corum</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Jalen Coker</span>
+        <span class="lineup-pts">8.7</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Devaughn Vele</span>
+        <span class="lineup-pts">14.6</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">KC Concepcion Jr.</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">DeVonta Smith</span>
+        <span class="lineup-pts">9.1</span>
+      </div>
+      </div>
+  </div>
+</details>
+<details class="matchup-card">
+  <summary class="matchup-summary">
+    <div class="matchup-scoreboard" role="group" aria-label="Tony versus Seif">
+        <div class="matchup-side is-win">
+          <img class="matchup-avatar" src="https://sleepercdn.com/avatars/thumbs/3c7def417a4613d104ae66403af0e0e7" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Tony</div>
+            <div class="matchup-team">Cee Deez Nuts</div>
+            <div class="matchup-scorers">Lamb <span class="pts">30.2</span> &middot; Jeanty <span class="pts">27.9</span></div>
+          </div>
+          <div class="matchup-score">128.66<span class="matchup-result">W</span></div>
+        </div>
+        <div class="matchup-vs" aria-hidden="true">vs</div>
+        <div class="matchup-side is-loss">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/c120d2119ad58784fb4cc0234116a649.jpg" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Seif</div>
+            <div class="matchup-team">Dont PUKA da BEAR</div>
+            <div class="matchup-scorers">McConkey <span class="pts">20.7</span> &middot; Stroud <span class="pts">20.46</span></div>
+          </div>
+          <div class="matchup-score">115.96<span class="matchup-result">L</span></div>
+        </div>
+    </div>
+  </summary>
+  <div class="matchup-lineups">
+    <div class="matchup-lineup is-win" aria-label="Tony lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Jared Goff</span>
+        <span class="lineup-pts">20.36</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Ollie Gordon II</span>
+        <span class="lineup-pts">8.7</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">D&#x27;Andre Swift</span>
+        <span class="lineup-pts">11.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">CeeDee Lamb</span>
+        <span class="lineup-pts">30.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Tetairoa McMillan</span>
+        <span class="lineup-pts">19.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Isaiah Likely</span>
+        <span class="lineup-pts">4.5</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">FLEX</span>
+        <span class="lineup-name">Ashton Jeanty</span>
+        <span class="lineup-pts">27.9</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Ka&#x27;imi Fairbairn</span>
+        <span class="lineup-pts">6.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">CIN D/ST</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Matthew Golden</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Tyler Warren</span>
+        <span class="lineup-pts">3.2</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Mike Evans</span>
+        <span class="lineup-pts">22.9</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Josh Jacobs</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Kenny Gainwell</span>
+        <span class="lineup-pts">9.9</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Tank Dell</span>
+        <span class="lineup-pts">5.7</span>
+      </div>
+      </div>
+    <div class="matchup-lineup is-loss" aria-label="Seif lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">C.J. Stroud</span>
+        <span class="lineup-pts">20.46</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Rico Dowdle</span>
+        <span class="lineup-pts">7.4</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Chase Brown</span>
+        <span class="lineup-pts">8.6</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Adonai Mitchell</span>
+        <span class="lineup-pts">5.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Zay Flowers</span>
+        <span class="lineup-pts">16.4</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">George Kittle</span>
+        <span class="lineup-pts">18.4</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Ladd McConkey</span>
+        <span class="lineup-pts">20.7</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Spencer Shrader</span>
+        <span class="lineup-pts">3.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">SF D/ST</span>
+        <span class="lineup-pts">16.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Caleb Williams</span>
+        <span class="lineup-pts">14.34</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Brock Bowers</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Quinshon Judkins</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Kyren Williams</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Christian Watson</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      </div>
+  </div>
+</details>
+<details class="matchup-card">
+  <summary class="matchup-summary">
+    <div class="matchup-scoreboard" role="group" aria-label="Jake versus CJ">
+        <div class="matchup-side is-win">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/041b87652e0a995b59740d9d2f71264f.jpg" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">Jake</div>
+            <div class="matchup-team">Emeka Mistake</div>
+            <div class="matchup-scorers">Williams <span class="pts">24.1</span> &middot; Pickens <span class="pts">23.8</span></div>
+          </div>
+          <div class="matchup-score">145.7<span class="matchup-result">W</span></div>
+        </div>
+        <div class="matchup-vs" aria-hidden="true">vs</div>
+        <div class="matchup-side is-loss">
+          <img class="matchup-avatar" src="https://sleepercdn.com/uploads/8664d28759bec0c605ea476c9d60d71c.jpg" alt="" loading="lazy">
+          <div class="matchup-id">
+            <div class="matchup-name">CJ</div>
+            <div class="matchup-team">K9 Unit 🍆</div>
+            <div class="matchup-scorers">Olave <span class="pts">19.2</span> &middot; Bass <span class="pts">18.0</span></div>
+          </div>
+          <div class="matchup-score">136.86<span class="matchup-result">L</span></div>
+        </div>
+    </div>
+  </summary>
+  <div class="matchup-lineups">
+    <div class="matchup-lineup is-win" aria-label="Jake lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Brock Purdy</span>
+        <span class="lineup-pts">22.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Javonte Williams</span>
+        <span class="lineup-pts">24.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Derrick Henry</span>
+        <span class="lineup-pts">19.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Parker Washington</span>
+        <span class="lineup-pts">18.3</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">George Pickens</span>
+        <span class="lineup-pts">23.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Mark Andrews</span>
+        <span class="lineup-pts">3.4</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Carnell Tate</span>
+        <span class="lineup-pts">13.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Chris Boswell</span>
+        <span class="lineup-pts">13.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">PIT D/ST</span>
+        <span class="lineup-pts">8.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Emeka Egbuka</span>
+        <span class="lineup-pts">3.8</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Jacory Croskey-Merritt</span>
+        <span class="lineup-pts">15.7</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Kaelon Black</span>
+        <span class="lineup-pts">2.5</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Davante Adams</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Saquon Barkley</span>
+        <span class="lineup-pts">13.5</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">TB D/ST</span>
+        <span class="lineup-pts">-1.0</span>
+      </div>
+      </div>
+    <div class="matchup-lineup is-loss" aria-label="CJ lineup">
+      <div class="lineup-label">Starters</div>
+      <div class="lineup-row">
+        <span class="pos pos-qb">QB</span>
+        <span class="lineup-name">Jayden Daniels</span>
+        <span class="lineup-pts">17.06</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">David Montgomery</span>
+        <span class="lineup-pts">15.4</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Justice Hill</span>
+        <span class="lineup-pts">17.6</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Amon-Ra St. Brown</span>
+        <span class="lineup-pts">14.7</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">WR</span>
+        <span class="lineup-name">Chris Olave</span>
+        <span class="lineup-pts">19.2</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-te">TE</span>
+        <span class="lineup-name">Trey McBride</span>
+        <span class="lineup-pts">14.8</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-wr">FLEX</span>
+        <span class="lineup-name">Ryan Flournoy</span>
+        <span class="lineup-pts">2.1</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Tyler Bass</span>
+        <span class="lineup-pts">18.0</span>
+      </div>
+      <div class="lineup-row">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">HOU D/ST</span>
+        <span class="lineup-pts">18.0</span>
+      </div>
+      <div class="lineup-label">Bench</div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Alvin Kamara</span>
+        <span class="lineup-pts">7.2</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Aaron Jones Sr.</span>
+        <span class="lineup-pts">11.3</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-k">K</span>
+        <span class="lineup-name">Jason Sanders</span>
+        <span class="lineup-pts">11.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Kenneth Walker III</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-rb">RB</span>
+        <span class="lineup-name">Zach Charbonnet</span>
+        <span class="lineup-pts">0.0</span>
+      </div>
+      <div class="lineup-row is-bench">
+        <span class="pos pos-dst">DST</span>
+        <span class="lineup-name">JAX D/ST</span>
+        <span class="lineup-pts">5.0</span>
+      </div>
+      </div>
+  </div>
+</details>
+</div>
+
+<details class="score-pulse" open>
+  <summary>League overview</summary>
+  <div class="league-overview">
+    <table class="standings-table">
+      <thead>
+        <tr>
+          <th class="rk"></th>
+          <th class="who">Team</th>
+          <th class="rec">Record</th>
+          <th class="pf">PF</th>
+          <th class="scoring">Scoring</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rk">1</td>
+          <td class="who">Tony</td>
+          <td class="rec is-warn">9&ndash;2</td>
+          <td class="pf">1481.02</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-win" style="width:66%" title="W1 136.16 W"></span><span class="score-h is-win" style="width:56%" title="W2 116.28 W"></span><span class="score-h is-win" style="width:52%" title="W3 107.06 W"></span><span class="score-h is-win" style="width:86%" title="W4 178.78 W"></span><span class="score-h is-win" style="width:73%" title="W5 150.84 W"></span><span class="score-h is-win" style="width:75%" title="W6 155.22 W"></span><span class="score-h is-win" style="width:56%" title="W7 116.12 W"></span><span class="score-h is-win" style="width:71%" title="W8 146.98 W"></span><span class="score-h is-loss" style="width:58%" title="W9 121.2 L"></span><span class="score-h is-loss" style="width:60%" title="W10 123.72 L"></span><span class="score-h is-win" style="width:62%" title="W11 128.66 W"></span></div>
+            <div class="score-nums"><span>W1: 136.16</span><span>W2: 116.28</span><span>W3: 107.06</span><span>W4: 178.78</span><span>W5: 150.84</span><span>W6: 155.22</span><span>W7: 116.12</span><span>W8: 146.98</span><span>W9: 121.2</span><span>W10: 123.72</span><span>W11: 128.66</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">2</td>
+          <td class="who">Kris</td>
+          <td class="rec is-warn">8&ndash;3</td>
+          <td class="pf">1454.9</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-win" style="width:74%" title="W1 152.66 W"></span><span class="score-h is-win" style="width:69%" title="W2 142.9 W"></span><span class="score-h is-win" style="width:62%" title="W3 127.9 W"></span><span class="score-h is-win" style="width:82%" title="W4 168.88 W"></span><span class="score-h is-win" style="width:74%" title="W5 153.12 W"></span><span class="score-h is-win" style="width:52%" title="W6 108.58 W"></span><span class="score-h is-loss" style="width:53%" title="W7 110.3 L"></span><span class="score-h is-loss" style="width:39%" title="W8 80.1 L"></span><span class="score-h is-loss" style="width:53%" title="W9 109.08 L"></span><span class="score-h is-win" style="width:86%" title="W10 177.22 W"></span><span class="score-h is-win" style="width:60%" title="W11 124.16 W"></span></div>
+            <div class="score-nums"><span>W1: 152.66</span><span>W2: 142.9</span><span>W3: 127.9</span><span>W4: 168.88</span><span>W5: 153.12</span><span>W6: 108.58</span><span>W7: 110.3</span><span>W8: 80.1</span><span>W9: 109.08</span><span>W10: 177.22</span><span>W11: 124.16</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">3</td>
+          <td class="who">PJ</td>
+          <td class="rec is-warn">7&ndash;4</td>
+          <td class="pf">1364.12</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-loss" style="width:45%" title="W1 93.5 L"></span><span class="score-h is-loss" style="width:40%" title="W2 82.1 L"></span><span class="score-h is-win" style="width:55%" title="W3 113.12 W"></span><span class="score-h is-loss" style="width:53%" title="W4 110.66 L"></span><span class="score-h is-win" style="width:92%" title="W5 190.26 W"></span><span class="score-h is-win" style="width:68%" title="W6 140.9 W"></span><span class="score-h is-win" style="width:54%" title="W7 111.44 W"></span><span class="score-h is-loss" style="width:56%" title="W8 116.66 L"></span><span class="score-h is-win" style="width:52%" title="W9 106.96 W"></span><span class="score-h is-win" style="width:73%" title="W10 151.02 W"></span><span class="score-h is-win" style="width:71%" title="W11 147.5 W"></span></div>
+            <div class="score-nums"><span>W1: 93.5</span><span>W2: 82.1</span><span>W3: 113.12</span><span>W4: 110.66</span><span>W5: 190.26</span><span>W6: 140.9</span><span>W7: 111.44</span><span>W8: 116.66</span><span>W9: 106.96</span><span>W10: 151.02</span><span>W11: 147.5</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">4</td>
+          <td class="who">CJ</td>
+          <td class="rec is-warn">6&ndash;5</td>
+          <td class="pf">1447.44</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-win" style="width:87%" title="W1 179.52 W"></span><span class="score-h is-win" style="width:67%" title="W2 138.76 W"></span><span class="score-h is-loss" style="width:58%" title="W3 120.52 L"></span><span class="score-h is-win" style="width:62%" title="W4 128.02 W"></span><span class="score-h is-loss" style="width:68%" title="W5 140.94 L"></span><span class="score-h is-loss" style="width:54%" title="W6 111.7 L"></span><span class="score-h is-win" style="width:55%" title="W7 114.12 W"></span><span class="score-h is-win" style="width:69%" title="W8 143.28 W"></span><span class="score-h is-win" style="width:64%" title="W9 131.56 W"></span><span class="score-h is-loss" style="width:49%" title="W10 102.16 L"></span><span class="score-h is-loss" style="width:66%" title="W11 136.86 L"></span></div>
+            <div class="score-nums"><span>W1: 179.52</span><span>W2: 138.76</span><span>W3: 120.52</span><span>W4: 128.02</span><span>W5: 140.94</span><span>W6: 111.7</span><span>W7: 114.12</span><span>W8: 143.28</span><span>W9: 131.56</span><span>W10: 102.16</span><span>W11: 136.86</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">5</td>
+          <td class="who">Neil</td>
+          <td class="rec is-warn">6&ndash;5</td>
+          <td class="pf">1234.0</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-win" style="width:65%" title="W1 133.96 W"></span><span class="score-h is-win" style="width:66%" title="W2 137.42 W"></span><span class="score-h is-loss" style="width:46%" title="W3 94.86 L"></span><span class="score-h is-win" style="width:51%" title="W4 106.42 W"></span><span class="score-h is-loss" style="width:45%" title="W5 93.2 L"></span><span class="score-h is-loss" style="width:34%" title="W6 71.2 L"></span><span class="score-h is-loss" style="width:51%" title="W7 106.12 L"></span><span class="score-h is-win" style="width:69%" title="W8 142.46 W"></span><span class="score-h is-win" style="width:61%" title="W9 125.56 W"></span><span class="score-h is-loss" style="width:48%" title="W10 99.74 L"></span><span class="score-h is-win" style="width:59%" title="W11 123.06 W"></span></div>
+            <div class="score-nums"><span>W1: 133.96</span><span>W2: 137.42</span><span>W3: 94.86</span><span>W4: 106.42</span><span>W5: 93.2</span><span>W6: 71.2</span><span>W7: 106.12</span><span>W8: 142.46</span><span>W9: 125.56</span><span>W10: 99.74</span><span>W11: 123.06</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">6</td>
+          <td class="who">Pangy</td>
+          <td class="rec is-loss">5&ndash;6</td>
+          <td class="pf">1425.12</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-loss" style="width:33%" title="W1 68.06 L"></span><span class="score-h is-loss" style="width:56%" title="W2 115.88 L"></span><span class="score-h is-win" style="width:82%" title="W3 169.78 W"></span><span class="score-h is-loss" style="width:54%" title="W4 111.92 L"></span><span class="score-h is-loss" style="width:56%" title="W5 116.8 L"></span><span class="score-h is-loss is-worst" style="width:28%" title="W6 58.32 L"></span><span class="score-h is-win" style="width:81%" title="W7 167.28 W"></span><span class="score-h is-win is-best" style="width:100%" title="W8 207.18 W"></span><span class="score-h is-win" style="width:69%" title="W9 142.34 W"></span><span class="score-h is-win" style="width:84%" title="W10 174.16 W"></span><span class="score-h is-loss" style="width:45%" title="W11 93.4 L"></span></div>
+            <div class="score-nums"><span>W1: 68.06</span><span>W2: 115.88</span><span>W3: 169.78</span><span>W4: 111.92</span><span>W5: 116.8</span><span>W6: 58.32</span><span>W7: 167.28</span><span>W8: 207.18</span><span>W9: 142.34</span><span>W10: 174.16</span><span>W11: 93.4</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">7</td>
+          <td class="who">Seif</td>
+          <td class="rec is-loss">5&ndash;6</td>
+          <td class="pf">1344.02</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-loss" style="width:53%" title="W1 109.56 L"></span><span class="score-h is-loss" style="width:37%" title="W2 77.62 L"></span><span class="score-h is-loss" style="width:51%" title="W3 105.94 L"></span><span class="score-h is-win" style="width:79%" title="W4 163.02 W"></span><span class="score-h is-win" style="width:78%" title="W5 162.12 W"></span><span class="score-h is-loss" style="width:42%" title="W6 86.3 L"></span><span class="score-h is-win" style="width:60%" title="W7 125.22 W"></span><span class="score-h is-loss" style="width:61%" title="W8 126.48 L"></span><span class="score-h is-win" style="width:76%" title="W9 157.56 W"></span><span class="score-h is-win" style="width:55%" title="W10 114.24 W"></span><span class="score-h is-loss" style="width:56%" title="W11 115.96 L"></span></div>
+            <div class="score-nums"><span>W1: 109.56</span><span>W2: 77.62</span><span>W3: 105.94</span><span>W4: 163.02</span><span>W5: 162.12</span><span>W6: 86.3</span><span>W7: 125.22</span><span>W8: 126.48</span><span>W9: 157.56</span><span>W10: 114.24</span><span>W11: 115.96</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">8</td>
+          <td class="who">Andy</td>
+          <td class="rec is-loss">4&ndash;7</td>
+          <td class="pf">1272.7</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-loss" style="width:55%" title="W1 113.62 L"></span><span class="score-h is-win" style="width:61%" title="W2 126.42 W"></span><span class="score-h is-loss" style="width:52%" title="W3 106.84 L"></span><span class="score-h is-loss" style="width:51%" title="W4 105.06 L"></span><span class="score-h is-loss" style="width:58%" title="W5 119.4 L"></span><span class="score-h is-win" style="width:67%" title="W6 137.94 W"></span><span class="score-h is-loss" style="width:49%" title="W7 100.96 L"></span><span class="score-h is-win" style="width:64%" title="W8 132.82 W"></span><span class="score-h is-loss" style="width:54%" title="W9 110.98 L"></span><span class="score-h is-win" style="width:54%" title="W10 112.9 W"></span><span class="score-h is-loss" style="width:51%" title="W11 105.76 L"></span></div>
+            <div class="score-nums"><span>W1: 113.62</span><span>W2: 126.42</span><span>W3: 106.84</span><span>W4: 105.06</span><span>W5: 119.4</span><span>W6: 137.94</span><span>W7: 100.96</span><span>W8: 132.82</span><span>W9: 110.98</span><span>W10: 112.9</span><span>W11: 105.76</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">9</td>
+          <td class="who">Jake</td>
+          <td class="rec is-loss">3&ndash;8</td>
+          <td class="pf">1283.58</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-loss" style="width:59%" title="W1 121.44 L"></span><span class="score-h is-loss" style="width:51%" title="W2 105.08 L"></span><span class="score-h is-win" style="width:69%" title="W3 142.98 W"></span><span class="score-h is-loss" style="width:52%" title="W4 107.42 L"></span><span class="score-h is-win" style="width:71%" title="W5 147.46 W"></span><span class="score-h is-loss" style="width:41%" title="W6 83.96 L"></span><span class="score-h is-loss" style="width:43%" title="W7 88.42 L"></span><span class="score-h is-loss" style="width:43%" title="W8 89.5 L"></span><span class="score-h is-loss" style="width:50%" title="W9 104.56 L"></span><span class="score-h is-loss" style="width:71%" title="W10 147.06 L"></span><span class="score-h is-win" style="width:70%" title="W11 145.7 W"></span></div>
+            <div class="score-nums"><span>W1: 121.44</span><span>W2: 105.08</span><span>W3: 142.98</span><span>W4: 107.42</span><span>W5: 147.46</span><span>W6: 83.96</span><span>W7: 88.42</span><span>W8: 89.5</span><span>W9: 104.56</span><span>W10: 147.06</span><span>W11: 145.7</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="rk">10</td>
+          <td class="who">Joel</td>
+          <td class="rec is-loss">2&ndash;9</td>
+          <td class="pf">1123.82</td>
+          <td class="scoring">
+            <div class="score-hs"><span class="score-h is-win" style="width:71%" title="W1 147.0 W"></span><span class="score-h is-loss" style="width:44%" title="W2 91.26 L"></span><span class="score-h is-loss" style="width:36%" title="W3 74.34 L"></span><span class="score-h is-loss" style="width:44%" title="W4 90.8 L"></span><span class="score-h is-loss" style="width:56%" title="W5 116.04 L"></span><span class="score-h is-win" style="width:49%" title="W6 100.88 W"></span><span class="score-h is-loss" style="width:45%" title="W7 93.2 L"></span><span class="score-h is-loss" style="width:49%" title="W8 102.2 L"></span><span class="score-h is-loss" style="width:49%" title="W9 101.58 L"></span><span class="score-h is-loss" style="width:53%" title="W10 109.28 L"></span><span class="score-h is-loss" style="width:47%" title="W11 97.24 L"></span></div>
+            <div class="score-nums"><span>W1: 147.0</span><span>W2: 91.26</span><span>W3: 74.34</span><span>W4: 90.8</span><span>W5: 116.04</span><span>W6: 100.88</span><span>W7: 93.2</span><span>W8: 102.2</span><span>W9: 101.58</span><span>W10: 109.28</span><span>W11: 97.24</span></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<h1>Matchup of the Week</h1>
+<div class="motw">
+  <div class="motw-bill" role="group" aria-label="Pangy versus CJ">
+    <div class="motw-side">
+      <img class="motw-avatar" src="https://sleepercdn.com/avatars/thumbs/82aec8e811b839b8ec25d7b458afd57b" alt="" loading="lazy">
+      <div class="motw-id">
+        <div class="motw-name">Pangy</div>
+        <div class="motw-team">Tee &amp; Jamar’s Phat Hogz</div>
+        <p class="rank-chips"><span class="stat-badge is-loss">5-6</span></p>
+      </div>
+    </div>
+    <div class="motw-vs" aria-hidden="true">vs</div>
+    <div class="motw-side">
+      <img class="motw-avatar" src="https://sleepercdn.com/uploads/8664d28759bec0c605ea476c9d60d71c.jpg" alt="" loading="lazy">
+      <div class="motw-id">
+        <div class="motw-name">CJ</div>
+        <div class="motw-team">K9 Unit 🍆</div>
+        <p class="rank-chips"><span class="stat-badge is-warn">6-5</span></p>
+      </div>
+    </div>
+  </div>
+  <p>CJ and Pangy face off in a <strong>HUGE</strong> game. Neil vs. PJ is pretty important too, but much more is on the line for the Battle of the Chrises!</p>
+  <p>Pangy can match CJ&rsquo;s record with a win, and if he wins by more than 22, he&rsquo;ll leap him in the standings. Only Neil is in between them now, but Neil&rsquo;s cooked on PF if he ends up tied with either of THE CHRISES.</p>
+  <div class="motw-watch">
+    <h3>What to watch</h3>
+    <ul>
+      <li><strong>RB for CJ</strong> &ndash; Walker&rsquo;s out, and CJ has been duct-taping it together for the weeks K9&rsquo;s been out. He&rsquo;s got six healthy RBs on his bench right now, and three of them will fill his RB and FLEX spots.</li>
+      <li><strong>Thanksgiving morning</strong> &ndash; DET/CJ (St. Brown) vs. CHI/Pangy (Loveland and Burden). Looks like one of the best games of the week, and surely one of them will be grumpy by snacktime.</li>
+      <li><strong>Pangy&rsquo;s Bengals</strong> &ndash; Burrow, Chase and Higgins at home against the Saints, with CJ&rsquo;s Olave on the other side.</li>
+      <li><strong>CJ&rsquo;s Commanders</strong> &ndash; Jayden Daniels against the shell of the Cards, with McBride on the other side.</li>
+    </ul>
+  </div>
+</div>
+
+<h1>Waiver Wire</h1>
+<p>Everyone broke as a joke.</p>
+<div class="roster waiver-log">
+  <h3 class="waiver-heading">Week Twelve Waivers</h3>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Nov 25</p>
+    <ul>
+      <li>Kris - Antonio Williams (WR) - $5</li>
+      <li>Jake - Mike Gesicki (TE) - $3</li>
+      <li>Joel - NYG D/ST (DST) - $2</li>
+      <li>Kris - Jordan Mason (RB) - $2</li>
+      <li>Neil - Chig Okonkwo (TE) - $2</li>
+      <li>CJ - Braelon Allen (RB) - $1</li>
+      <li>CJ - CLE D/ST (DST) - $1</li>
+      <li>CJ - Chris Rodriguez Jr. (RB) - $1</li>
+      <li>Jake - Drew Stevens (K) - $1</li>
+      <li>Tony - GB D/ST (DST) - $1</li>
+    </ul>
+  </div>
+</div>
+<details class="roster waiver-log">
+  <summary>Earlier pickups (212)</summary>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Nov 22</p>
+    <ul>
+      <li>Seif - Ladd McConkey (WR) - $4</li>
+      <li>Jake - Chris Boswell (K) - $1</li>
+      <li>CJ - Jason Sanders (K) - $0</li>
+      <li>Jake - Mark Andrews (TE) - $0</li>
+      <li>Neil - Joey Slye (K) - $0</li>
+      <li>Neil - Ryan Fitzgerald (K) - $0</li>
+      <li>PJ - Kirk Cousins (QB) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Nov 21</p>
+    <ul>
+      <li>Jake - Konata Mumpfield (WR) - $2</li>
+      <li>Seif - SF D/ST (DST) - $2</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Nov 20</p>
+    <ul>
+      <li>Seif - Adonai Mitchell (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Nov 19</p>
+    <ul>
+      <li>Neil - Elic Ayomanor (WR) - $5</li>
+      <li>Tony - CIN D/ST (DST) - $3</li>
+      <li>Andy - DET D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Nov 18</p>
+    <ul>
+      <li>PJ - Dak Prescott (QB) - $12</li>
+      <li>Jake - Kaelon Black (RB) - $6</li>
+      <li>Jake - Michael Mayer (TE) - $6</li>
+      <li>Kris - CHI D/ST (DST) - $6</li>
+      <li>Jake - PIT D/ST (DST) - $5</li>
+      <li>CJ - Ryan Flournoy (WR) - $4</li>
+      <li>Jake - Jacory Croskey-Merritt (RB) - $4</li>
+      <li>CJ - Alvin Kamara (RB) - $2</li>
+      <li>Tony - Kenny Gainwell (RB) - $2</li>
+      <li>Pangy - CAR D/ST (DST) - $1</li>
+      <li>Seif - Pat Bryant (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Nov 15</p>
+    <ul>
+      <li>CJ - Justice Hill (RB) - $1</li>
+      <li>PJ - DEN D/ST (DST) - $1</li>
+      <li>Jake - Chimere Dike (WR) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Nov 13</p>
+    <ul>
+      <li>PJ - Kirk Cousins (QB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Nov 12</p>
+    <ul>
+      <li>CJ - Audric Estime (RB) - $4</li>
+      <li>Jake - BAL D/ST (DST) - $2</li>
+      <li>CJ - Tyler Higbee (TE) - $1</li>
+      <li>Jake - TB D/ST (DST) - $1</li>
+      <li>Seif - Rico Dowdle (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Nov 11</p>
+    <ul>
+      <li>Neil - Corey Kiner (RB) - $11</li>
+      <li>Tony - Konata Mumpfield (WR) - $7</li>
+      <li>Seif - C.J. Stroud (QB) - $6</li>
+      <li>Tony - Tank Dell (WR) - $5</li>
+      <li>Joel - Darren Waller (TE) - $4</li>
+      <li>Joel - Josh Downs (WR) - $4</li>
+      <li>CJ - Tyler Bass (K) - $2</li>
+      <li>Tony - GB D/ST (DST) - $2</li>
+      <li>PJ - NYG D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Nov 8</p>
+    <ul>
+      <li>CJ - Devin Singletary (RB) - $8</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Nov 7</p>
+    <ul>
+      <li>Seif - Kirk Cousins (QB) - $1</li>
+      <li>Tony - Adonai Mitchell (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Nov 5</p>
+    <ul>
+      <li>Joel - Rachaad White (RB) - $1</li>
+      <li>Neil - BUF D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Nov 4</p>
+    <ul>
+      <li>Pangy - Tyler Allgeier (RB) - $34</li>
+      <li>Jake - DEN D/ST (DST) - $6</li>
+      <li>Jake - Mike Gesicki (TE) - $5</li>
+      <li>Tony - Ka'imi Fairbairn (K) - $4</li>
+      <li>Kris - Keenan Allen (WR) - $3</li>
+      <li>Tony - CHI D/ST (DST) - $3</li>
+      <li>PJ - Emmett Johnson (RB) - $2</li>
+      <li>Kris - Xavier Worthy (WR) - $1</li>
+      <li>PJ - NO D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Nov 1</p>
+    <ul>
+      <li>CJ - J.K. Dobbins (RB) - $4</li>
+      <li>CJ - HOU D/ST (DST) - $1</li>
+      <li>Kris - Hunter Henry (TE) - $0</li>
+      <li>PJ - T.J. Hockenson (TE) - $0</li>
+      <li>Seif - Makai Lemon (WR) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Oct 31</p>
+    <ul>
+      <li>Joel - KC Concepcion Jr. (WR) - $1</li>
+      <li>PJ - Seth McGowan (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Oct 30</p>
+    <ul>
+      <li>Neil - WAS D/ST (DST) - $4</li>
+      <li>Seif - Bo Nix (QB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Oct 29</p>
+    <ul>
+      <li>Tony - Chris Boswell (K) - $2</li>
+      <li>PJ - Caleb Douglas (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Oct 28</p>
+    <ul>
+      <li>Jake - Dak Prescott (QB) - $10</li>
+      <li>Kris - Jadarian Price (RB) - $9</li>
+      <li>Jake - Chig Okonkwo (TE) - $6</li>
+      <li>Jake - PIT D/ST (DST) - $6</li>
+      <li>CJ - Chad Ryland (K) - $4</li>
+      <li>CJ - Tre Tucker (WR) - $4</li>
+      <li>Tony - TB D/ST (DST) - $4</li>
+      <li>CJ - JAX D/ST (DST) - $3</li>
+      <li>Jake - Evan McPherson (K) - $3</li>
+      <li>Seif - Kaelon Black (RB) - $3</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Monday, Oct 26</p>
+    <ul>
+      <li>Joel - Darius Cooper (WR) - $0</li>
+      <li>Joel - Jake Elliott (K) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Oct 25</p>
+    <ul>
+      <li>PJ - Rachaad White (RB) - $1</li>
+      <li>PJ - CIN D/ST (DST) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Oct 24</p>
+    <ul>
+      <li>Tony - Marvin Harrison Jr. (WR) - $4</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Oct 23</p>
+    <ul>
+      <li>Tony - SF D/ST (DST) - $2</li>
+      <li>CJ - Zonovan Knight (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Oct 22</p>
+    <ul>
+      <li>Kris - Roschon Johnson (RB) - $1</li>
+      <li>PJ - Terrance Ferguson (TE) - $1</li>
+      <li>Pangy - Malik Washington (WR) - $1</li>
+      <li>Pangy - Tony Pollard (RB) - $1</li>
+      <li>Seif - Tyrone Tracy Jr. (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Oct 21</p>
+    <ul>
+      <li>Kris - Omar Cooper Jr. (WR) - $17</li>
+      <li>CJ - C.J. Stroud (QB) - $6</li>
+      <li>Andy - Chase McLaughlin (K) - $5</li>
+      <li>CJ - NYJ D/ST (DST) - $5</li>
+      <li>Jake - DEN D/ST (DST) - $4</li>
+      <li>Neil - Kyle Pitts Sr. (TE) - $4</li>
+      <li>Neil - CLE D/ST (DST) - $3</li>
+      <li>PJ - Kendre Miller (RB) - $2</li>
+      <li>Tony - CHI D/ST (DST) - $2</li>
+      <li>Jake - Chris Boswell (K) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Oct 18</p>
+    <ul>
+      <li>Jake - Eddy Pineiro (K) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Oct 17</p>
+    <ul>
+      <li>Pangy - SF D/ST (DST) - $3</li>
+      <li>Joel - Dameon Pierce (RB) - $2</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Oct 16</p>
+    <ul>
+      <li>PJ - CAR D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Oct 15</p>
+    <ul>
+      <li>CJ - NYG D/ST (DST) - $1</li>
+      <li>Pangy - IND D/ST (DST) - $1</li>
+      <li>Seif - MarShawn Lloyd (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Oct 14</p>
+    <ul>
+      <li>Pangy - Woody Marks (RB) - $17</li>
+      <li>Andy - Brenton Strange (TE) - $11</li>
+      <li>Andy - Jordan Love (QB) - $9</li>
+      <li>Jake - Germie Bernard (WR) - $8</li>
+      <li>CJ - Tony Pollard (RB) - $6</li>
+      <li>Neil - Wan'Dale Robinson (WR) - $6</li>
+      <li>Joel - KC D/ST (DST) - $4</li>
+      <li>Andy - NE D/ST (DST) - $3</li>
+      <li>Tony - Kirk Cousins (QB) - $2</li>
+      <li>Kris - Tyler Bass (K) - $1</li>
+      <li>PJ - Jason Myers (K) - $1</li>
+      <li>PJ - SF D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Oct 11</p>
+    <ul>
+      <li>Kris - Romeo Doubs (WR) - $2</li>
+      <li>CJ - Dominic Zvada (K) - $1</li>
+      <li>Seif - Bo Nix (QB) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Oct 10</p>
+    <ul>
+      <li>Jake - Mike Washington Jr. (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Oct 9</p>
+    <ul>
+      <li>Neil - JAX D/ST (DST) - $3</li>
+      <li>CJ - Braelon Allen (RB) - $2</li>
+      <li>Neil - Jacoby Brissett (QB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Oct 8</p>
+    <ul>
+      <li>Andy - Aaron Rodgers (QB) - $1</li>
+      <li>CJ - CIN D/ST (DST) - $1</li>
+      <li>CJ - Jayden Daniels (QB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Oct 7</p>
+    <ul>
+      <li>Joel - Keon Coleman (WR) - $18</li>
+      <li>PJ - Drake Maye (QB) - $11</li>
+      <li>PJ - Brian Robinson Jr. (RB) - $5</li>
+      <li>Andy - DEN D/ST (DST) - $1</li>
+      <li>Andy - T.J. Hockenson (TE) - $1</li>
+      <li>Joel - NYG D/ST (DST) - $1</li>
+      <li>PJ - Will Reichard (K) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Oct 4</p>
+    <ul>
+      <li>Andy - KC D/ST (DST) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Oct 3</p>
+    <ul>
+      <li>Kris - Emanuel Wilson (RB) - $3</li>
+      <li>Pangy - Jakobi Meyers (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Oct 2</p>
+    <ul>
+      <li>CJ - GB D/ST (DST) - $1</li>
+      <li>Joel - Tyreek Hill (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Oct 1</p>
+    <ul>
+      <li>Seif - Spencer Shrader (K) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Sep 30</p>
+    <ul>
+      <li>Andy - Braelon Allen (RB) - $27</li>
+      <li>Joel - Kenyon Sadiq (TE) - $18</li>
+      <li>Neil - Jordan Addison (WR) - $16</li>
+      <li>CJ - Alvin Kamara (RB) - $12</li>
+      <li>Jake - PIT D/ST (DST) - $7</li>
+      <li>Seif - Sam Darnold (QB) - $4</li>
+      <li>Tony - Ollie Gordon II (RB) - $4</li>
+      <li>Joel - BUF D/ST (DST) - $3</li>
+      <li>PJ - Kalif Raymond (WR) - $3</li>
+      <li>PJ - Bo Nix (QB) - $2</li>
+      <li>Tony - Keenan Allen (WR) - $2</li>
+      <li>Andy - Tyler Loop (K) - $1</li>
+      <li>Jake - Matthew Stafford (QB) - $1</li>
+      <li>PJ - CHI D/ST (DST) - $1</li>
+      <li>Pangy - Harold Fannin Jr. (TE) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Sep 27</p>
+    <ul>
+      <li>Joel - Terrance Ferguson (TE) - $5</li>
+      <li>Kris - Malik Washington (WR) - $0</li>
+      <li>Seif - Justin Herbert (QB) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Sep 26</p>
+    <ul>
+      <li>Neil - Khalil Shakir (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Sep 25</p>
+    <ul>
+      <li>Pangy - Caleb Douglas (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Sep 24</p>
+    <ul>
+      <li>Jake - Drake Maye (QB) - $4</li>
+      <li>Jake - J.K. Dobbins (RB) - $3</li>
+      <li>PJ - Kyler Murray (QB) - $2</li>
+      <li>Andy - Jordan Love (QB) - $1</li>
+      <li>Andy - Xavier Worthy (WR) - $1</li>
+      <li>Jake - Emmett Johnson (RB) - $1</li>
+      <li>Neil - Matt Gay (K) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Sep 23</p>
+    <ul>
+      <li>PJ - Denzel Boston (WR) - $23</li>
+      <li>PJ - Dalton Schultz (TE) - $18</li>
+      <li>Joel - Patrick Mahomes (QB) - $16</li>
+      <li>Andy - Bryce Young (QB) - $11</li>
+      <li>Kris - Rashod Bateman (WR) - $11</li>
+      <li>Neil - Tyler Shough (QB) - $9</li>
+      <li>Seif - George Kittle (TE) - $9</li>
+      <li>Neil - Jonah Coleman (RB) - $8</li>
+      <li>Tony - Jared Goff (QB) - $4</li>
+      <li>CJ - Josh Downs (WR) - $3</li>
+      <li>Joel - NYG D/ST (DST) - $3</li>
+      <li>PJ - Harrison Butker (K) - $2</li>
+      <li>Jake - Jordan Mason (RB) - $1</li>
+      <li>PJ - NO D/ST (DST) - $1</li>
+      <li>Seif - Tyler Loop (K) - $1</li>
+      <li>Tony - CIN D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Sep 20</p>
+    <ul>
+      <li>Andy - NE D/ST (DST) - $1</li>
+      <li>Andy - Travis Kelce (TE) - $1</li>
+      <li>Jake - Evan McPherson (K) - $0</li>
+      <li>Neil - Trey Smack (K) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Sep 18</p>
+    <ul>
+      <li>PJ - GB D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Sep 17</p>
+    <ul>
+      <li>CJ - Aaron Jones Sr. (RB) - $12</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Sep 16</p>
+    <ul>
+      <li>Seif - Jalen Coker (WR) - $23</li>
+      <li>Joel - Devaughn Vele (WR) - $15</li>
+      <li>Pangy - Kaelon Black (RB) - $11</li>
+      <li>Tony - Matthew Golden (WR) - $9</li>
+      <li>Neil - SF D/ST (DST) - $6</li>
+      <li>Seif - Kenyon Sadiq (TE) - $6</li>
+      <li>Jake - Brock Purdy (QB) - $4</li>
+      <li>Andy - Caleb Douglas (WR) - $2</li>
+      <li>CJ - KC D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Sep 13</p>
+    <ul>
+      <li>Jake - Chase McLaughlin (K) - $0</li>
+      <li>PJ - Jaxson Dart (QB) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Sep 11</p>
+    <ul>
+      <li>Seif - Darren Waller (TE) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Sep 10</p>
+    <ul>
+      <li>CJ - T.J. Hockenson (TE) - $1</li>
+      <li>Pangy - Tyler Allgeier (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Sep 9</p>
+    <ul>
+      <li>Seif - Tyler Loop (K) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Sep 6</p>
+    <ul>
+      <li>Joel - TB D/ST (DST) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Saturday, Sep 5</p>
+    <ul>
+      <li>Tony - Jacob Saylors (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Friday, Sep 4</p>
+    <ul>
+      <li>Andy - Woody Marks (RB) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Thursday, Sep 3</p>
+    <ul>
+      <li>PJ - Deebo Samuel Sr. (WR) - $1</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Wednesday, Sep 2</p>
+    <ul>
+      <li>Pangy - Mike Washington Jr. (RB) - $0</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Monday, Aug 31</p>
+    <ul>
+      <li>Seif - MarShawn Lloyd (RB) - $4</li>
+    </ul>
+  </div>
+  <div class="waiver-group">
+    <p class="waiver-date">Sunday, Aug 30</p>
+    <ul>
+      <li>CJ - LAC D/ST (DST) - $0</li>
+    </ul>
+  </div>
+</details>
+<div class="trades">
+  <h3>Trades</h3>
+  <ul>
+      <li>Joel gets Stefon Diggs; Kris gets Patrick Mahomes</li>
+      <li>Seif gets Chase Brown; Joel gets Jalen Coker, Blake Corum</li>
+      <li>Jake gets Carnell Tate, $26; Kris gets Matthew Stafford</li>
+  </ul>
+</div>
+
+<hr>
+<h1>Week Twelve Power Rankings</h1>
+<h1>Tier 1: Golden Boys</h1>
+<div id="tony">
+<p class="rank-banner"><img alt="" src="../../assets/tony-week12.jpg"></p>
+<h2><span class="rank-name">1. Tony 🔒 &mdash; Cee Deez Nuts</span> <span class="rank-grade is-up is-move-1" title="Up 1 from 2">Last Week: 2 <span class="rank-move">▲1</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-warn">9-2</span>
+  <span class="stat-badge is-win">W1</span>
+  <span class="stat-badge is-win">PF: 1481.02</span>
+  <span class="stat-badge is-win">PA: 1147.94</span>
+  <span class="stat-badge is-loss">FAAB: $35</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 71.72</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">136.16</span>
+      <div class="score-bar is-hot" style="height:79px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">116.28</span>
+      <div class="score-bar is-mid" style="height:67px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">107.06</span>
+      <div class="score-bar is-mid" style="height:62px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">178.78</span>
+      <div class="score-bar is-hot" style="height:104px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">150.84</span>
+      <div class="score-bar is-hot" style="height:87px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">155.22</span>
+      <div class="score-bar is-hot" style="height:90px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">116.12</span>
+      <div class="score-bar is-mid" style="height:67px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">146.98</span>
+      <div class="score-bar is-hot" style="height:85px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">121.2</span>
+      <div class="score-bar is-mid" style="height:70px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">123.72</span>
+      <div class="score-bar is-mid" style="height:72px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">128.66</span>
+      <div class="score-bar is-hot" style="height:75px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>He&rsquo;s in.</strong></p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>CeeDee Lamb</strong> &mdash; His namesake. Lamb was the top-ranked player left on the board when Tony was up in round one. I&rsquo;m chalking it up to pure luck, no skill.</p>
+</div>
+<hr>
+<div id="kris">
+<p class="rank-banner"><img alt="" src="../../assets/kris-week12.jpg"></p>
+<h2><span class="rank-name">2. Kris &mdash; Spitters not Quiters</span> <span class="rank-grade is-up is-move-1" title="Up 1 from 3">Last Week: 3 <span class="rank-move">▲1</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-warn">8-3</span>
+  <span class="stat-badge is-win">W2</span>
+  <span class="stat-badge is-win">PF: 1454.9</span>
+  <span class="stat-badge is-win">PA: 1270.34</span>
+  <span class="stat-badge is-loss">FAAB: $13</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 97.12</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">152.66</span>
+      <div class="score-bar is-hot" style="height:88px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">142.9</span>
+      <div class="score-bar is-hot" style="height:83px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">127.9</span>
+      <div class="score-bar is-hot" style="height:74px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">168.88</span>
+      <div class="score-bar is-hot" style="height:98px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">153.12</span>
+      <div class="score-bar is-hot" style="height:89px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">108.58</span>
+      <div class="score-bar is-mid" style="height:63px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">110.3</span>
+      <div class="score-bar is-mid" style="height:64px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">80.1</span>
+      <div class="score-bar is-cold" style="height:46px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">109.08</span>
+      <div class="score-bar is-mid" style="height:63px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">177.22</span>
+      <div class="score-bar is-hot" style="height:103px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">124.16</span>
+      <div class="score-bar is-mid" style="height:72px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>One win and he&rsquo;s in.</strong> Even at 0&ndash;2 he only sweats if CJ and Neil both win out, and he&rsquo;d still lead that tiebreaker on points for.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Jaxon Smith-Njigba</strong> &mdash; What JSN did last year made him the perfect keeper, with Seahawks synergy on top. And again, <strong>luck</strong>: the returning champ got the first pick, and JSN is probably the best-performing unanimous #1 in the last decade. Doesn&rsquo;t get easier than that. Oh, and he&rsquo;s thankful to Joel for trading him his favorite player, Mahomes.</p>
+</div>
+<hr>
+<h1>Tier 2: Very Hairy</h1>
+<div id="pj">
+<p class="rank-banner"><img alt="" src="../../assets/pj-week12.jpg"></p>
+<h2><span class="rank-name">3. PJ &mdash; The Questionables</span> <span class="rank-grade is-up is-move-1" title="Up 1 from 4">Last Week: 4 <span class="rank-move">▲1</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-warn">7-4</span>
+  <span class="stat-badge is-win">W3</span>
+  <span class="stat-badge is-warn">PF: 1364.12</span>
+  <span class="stat-badge is-warn">PA: 1380.22</span>
+  <span class="stat-badge is-loss">FAAB: $2</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 108.16</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">93.5</span>
+      <div class="score-bar is-cold" style="height:54px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">82.1</span>
+      <div class="score-bar is-cold" style="height:48px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">113.12</span>
+      <div class="score-bar is-mid" style="height:66px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">110.66</span>
+      <div class="score-bar is-mid" style="height:64px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">190.26</span>
+      <div class="score-bar is-hot" style="height:110px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">140.9</span>
+      <div class="score-bar is-hot" style="height:82px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">111.44</span>
+      <div class="score-bar is-mid" style="height:65px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">116.66</span>
+      <div class="score-bar is-mid" style="height:68px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">106.96</span>
+      <div class="score-bar is-mid" style="height:62px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">151.02</span>
+      <div class="score-bar is-hot" style="height:87px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">147.5</span>
+      <div class="score-bar is-hot" style="height:85px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>Beat Neil and he&rsquo;s in.</strong> Lose to Neil but beat Kris and he&rsquo;s still basically in. Lose both and he&rsquo;s an underdog, rooting hard against CJ.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Health</strong> &mdash; PJ bet on comebacks from Kraft and Nabers, and on the sometimes-hurt CMC&hellip; but the unhealthiness of K9 has also helped fuel PJ&rsquo;s win streak (three straight), with Emmett Johnson&rsquo;s emergence driving his playoff run.</p>
+</div>
+<hr>
+<div id="cj">
+<p class="rank-banner is-tall"><img alt="" src="../../assets/cj-week12.jpg"></p>
+<h2><span class="rank-name">4. CJ &mdash; K9 Unit 🍆</span> <span class="rank-grade is-up is-move-1" title="Up 1 from 5">Last Week: 5 <span class="rank-move">▲1</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-warn">6-5</span>
+  <span class="stat-badge is-loss">L2</span>
+  <span class="stat-badge is-win">PF: 1447.44</span>
+  <span class="stat-badge is-warn">PA: 1370.78</span>
+  <span class="stat-badge is-loss">FAAB: $5</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 77.36</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">179.52</span>
+      <div class="score-bar is-hot" style="height:104px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">138.76</span>
+      <div class="score-bar is-hot" style="height:80px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">120.52</span>
+      <div class="score-bar is-mid" style="height:70px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">128.02</span>
+      <div class="score-bar is-hot" style="height:74px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">140.94</span>
+      <div class="score-bar is-hot" style="height:82px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">111.7</span>
+      <div class="score-bar is-mid" style="height:65px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">114.12</span>
+      <div class="score-bar is-mid" style="height:66px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">143.28</span>
+      <div class="score-bar is-hot" style="height:83px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">131.56</span>
+      <div class="score-bar is-hot" style="height:76px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">102.16</span>
+      <div class="score-bar is-mid" style="height:59px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">136.86</span>
+      <div class="score-bar is-hot" style="height:79px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>Win out and he&rsquo;s in.</strong> Split and he&rsquo;s probably in, thanks to the best points for on the bubble, as long as Neil doesn&rsquo;t win out while PJ beats Kris.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Amon-Ra St. Brown</strong> &mdash; A mixed bag, and a tough one here. It was so clearly K9, Olave and McBride, but all of them have slowed. So let&rsquo;s go with our Sun God, Amon-Ra!</p>
+</div>
+<hr>
+<div id="pangy">
+<p class="rank-banner"><img alt="" src="../../assets/pangy-week12.jpg"></p>
+<h2><span class="rank-name">5. Pangy &mdash; Tee &amp; Jamar’s Phat Hogz</span> <span class="rank-grade is-down is-move-4" title="Down 4 from 1">Last Week: 1 <span class="rank-move">▼4</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-loss">5-6</span>
+  <span class="stat-badge is-loss">L1</span>
+  <span class="stat-badge is-warn">PF: 1425.12</span>
+  <span class="stat-badge is-loss">PA: 1407.82</span>
+  <span class="stat-badge is-loss">FAAB: $27</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 148.86</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">68.06</span>
+      <div class="score-bar is-cold" style="height:39px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">115.88</span>
+      <div class="score-bar is-mid" style="height:67px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">169.78</span>
+      <div class="score-bar is-hot" style="height:98px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">111.92</span>
+      <div class="score-bar is-mid" style="height:65px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">116.8</span>
+      <div class="score-bar is-mid" style="height:68px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">58.32</span>
+      <div class="score-bar is-cold is-worst" style="height:34px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">167.28</span>
+      <div class="score-bar is-hot" style="height:97px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">207.18</span>
+      <div class="score-bar is-hot is-best" style="height:120px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">142.34</span>
+      <div class="score-bar is-hot" style="height:82px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">174.16</span>
+      <div class="score-bar is-hot" style="height:101px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">93.4</span>
+      <div class="score-bar is-cold" style="height:54px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>Win out</strong> (CJ, then Seif) and he&rsquo;s got a real shot, mostly on points for. One loss and he&rsquo;s done.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Jake</strong> &mdash; I have to believe Pangy&rsquo;s pre-draft rankings would have been turrible. By wiping them, the autodraft gods smiled and loaded Pangy&rsquo;s roster with the most potent of weapons&hellip; even if it looked pretty bad there at the beginning.</p>
+</div>
+<hr>
+<h1>Tier 3: It could happen!</h1>
+<div id="neil">
+<p class="rank-banner"><img alt="" src="../../assets/neil-week12.jpg"></p>
+<h2><span class="rank-name">6. Neil &mdash; JA17’s Hand Me Down Hog</span> <span class="rank-grade is-up is-move-2" title="Up 2 from 8">Last Week: 8 <span class="rank-move">▲2</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-warn">6-5</span>
+  <span class="stat-badge is-win">W1</span>
+  <span class="stat-badge is-loss">PF: 1234.0</span>
+  <span class="stat-badge is-win">PA: 1253.48</span>
+  <span class="stat-badge is-loss">FAAB: $19</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 71.26</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">133.96</span>
+      <div class="score-bar is-hot" style="height:78px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">137.42</span>
+      <div class="score-bar is-hot" style="height:80px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">94.86</span>
+      <div class="score-bar is-cold" style="height:55px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">106.42</span>
+      <div class="score-bar is-mid" style="height:62px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">93.2</span>
+      <div class="score-bar is-cold" style="height:54px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">71.2</span>
+      <div class="score-bar is-cold" style="height:41px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">106.12</span>
+      <div class="score-bar is-mid" style="height:61px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">142.46</span>
+      <div class="score-bar is-hot" style="height:83px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">125.56</span>
+      <div class="score-bar is-hot" style="height:73px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">99.74</span>
+      <div class="score-bar is-cold" style="height:58px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">123.06</span>
+      <div class="score-bar is-mid" style="height:71px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>He has to win out</strong>, and even then he needs CJ to slip or Kris to beat PJ. He&rsquo;s last on the bubble in points for, so he&rsquo;ll lose any tiebreaker.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Lack of competition</strong> &mdash; Only Tony&rsquo;s opponents have scored fewer points, and Tony also has the most PF. Neil has clearly taken advantage of his opponents, turning 9th in PF into a playoff run. Thankful, indeed.</p>
+</div>
+<hr>
+<div id="seif">
+<p class="rank-banner"><img alt="" src="../../assets/seif-week12.jpg"></p>
+<h2><span class="rank-name">7. Seif &mdash; Dont PUKA da BEAR</span> <span class="rank-grade is-down is-move-1" title="Down 1 from 6">Last Week: 6 <span class="rank-move">▼1</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-loss">5-6</span>
+  <span class="stat-badge is-loss">L1</span>
+  <span class="stat-badge is-warn">PF: 1344.02</span>
+  <span class="stat-badge is-warn">PA: 1390.96</span>
+  <span class="stat-badge is-loss">FAAB: $23</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 85.4</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">109.56</span>
+      <div class="score-bar is-mid" style="height:63px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">77.62</span>
+      <div class="score-bar is-cold" style="height:45px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">105.94</span>
+      <div class="score-bar is-mid" style="height:61px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">163.02</span>
+      <div class="score-bar is-hot" style="height:94px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">162.12</span>
+      <div class="score-bar is-hot" style="height:94px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">86.3</span>
+      <div class="score-bar is-cold" style="height:50px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">125.22</span>
+      <div class="score-bar is-hot" style="height:73px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">126.48</span>
+      <div class="score-bar is-hot" style="height:73px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">157.56</span>
+      <div class="score-bar is-hot" style="height:91px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">114.24</span>
+      <div class="score-bar is-mid" style="height:66px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">115.96</span>
+      <div class="score-bar is-mid" style="height:67px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">How he gets in</span> <strong>Win out</strong> (Jake, then Pangy) and hope CJ and Neil both crater. One loss and he&rsquo;s done.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Christian Watson</strong> &mdash; As I&rsquo;m typing this, Watson literally just scored&hellip; he&rsquo;s been great, and uncharacteristically healthy. I mean, I still can&rsquo;t believe that guy went to the hospital in an ambulance in the middle of a game and came back to finish it (and was productive). Fuck you, Seif, you&rsquo;re already up 30 on me and it&rsquo;s not even halftime of WNF (Kyren doing everything for LAR, too, despite us just finding out he&rsquo;s had turf toe for a month). <em>Update: Watson got absolutely obliterated after I typed this. Hope he&rsquo;s okay.</em></p>
+</div>
+<hr>
+<h1>Obituaries</h1>
+<div id="andy">
+<p class="rank-banner"><img alt="" src="../../assets/andy-week12.jpg"></p>
+<h2><span class="rank-name">8. Andy &mdash; U Sown Loik Ya Frm LONDON</span> <span class="rank-grade is-down is-move-1" title="Down 1 from 7">Last Week: 7 <span class="rank-move">▼1</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-loss">4-7</span>
+  <span class="stat-badge is-loss">L1</span>
+  <span class="stat-badge is-warn">PF: 1272.7</span>
+  <span class="stat-badge is-warn">PA: 1321.24</span>
+  <span class="stat-badge is-loss">FAAB: $22</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 36.98</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">113.62</span>
+      <div class="score-bar is-mid" style="height:66px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">126.42</span>
+      <div class="score-bar is-hot" style="height:73px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">106.84</span>
+      <div class="score-bar is-mid" style="height:62px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">105.06</span>
+      <div class="score-bar is-mid" style="height:61px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">119.4</span>
+      <div class="score-bar is-mid" style="height:69px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">137.94</span>
+      <div class="score-bar is-hot" style="height:80px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">100.96</span>
+      <div class="score-bar is-mid" style="height:58px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">132.82</span>
+      <div class="score-bar is-hot" style="height:77px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">110.98</span>
+      <div class="score-bar is-mid" style="height:64px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">112.9</span>
+      <div class="score-bar is-mid" style="height:65px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">105.76</span>
+      <div class="score-bar is-mid" style="height:61px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p>Passed away after the loss to PJ. The doctors say he&rsquo;s technically still breathing (win out and get a lot of help), but the family has decided to pull the plug.</p>
+<p>We know he was one of the most consistent, continuing his 100+ streak last week on his death bed. But, never could get to the next level consistently. He lost to Tony by 0.22 in Week 3 and to Neil by 1.36 in Week 4. Flip those two and he&rsquo;s 6&ndash;5 and in the hunt.</p>
+<p>He is survived by Chuba Hubbard (26.0) and Travis Kelce (25.4), who showed up to the end.</p>
+<p>In lieu of flowers, please stop beating his corpse by less than 2 points. Services will be held against Tony this week.</p>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Kirk Cousins</strong> &mdash; He arrives to help fuel the Jettas through the rest of the season, propelling Andy&rsquo;s chances to win the Slutler pool.</p>
+</div>
+<hr>
+<div id="jake">
+<p class="rank-banner"><img alt="" src="../../assets/jake-week12.jpg"></p>
+<h2><span class="rank-name">9. Jake &mdash; Emeka Mistake</span> <span class="rank-grade is-same" title="Held at 9">Last Week: 9 <span class="rank-move">&harr;</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-loss">3-8</span>
+  <span class="stat-badge is-win">W1</span>
+  <span class="stat-badge is-warn">PF: 1283.58</span>
+  <span class="stat-badge is-loss">PA: 1477.72</span>
+  <span class="stat-badge is-loss">FAAB: $23</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 63.5</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">121.44</span>
+      <div class="score-bar is-mid" style="height:70px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">105.08</span>
+      <div class="score-bar is-mid" style="height:61px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">142.98</span>
+      <div class="score-bar is-hot" style="height:83px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">107.42</span>
+      <div class="score-bar is-mid" style="height:62px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">147.46</span>
+      <div class="score-bar is-hot" style="height:85px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">83.96</span>
+      <div class="score-bar is-cold" style="height:49px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">88.42</span>
+      <div class="score-bar is-cold" style="height:51px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">89.5</span>
+      <div class="score-bar is-cold" style="height:52px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">104.56</span>
+      <div class="score-bar is-mid" style="height:61px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">147.06</span>
+      <div class="score-bar is-hot" style="height:85px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">145.7</span>
+      <div class="score-bar is-hot" style="height:84px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Some nice bets</strong> &mdash; They paid for my buy-in this year.</p>
+</div>
+<hr>
+<div id="joel">
+<p class="rank-banner"><img alt="" src="../../assets/joel-week12.jpg"></p>
+<h2><span class="rank-name">10. Joel &mdash; JOELLM</span> <span class="rank-grade is-same" title="Held at 10">Last Week: 10 <span class="rank-move">&harr;</span></span></h2>
+<p class="rank-chips">
+  <span class="stat-badge is-loss">2-9</span>
+  <span class="stat-badge is-loss">L5</span>
+  <span class="stat-badge is-loss">PF: 1123.82</span>
+  <span class="stat-badge is-loss">PA: 1410.22</span>
+  <span class="stat-badge is-loss">FAAB: $1</span>
+</p>
+<details class="score-log">
+  <summary>Week-to-week scoring <span class="score-spread">spread 72.66</span></summary>
+  <div class="score-chart" style="--max:207.18;--avg:122.1">
+    <div class="score-plot">
+      <div class="score-avg" title="League average 122.1"></div>
+    <div class="score-col">
+      <span class="score-val">147.0</span>
+      <div class="score-bar is-hot" style="height:85px"></div>
+      <span class="score-wk">W1</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">91.26</span>
+      <div class="score-bar is-cold" style="height:53px"></div>
+      <span class="score-wk">W2</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">74.34</span>
+      <div class="score-bar is-cold" style="height:43px"></div>
+      <span class="score-wk">W3</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">90.8</span>
+      <div class="score-bar is-cold" style="height:53px"></div>
+      <span class="score-wk">W4</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">116.04</span>
+      <div class="score-bar is-mid" style="height:67px"></div>
+      <span class="score-wk">W5</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">100.88</span>
+      <div class="score-bar is-mid" style="height:58px"></div>
+      <span class="score-wk">W6</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">93.2</span>
+      <div class="score-bar is-cold" style="height:54px"></div>
+      <span class="score-wk">W7</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">102.2</span>
+      <div class="score-bar is-mid" style="height:59px"></div>
+      <span class="score-wk">W8</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">101.58</span>
+      <div class="score-bar is-mid" style="height:59px"></div>
+      <span class="score-wk">W9</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">109.28</span>
+      <div class="score-bar is-mid" style="height:63px"></div>
+      <span class="score-wk">W10</span>
+    </div>
+    <div class="score-col">
+      <span class="score-val">97.24</span>
+      <div class="score-bar is-cold" style="height:56px"></div>
+      <span class="score-wk">W11</span>
+    </div>
+    </div>
+    <p class="score-legend">Dashed line is league average (122.1). Same scale for every team. Red under 100, yellow 100–125, green over 125.</p>
+  </div>
+</details>
+<p class="team-mvp"><span class="award-label">This guy&rsquo;s thankful for</span> <strong>Blake Corum</strong> &mdash; Picked him up from Seif, and he could be a big head start on next year as a potential 11th-round keeper.</p>
+</div>
+<hr>
+<h1>Quote of the Week</h1>
+<p class="rank-banner"><img alt="Detroit Lions players in headsets carve John Madden&rsquo;s Thanksgiving turkey at the Silverdome" src="../../assets/week12-quote.jpg"></p>
+<blockquote>
+<p>There&rsquo;s no place I&rsquo;d rather be today, on Thanksgiving, than right here, right now, at a football game. There&rsquo;s just certain things that go together. The turkey, the family, the tradition, football, and we have it all today.<br>
+<em>&mdash; John Madden</em></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Good luck to everyone besides Seif!<br>
+<em>- Snake</em></p>
+</blockquote>
+</article>
+</main>
+</div>
+</div>
+<div class="scrim"></div>
+<script src="../../site.js"></script>
+</body>
+</html>
